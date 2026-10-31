@@ -1,0 +1,13 @@
+- id: sizes
+  title: Sizes
+  source: |
+    <div class="si-cluster">
+      {% include '@si/avatar.html.twig' with {name: 'Alex Martin', initials: 'AM', size: 'sm'} only %}
+      {% include '@si/avatar.html.twig' with {name: 'Alex Martin', initials: 'AM'} only %}
+      {% include '@si/avatar.html.twig' with {name: 'Alex Martin', initials: 'AM', size: 'lg'} only %}
+      {% include '@si/avatar.html.twig' with {name: 'Alex Martin', initials: 'AM', size: 'xl'} only %}
+    </div>
+- id: round
+  title: Round
+  source: |
+    {% include '@si/avatar.html.twig' with {name: 'Sam Durand', initials: 'SD', round: true} only %}

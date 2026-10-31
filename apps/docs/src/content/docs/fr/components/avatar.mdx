@@ -1,0 +1,51 @@
+---
+title: "Avatar"
+description: "Représente une personne ou une organisation."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Représente une personne ou une organisation.
+
+## Usage
+
+Utilisez-le à côté d'un nom, dans les listes et les en-têtes.
+
+## Variantes
+
+- Initiales, ou image avec `image`.
+- Carré arrondi par défaut, **rond** avec `round: true`.
+
+## États
+
+- Statique.
+
+## Dimensions
+
+24px (`sm`), 32px (par défaut), 40px (`lg`), 64px (`xl`).
+
+## Accessibilité
+
+- `name` est lu par les lecteurs d'écran, et les initiales leur sont masquées.
+- Si le nom est déjà à côté, il est répété : gardez-le court.
+
+## Responsive
+
+Une taille fixe : il ne se réduit pas dans une ligne.
+
+## Exemples
+
+<Examples component="avatar" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Utilisez deux lettres au plus.</Fragment>
+  <Fragment slot="dont">Ne lui donnez pas de sens par sa seule couleur.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/avatar.html.twig` : `name`, `initials`, `image`, `size`, `round`. Les couleurs de rôle restent dans l'application.

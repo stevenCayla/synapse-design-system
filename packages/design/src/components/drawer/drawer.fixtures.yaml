@@ -1,0 +1,15 @@
+- id: trigger
+  title: Opened by a button
+  height: 90
+  source: |
+    <button type="button" class="si-btn" data-si-open="user-drawer">Open the details</button>
+    {% embed '@si/drawer.html.twig' with {id: 'user-drawer', title: 'Alex Martin', close_label: 'Close'} only %}
+      {% block body %}<p>Monitor on 3 studies.</p>{% endblock %}
+      {% block footer %}<button type="button" class="si-btn" data-si-close>Close</button>{% endblock %}
+    {% endembed %}
+- id: loaded
+  title: Content loaded on opening
+  height: 90
+  source: |
+    <button type="button" class="si-btn" data-si-open="report-drawer">Open the report</button>
+    {% include '@si/drawer.html.twig' with {id: 'report-drawer', title: 'Report', close_label: 'Close', url: '/examples/alert/default/', loading_label: 'Loading', error_title: 'The content could not be loaded', size: 'lg'} only %}

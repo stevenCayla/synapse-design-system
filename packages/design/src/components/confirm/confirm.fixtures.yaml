@@ -1,0 +1,20 @@
+- id: rendered
+  title: Rendered in the page
+  source: |
+    {% include '@si/confirm.html.twig' with {title: 'Delete the site?', message: 'The site has no patient. This cannot be undone.', ok_label: 'Delete', cancel_label: 'Cancel', reason_label: 'Reason', open: true} only %}
+- id: declarative
+  title: On a button or a form
+  height: 280
+  source: |
+    <form data-si-confirm="The site has no patient. This cannot be undone." data-si-confirm-title="Delete the site?">
+      <button type="submit" class="si-btn si-btn--danger">Delete the site</button>
+    </form>
+    {% include '@si/confirm.html.twig' with {title: 'Please confirm', ok_label: 'Confirm', cancel_label: 'Cancel', reason_label: 'Reason'} only %}
+- id: with-reason
+  title: With a required reason
+  height: 280
+  source: |
+    <form data-si-confirm="The patient stays in the study history." data-si-confirm-title="Withdraw the patient?" data-si-confirm-reason-name="reason">
+      <button type="submit" class="si-btn si-btn--danger">Withdraw</button>
+    </form>
+    {% include '@si/confirm.html.twig' with {title: 'Please confirm', ok_label: 'Confirm', cancel_label: 'Cancel', reason_label: 'Reason'} only %}

@@ -8,3 +8,5 @@ dist/
 /meta/
 /packages/design/generated/
 /tooling/twig-parity/vendor/
+/test-results/
+/playwright-report/

@@ -1,0 +1,17 @@
+{#
+  Parameters
+  ----------
+  title     string  translated title of the page, the only h1
+  eyebrow   string  optional translated text above the title
+  subtitle  string  optional translated text under the title
+
+  Block: actions.
+#}
+<header class="si-page-header">
+    <div class="si-page-header__heading">
+        {%- if eyebrow is defined and eyebrow %}<p class="si-page-header__eyebrow">{{ eyebrow }}</p>{% endif -%}
+        <h1 class="si-page-header__title">{{ title }}</h1>
+        {%- if subtitle is defined and subtitle %}<p class="si-page-header__subtitle">{{ subtitle }}</p>{% endif -%}
+    </div>
+    {%- block actions_wrapper %}{% if block('actions') is defined %}<div class="si-page-header__actions">{{ block('actions') }}</div>{% endif %}{% endblock -%}
+</header>

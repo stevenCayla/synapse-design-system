@@ -18,3 +18,19 @@
   title: Text is escaped
   source: |
     {% include '@si/badge.html.twig' with {label: 'R&D <b>team</b> "A"'} only %}
+- id: info
+  title: Info
+  source: |
+    {% include '@si/badge.html.twig' with {label: 'In review', tone: 'info'} only %}
+- id: neutral
+  title: Neutral
+  source: |
+    {% include '@si/badge.html.twig' with {label: 'Archived', tone: 'neutral'} only %}
+- id: pill-dot
+  title: Pill with a status dot
+  source: |
+    {% include '@si/badge.html.twig' with {label: 'Active', tone: 'success', pill: true, dot: true} only %}
+- id: with-icon
+  title: With an icon
+  source: |
+    {% include '@si/badge.html.twig' with {label: 'Locked', tone: 'warning', icon: 'bi bi-lock-fill'} only %}

@@ -1,0 +1,52 @@
+---
+title: "KPI"
+description: "Un chiffre clé avec son libellé."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Un chiffre clé avec son libellé.
+
+## Usage
+
+Utilisez une rangée de KPI en haut d'un tableau de bord ou d'une liste.
+
+## Variantes
+
+- **Tonalités** sur l'icône : `success`, `warning`, `danger`, `info`.
+- **Lien** (`href`) ou **filtre** (`pressed`).
+- `si-kpi-row` pour une rangée.
+
+## États
+
+- Un filtre utilise `aria-pressed`. Les liens et filtres ont des états de survol et `:focus-visible`.
+
+## Dimensions
+
+La rangée donne à chaque KPI au moins 150px.
+
+## Accessibilité
+
+- Le libellé dit ce que signifie le chiffre : la tonalité ne fait que l'appuyer.
+- Un KPI qui agit est un vrai lien ou bouton.
+
+## Responsive
+
+`si-kpi-row` passe à la ligne toute seule.
+
+## Exemples
+
+<Examples component="kpi" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Gardez quelques chiffres qui mènent à une décision.</Fragment>
+  <Fragment slot="dont">Ne comptez pas sur la couleur pour signaler un problème.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/kpi.html.twig` : `label`, `value`, `sub`, `icon`, `tone`, `href`, `pressed`.

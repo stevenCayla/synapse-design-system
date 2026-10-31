@@ -1,0 +1,52 @@
+---
+title: "Toast"
+description: "Un message court qui n'interrompt pas."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Un message court qui n'interrompt pas.
+
+## Usage
+
+Utilisez-le pour confirmer le résultat d'une action. Pour un message à garder sur la page, utilisez une [alerte](/fr/components/alert/).
+
+## Variantes
+
+- **Tonalités :** par défaut, `success`, `warning`, `danger`, `info`.
+- **Depuis le serveur** (messages flash), avec le partiel, ou **depuis un script** avec `showToast`.
+
+## États
+
+- Il disparaît après 6 secondes, et attend tant que le pointeur ou le focus est dessus.
+- Une erreur reste jusqu'à sa fermeture.
+
+## Dimensions
+
+Jusqu'à 420px de large, en bas de l'écran.
+
+## Accessibilité
+
+- La région est `aria-live="polite"`, et une erreur a `role="alert"`.
+- Ne mettez jamais d'action obligatoire dans un toast : il disparaît.
+
+## Responsive
+
+Il garde une marge de 16px sur les plus petits écrans.
+
+## Exemples
+
+<Examples component="toast" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Limitez-le à une phrase courte.</Fragment>
+  <Fragment slot="dont">Ne l'utilisez pas pour une erreur à corriger dans un formulaire.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/toast.html.twig` : `label`, `close_label`, `toasts` sous la forme `[{message, tone, duration}]`. JS : `showToast(message, {tone, duration})`. Attribut : `data-si-toast`. Demande le script des comportements : `import '.../js/behaviors.js'`.

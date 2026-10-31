@@ -1,0 +1,27 @@
+{#
+  The one confirmation dialog of a page, used by confirmDialog() and data-si-confirm.
+
+  Parameters
+  ----------
+  title         string  translated default title
+  ok_label      string  translated default label of the action
+  cancel_label  string  translated label of the cancel button
+  reason_label  string  translated label of the optional reason field
+  open          bool    render it open, in the page (documentation only)
+  message       string  message shown when rendered open
+#}
+<dialog class="si-modal si-modal--sm si-confirm" id="si-confirm" aria-labelledby="si-confirm-title" aria-describedby="si-confirm-message" data-si-confirm-dialog{% if open is defined and open %} open{% endif %}>
+    <header class="si-modal__header"><h2 class="si-modal__title" id="si-confirm-title" data-si-confirm-title>{{ title }}</h2></header>
+    <div class="si-modal__body">
+        <p id="si-confirm-message" data-si-confirm-message>{{ message|default('') }}</p>
+        <div class="si-field si-confirm__reason" data-si-confirm-reason hidden>
+            <label class="si-field__label" for="si-confirm-reason-input">{{ reason_label }}</label>
+            <textarea class="si-input" id="si-confirm-reason-input" rows="3"></textarea>
+        </div>
+    </div>
+    <footer class="si-modal__footer">
+        {# The safe choice has the focus first. #}
+        <button type="button" class="si-btn" data-si-confirm-cancel autofocus>{{ cancel_label }}</button>
+        <button type="button" class="si-btn si-btn--danger" data-si-confirm-ok>{{ ok_label }}</button>
+    </footer>
+</dialog>

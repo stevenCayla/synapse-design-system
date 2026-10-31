@@ -250,5 +250,59 @@
       "$type": "dimension",
       "$value": "2px"
     }
+  },
+  "size": {
+    "control": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "32px"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "36px"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "44px"
+      }
+    },
+    "icon": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "14px"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "20px"
+      }
+    },
+    "avatar": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "32px"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "40px"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "64px"
+      }
+    }
+  },
+  "border": {
+    "width": {
+      "$type": "dimension",
+      "$value": "1px"
+    }
   }
 }

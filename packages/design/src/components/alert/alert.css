@@ -1,4 +1,7 @@
 .si-alert {
+  display: flex;
+  gap: var(--si-space-10);
+  align-items: flex-start;
   padding: var(--si-space-12) var(--si-space-16);
   border-radius: var(--si-radius-sm);
   background: var(--si-color-accent-soft);
@@ -8,6 +11,20 @@
 .si-alert__title {
   margin: 0 0 var(--si-space-4);
   font-weight: var(--si-font-weight-semibold);
+}
+
+.si-alert__icon {
+  flex: none;
+  line-height: var(--si-font-leading-normal);
+}
+
+.si-alert__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.si-alert__body > :first-child {
+  margin-top: 0;
 }
 
 .si-alert__body > :last-child {
@@ -29,4 +46,59 @@
 
 .si-alert--danger {
   background: var(--si-color-danger-soft);
+}
+
+.si-alert--info {
+  background: var(--si-color-info-soft);
+}
+
+.si-alert--success .si-alert__icon {
+  color: var(--si-color-success);
+}
+
+.si-alert--warning .si-alert__icon {
+  color: var(--si-color-warning);
+}
+
+.si-alert--danger .si-alert__icon {
+  color: var(--si-color-danger);
+}
+
+.si-alert--info .si-alert__icon {
+  color: var(--si-color-info);
+}
+
+/* A short note inside a page or a form. */
+.si-alert--note {
+  border-inline-start: 3px solid var(--si-color-accent);
+  border-radius: 0 var(--si-radius-sm) var(--si-radius-sm) 0;
+  background: var(--si-color-surface-raised);
+}
+
+/* Full-width message at the top of a page. */
+.si-alert--banner {
+  border-radius: 0;
+}
+
+.si-alert__dismiss {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--si-size-control-sm);
+  height: var(--si-size-control-sm);
+  margin: calc(-1 * var(--si-space-4));
+  border: 0;
+  border-radius: var(--si-radius-sm);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--si-color-state-hover);
+  }
+
+  &:focus-visible {
+    outline: var(--si-focus-width) solid var(--si-color-focus-ring);
+  }
 }

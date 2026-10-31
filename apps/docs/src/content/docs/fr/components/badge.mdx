@@ -4,10 +4,49 @@ description: "Une étiquette courte pour un état ou une catégorie."
 status: experimental
 ---
 
+import DoDont from '../../../../components/DoDont.astro';
 import Examples from '../../../../components/Examples.astro';
 
-Utilisez un badge pour indiquer un état ou une catégorie à côté de l'élément concerné. Ne comptez pas sur la seule couleur : c'est le texte qui porte le sens.
+Une étiquette courte pour un état ou une catégorie.
+
+## Usage
+
+Utilisez un badge pour indiquer un état ou une catégorie à côté de l'élément concerné. C'est le texte qui porte le sens, pas la couleur.
+
+## Variantes
+
+- **Tonalités :** par défaut, `success`, `warning`, `danger`, `info`, `neutral`.
+- **Pilule** (`pill: true`) et **point d'état** (`dot: true`).
+- **Icône :** `icon`, décorative.
+
+## États
+
+- Un badge est statique. Pour filtrer, utilisez une [puce](/fr/components/chip/).
+
+## Dimensions
+
+Texte de 12px sur une ligne d'environ 22px.
+
+## Accessibilité
+
+- Le texte dit l'état : jamais la couleur seule.
+- Le texte est échappé, et chaque tonalité atteint 4,5:1 sur son propre fond.
+
+## Responsive
+
+Il reste sur une ligne et suit le texte autour de lui.
 
 ## Exemples
 
 <Examples component="badge" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Utilisez la même tonalité pour le même sens sur tous les écrans.</Fragment>
+  <Fragment slot="dont">Ne rendez pas un badge cliquable, et n'y écrivez pas de phrase.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/badge.html.twig` : `label`, `tone`, `pill`, `dot`, `icon`. L'application associe ses états aux tonalités.

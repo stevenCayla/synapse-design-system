@@ -1,6 +1,7 @@
 ---
 // One standalone page per fixture: shown in an iframe by the documentation, and the target of the
 // accessibility and visual tests.
+import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import '@synapse-medical/design/styles.css';
 import { listFixtures, renderFixture } from '@synapse-medical/design/fixtures';
 
@@ -26,5 +27,8 @@ const html = await renderFixture(fixture);
   </head>
   <body class="si-example">
     <main set:html={html} />
+    <script>
+      import '@synapse-medical/design/behaviors';
+    </script>
   </body>
 </html>

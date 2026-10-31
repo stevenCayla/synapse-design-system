@@ -1,5 +1,5 @@
 // Builds what the applications consume: dist/ (CSS) and twig/ (partials) at the repository root.
-import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { bundle } from 'lightningcss';
@@ -46,8 +46,13 @@ cpSync(join(packageDir, 'tokens', 'migration', 'TABLE.md'), join(metaDir, 'token
 cpSync(join(packageDir, 'src', 'foundations', 'fonts'), join(distDir, 'fonts'), { recursive: true });
 cpSync(join(packageDir, 'assets', 'images'), join(distDir, 'images'), { recursive: true });
 
+cpSync(join(packageDir, 'src', 'behaviors.js'), join(distDir, 'js', 'behaviors.js'));
 for (const component of listComponents()) {
-  cpSync(join(componentsDir, component, `${component}.html.twig`), join(twigDir, `${component}.html.twig`));
+  // Simple components have no partial: their HTML is the contract.
+  const partial = join(componentsDir, component, `${component}.html.twig`);
+  if (existsSync(partial)) cpSync(partial, join(twigDir, `${component}.html.twig`));
+  const script = join(componentsDir, component, `${component}.js`);
+  if (existsSync(script)) cpSync(script, join(distDir, 'js', 'components', component, `${component}.js`));
 }
 
-console.log(`Built dist/synapse-design.css (${size} bytes), ${tokens.length} tokens and ${listComponents().length} partials in twig/.`);
+console.log(`Built dist/synapse-design.css (${size} bytes), ${tokens.length} tokens and ${listComponents().length} components.`);

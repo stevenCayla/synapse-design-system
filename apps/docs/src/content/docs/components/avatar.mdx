@@ -1,0 +1,51 @@
+---
+title: "Avatar"
+description: "Represents a person or an organisation."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Represents a person or an organisation.
+
+## Usage
+
+Use it next to a name, in lists and headers.
+
+## Variants
+
+- Initials, or an image with `image`.
+- Rounded square by default, **round** with `round: true`.
+
+## States
+
+- Static.
+
+## Dimensions
+
+24px (`sm`), 32px (default), 40px (`lg`), 64px (`xl`).
+
+## Accessibility
+
+- `name` is read by screen readers, and the initials are hidden from them.
+- If the name is already next to it, it may be repeated: keep it short.
+
+## Responsive
+
+A fixed size: it does not shrink in a row.
+
+## Examples
+
+<Examples component="avatar" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Use two letters at most.</Fragment>
+  <Fragment slot="dont">Do not give it a meaning through its colour alone.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/avatar.html.twig`: `name`, `initials`, `image`, `size`, `round`. Role colours stay in the application.

@@ -1,0 +1,49 @@
+---
+title: "Bascule de thème"
+description: "Passe du thème clair au thème sombre."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Passe du thème clair au thème sombre.
+
+## Usage
+
+Utilisez-la une seule fois, dans l'en-tête de l'application.
+
+## Variantes
+
+- Un seul bouton icône.
+
+## États
+
+- L'icône suit `data-theme` en CSS, et le libellé dit le thème vers lequel elle bascule.
+
+## Dimensions
+
+Un bouton icône de 36px.
+
+## Accessibilité
+
+- Le libellé change avec l'état, et utilise la langue de l'utilisateur.
+
+## Responsive
+
+Elle garde sa taille.
+
+## Exemples
+
+<Examples component="theme-toggle" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Suivez le système tant que la personne n'a pas choisi.</Fragment>
+  <Fragment slot="dont">N'ajoutez pas un réglage séparé qui pourrait la contredire.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/theme-toggle.html.twig` : `to_dark`, `to_light`. JS : `setTheme(theme)`, clé `synapse-theme`. La page demande un petit script dans `<head>` qui pose `data-theme` avant le premier affichage, avec cette clé. Demande le script des comportements : `import '.../js/behaviors.js'`.

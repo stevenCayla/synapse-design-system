@@ -1,0 +1,52 @@
+---
+title: "KPI"
+description: "A key figure with its label."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+A key figure with its label.
+
+## Usage
+
+Use a row of KPIs at the top of a dashboard or a list.
+
+## Variants
+
+- **Tones** on the icon: `success`, `warning`, `danger`, `info`.
+- **Link** (`href`) or **filter** (`pressed`).
+- `si-kpi-row` for a row.
+
+## States
+
+- A filter uses `aria-pressed`. Links and filters have hover and `:focus-visible` states.
+
+## Dimensions
+
+The row gives each KPI at least 150px.
+
+## Accessibility
+
+- The label says what the figure means: the tone only supports it.
+- A KPI that acts is a real link or button.
+
+## Responsive
+
+`si-kpi-row` wraps by itself.
+
+## Examples
+
+<Examples component="kpi" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Keep a few figures that lead to a decision.</Fragment>
+  <Fragment slot="dont">Do not rely on the colour to signal a problem.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/kpi.html.twig`: `label`, `value`, `sub`, `icon`, `tone`, `href`, `pressed`.

@@ -1,0 +1,49 @@
+---
+title: "Page header"
+description: "The title of a page, with its context and actions."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+The title of a page, with its context and actions.
+
+## Usage
+
+Use it once, at the top of a screen.
+
+## Variants
+
+- With an **eyebrow**, a **subtitle** and **actions**, or the title alone.
+
+## States
+
+- Static.
+
+## Dimensions
+
+Title in `--si-font-size-3xl`.
+
+## Accessibility
+
+- It holds the only `<h1>` of the page.
+
+## Responsive
+
+The actions move under the title when there is no room.
+
+## Examples
+
+<Examples component="page-header" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Keep the main action on the right, and the title short.</Fragment>
+  <Fragment slot="dont">Do not fill it with more than a few actions: use a [menu](/components/menu/).</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/page-header.html.twig`: `title`, `eyebrow`, `subtitle`, block `actions`.

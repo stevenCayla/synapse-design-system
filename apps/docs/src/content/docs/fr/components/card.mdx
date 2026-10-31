@@ -1,0 +1,54 @@
+---
+title: "Carte"
+description: "Regroupe le contenu sur un même sujet."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Regroupe le contenu sur un même sujet.
+
+## Usage
+
+Utilisez une carte pour un élément d'une grille, ou un bloc de contenu lié. Une simple section avec un titre suffit souvent.
+
+## Variantes
+
+- Avec une **icône**, un **sous-titre** et des **chiffres** (`stats`).
+- **Accent** (`accent: true`) : un bord supérieur coloré, réglé par `--si-card-accent`.
+- **Pied** (bloc `footer`) pour les actions.
+- **Cliquable** (`href`) : toute la carte est un lien.
+
+## États
+
+- Une carte cliquable a des états de survol et `:focus-visible`.
+
+## Dimensions
+
+Elle remplit son conteneur. Les espacements viennent des jetons.
+
+## Accessibilité
+
+- Choisissez le niveau de titre avec `level`, pour garder l'ordre de la page.
+- Une carte cliquable ne contient aucun autre lien ni bouton.
+- La couleur d'accent est décorative.
+
+## Responsive
+
+Disposez les cartes avec votre grille. Les chiffres passent à la ligne.
+
+## Exemples
+
+<Examples component="card" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Gardez un seul sujet par carte.</Fragment>
+  <Fragment slot="dont">N'imbriquez pas de cartes.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/card.html.twig` : `title`, `subtitle`, `icon`, `accent`, `href`, `stats`, `level`, blocs `body`, `footer`.

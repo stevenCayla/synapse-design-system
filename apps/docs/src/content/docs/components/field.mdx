@@ -1,0 +1,58 @@
+---
+title: "Field"
+description: "A form control with its label, help and error."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+A form control with its label, help and error.
+
+## Usage
+
+Use it for every form input. The partial adds the label, the help and the error; the control stays yours, so any input fits.
+
+## Variants
+
+- **Input, select, textarea:** `si-input` on the native element.
+- **Checkbox and radio:** `si-check`, grouped in `si-fieldset` with a `<legend>`.
+- **Switch:** `si-check__input--switch` with `role="switch"`, for a setting that applies at once.
+- **Input group:** `si-input-group`, with a text or a button.
+- **Drop zone:** `si-dropzone`, around a real file input.
+
+## States
+
+- **Required:** `required` on the control, and `required: true` for the mark.
+- **Invalid:** `aria-invalid="true"`, with the error linked by `aria-describedby`.
+- **Disabled** and **read-only:** the native attributes.
+
+## Dimensions
+
+A control is 36px high, or 32px with `si-input--sm`. Check marks are 16px, in a label that is the click target.
+
+## Accessibility
+
+- Every control has a visible label, linked by `for` and `id`.
+- An error says what to do, and is linked to the control.
+- The required mark is not enough on its own: pass `required_label`.
+- A group of options goes in a `<fieldset>` with a `<legend>`.
+
+## Responsive
+
+Controls fill their container. Lay out several fields with `si-stack` or your own grid.
+
+## Examples
+
+<Examples component="field" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Keep the label visible, and write the error next to the field.</Fragment>
+  <Fragment slot="dont">Do not use a placeholder as a label, or show an error by colour alone.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/field.html.twig`: `id`, `label`, `required`, `required_label`, `hint`, `error`, block `control`. A Symfony form theme comes with the migration of the application.

@@ -1,0 +1,49 @@
+---
+title: "Theme toggle"
+description: "Switches between the light and dark themes."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Switches between the light and dark themes.
+
+## Usage
+
+Use it once, in the header of the application.
+
+## Variants
+
+- A single icon button.
+
+## States
+
+- The icon follows `data-theme` in CSS, and the label says the theme it switches to.
+
+## Dimensions
+
+A 36px icon button.
+
+## Accessibility
+
+- The label changes with the state, and uses the language of the user.
+
+## Responsive
+
+It keeps its size.
+
+## Examples
+
+<Examples component="theme-toggle" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Follow the system until the person makes a choice.</Fragment>
+  <Fragment slot="dont">Do not add a separate setting that can disagree with it.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/theme-toggle.html.twig`: `to_dark`, `to_light`. JS: `setTheme(theme)`, key `synapse-theme`. The page needs a small script in `<head>` that sets `data-theme` before the first paint, with this key. Needs the behaviours script: `import '.../js/behaviors.js'`.

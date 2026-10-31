@@ -1,0 +1,53 @@
+---
+title: "Onglets"
+description: "Permet de passer d'une vue à l'autre sur un même sujet."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Permet de passer d'une vue à l'autre sur un même sujet.
+
+## Usage
+
+Utilisez des onglets quand les vues sont au même niveau et que l'on a rarement besoin de les voir côte à côte.
+
+## Variantes
+
+- **Panneaux dans la page :** `data-si-tabs`, avec les rôles d'onglet.
+- **Liens entre pages :** un `<nav>` avec `aria-current="page"`.
+- **Compteur :** `si-tabs__count`.
+
+## États
+
+- Sélectionné, survol et `:focus-visible`.
+
+## Dimensions
+
+Les onglets mesurent 36px de haut.
+
+## Accessibilité
+
+- Les flèches passent d'un onglet à l'autre et le sélectionnent, Début et Fin vont aux extrémités.
+- Seul l'onglet sélectionné est dans l'ordre de tabulation, puis son panneau.
+- Les liens entre pages n'utilisent pas les rôles d'onglet.
+
+## Responsive
+
+Les onglets passent à la ligne sur écran étroit.
+
+## Exemples
+
+<Examples component="tabs" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Écrivez des libellés courts, et placez d'abord l'onglet le plus utilisé.</Fragment>
+  <Fragment slot="dont">N'utilisez pas d'onglets pour des étapes à suivre dans l'ordre.</Fragment>
+</DoDont>
+
+## API
+
+Pas de partiel. Classes : `si-tabs`, `__list`, `__tab`, `__count`, `__panel`. Demande le script des comportements : `import '.../js/behaviors.js'`.

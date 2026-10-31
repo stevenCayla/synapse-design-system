@@ -1,0 +1,14 @@
+- id: closed
+  title: Closed
+  source: |
+    <details class="si-disclosure">
+      <summary>Advanced settings</summary>
+      <div class="si-disclosure__body"><p>Options that most studies do not need.</p></div>
+    </details>
+- id: open
+  title: Open
+  source: |
+    <details class="si-disclosure" open>
+      <summary>Advanced settings</summary>
+      <div class="si-disclosure__body"><p>Options that most studies do not need.</p></div>
+    </details>

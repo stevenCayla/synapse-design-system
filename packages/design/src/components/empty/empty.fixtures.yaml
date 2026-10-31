@@ -1,0 +1,16 @@
+- id: default
+  title: Nothing yet
+  source: |
+    {% embed '@si/empty.html.twig' with {title: 'No site yet', text: 'Add the first site to start including patients.', icon: 'bi bi-hospital'} only %}
+      {% block actions %}<button type="button" class="si-btn si-btn--primary">Add a site</button>{% endblock %}
+    {% endembed %}
+- id: no-result
+  title: No result
+  source: |
+    {% include '@si/empty.html.twig' with {title: 'No result', text: 'Try another search or remove a filter.', icon: 'bi bi-search', compact: true} only %}
+- id: error
+  title: Error
+  source: |
+    {% embed '@si/empty.html.twig' with {title: 'The list could not be loaded', text: 'Check your connection, then try again.', icon: 'bi bi-exclamation-triangle', tone: 'danger', role: 'alert'} only %}
+      {% block actions %}<button type="button" class="si-btn">Try again</button>{% endblock %}
+    {% endembed %}

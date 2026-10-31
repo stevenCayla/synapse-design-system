@@ -1,0 +1,53 @@
+---
+title: "Confirmation"
+description: "Demande avant une action qui ne peut pas être annulée."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Demande avant une action qui ne peut pas être annulée.
+
+## Usage
+
+Utilisez-la pour ce qui supprime ou a un effet durable. Placez la boîte de dialogue une fois dans la page, puis demandez depuis un formulaire, un lien ou un script.
+
+## Variantes
+
+- Sur un **formulaire ou un lien** : `data-si-confirm="message"`.
+- **Avec un motif obligatoire :** `data-si-confirm-reason-name`, envoyé dans ce champ.
+- **Depuis un script :** `confirmDialog(message, options)`.
+
+## États
+
+- Le focus commence sur Annuler, le choix sûr. Échap annule.
+- Un motif manquant garde la boîte ouverte et marque le champ invalide.
+
+## Dimensions
+
+La taille d'une petite modale.
+
+## Accessibilité
+
+- Un `<dialog>` natif, avec le message relié par `aria-describedby`.
+- L'action dit ce qu'elle fait : « Supprimer », pas « Oui ».
+
+## Responsive
+
+Elle suit la [modale](/fr/components/modal/).
+
+## Exemples
+
+<Examples component="confirm" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Dites ce qui va se passer, et si cela peut être annulé.</Fragment>
+  <Fragment slot="dont">Ne demandez pas pour ce qui peut simplement être annulé.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/confirm.html.twig` : `title`, `ok_label`, `cancel_label`, `reason_label`. JS : `confirmDialog(message, {title, okLabel, tone, withReason})` renvoie `true`, `false` ou `{ok, reason}`. Attributs : `data-si-confirm`, `-title`, `-ok`, `-reason-name`. Demande le script des comportements : `import '.../js/behaviors.js'`.

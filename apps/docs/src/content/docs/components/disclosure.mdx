@@ -1,0 +1,50 @@
+---
+title: "Disclosure"
+description: "Shows or hides secondary content."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Shows or hides secondary content.
+
+## Usage
+
+Use it for details that most people do not need. Several in a row make an accordion.
+
+## Variants
+
+- Closed by default, open with the `open` attribute. The `name` attribute keeps one open in a group.
+
+## States
+
+- Open, closed, hover and `:focus-visible`.
+
+## Dimensions
+
+It fills its container.
+
+## Accessibility
+
+- It is the native `<details>` element: keyboard and screen readers need nothing else.
+- Do not hide required information or a form error in it.
+
+## Responsive
+
+The summary wraps on a narrow screen.
+
+## Examples
+
+<Examples component="disclosure" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Write a summary that says what is inside.</Fragment>
+  <Fragment slot="dont">Do not put the main content of a page in it.</Fragment>
+</DoDont>
+
+## API
+
+No partial and no script. Classes: `si-disclosure`, `si-disclosure__body`.

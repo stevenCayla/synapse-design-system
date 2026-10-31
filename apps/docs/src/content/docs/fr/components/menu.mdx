@@ -1,0 +1,51 @@
+---
+title: "Menu"
+description: "Une liste d'actions derrière un bouton."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Une liste d'actions derrière un bouton.
+
+## Usage
+
+Utilisez-le pour les actions secondaires d'une ligne ou d'une page.
+
+## Variantes
+
+- Liens et boutons, un **séparateur** (`si-menu__divider`) et un élément **danger** (`si-menu__item--danger`).
+
+## États
+
+- Il s'ouvre sous son bouton, ou au-dessus si la place manque. Un élément désactivé est ignoré.
+
+## Dimensions
+
+Au moins 180px de large, avec des éléments de 32px.
+
+## Accessibilité
+
+- Un popover natif : Échap et un clic à l'extérieur le ferment, et le focus revient au bouton.
+- Le focus va au premier élément, et les flèches parcourent les éléments.
+- C'est une liste de liens et de boutons, sans le rôle `menu`.
+
+## Responsive
+
+Il reste dans l'écran.
+
+## Exemples
+
+<Examples component="menu" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Placez l'action destructive en dernier, après un séparateur.</Fragment>
+  <Fragment slot="dont">N'y cachez pas l'action principale d'une page.</Fragment>
+</DoDont>
+
+## API
+
+Pas de partiel. Bouton : `popovertarget`. Menu : `popover`, `data-si-menu`. Classes : `si-menu`, `__list`, `__item`, `__item--danger`, `__divider`. Demande le script des comportements : `import '.../js/behaviors.js'`.

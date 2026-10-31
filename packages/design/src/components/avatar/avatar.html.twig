@@ -1,0 +1,13 @@
+{#
+  Parameters
+  ----------
+  name      string  full name, read by screen readers
+  initials  string  up to two letters
+  image     string  optional image URL, instead of the initials
+  size      string  'sm' | '' | 'lg' | 'xl'
+  round     bool    fully round
+#}
+<span class="si-avatar{% if size is defined and size %} si-avatar--{{ size }}{% endif %}{% if round is defined and round %} si-avatar--round{% endif %}">
+    {%- if image is defined and image %}<img src="{{ image }}" alt="{{ name }}">
+    {%- else %}<span aria-hidden="true">{{ initials }}</span><span class="si-sr-only">{{ name }}</span>{% endif -%}
+</span>

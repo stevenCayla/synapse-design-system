@@ -1,0 +1,52 @@
+---
+title: "État vide"
+description: "Remplace un contenu absent ou qui n'a pas pu se charger."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Remplace un contenu absent ou qui n'a pas pu se charger.
+
+## Usage
+
+Utilisez-le quand une liste n'a rien à montrer, quand une recherche ne trouve rien, ou quand un chargement échoue. Dites pourquoi, et quoi faire.
+
+## Variantes
+
+- **Rien pour l'instant :** avec une action pour commencer.
+- **Aucun résultat :** `compact`, dans une liste.
+- **Erreur :** `tone: danger`, avec un moyen de réessayer.
+
+## États
+
+- Statique. Pour une attente, utilisez le [chargement](/fr/components/loading/).
+
+## Dimensions
+
+Centré, avec `compact` pour réduire les marges dans une carte ou un tiroir.
+
+## Accessibilité
+
+- Choisissez le niveau de titre avec `level`.
+- `role: alert` quand il apparaît à la suite d'une action.
+
+## Responsive
+
+Le texte est limité à une largeur lisible.
+
+## Exemples
+
+<Examples component="empty" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Proposez l'étape suivante quand il y en a une.</Fragment>
+  <Fragment slot="dont">Ne laissez pas une zone blanche, et ne mettez pas la faute sur l'utilisateur.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/empty.html.twig` : `title`, `text`, `icon`, `tone`, `compact`, `role`, `level`, bloc `actions`.

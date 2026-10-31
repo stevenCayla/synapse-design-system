@@ -1,0 +1,94 @@
+.si-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--si-space-12);
+}
+
+.si-kpi {
+  position: relative;
+  display: block;
+  padding: var(--si-space-16);
+  border: 1px solid var(--si-color-border);
+  border-radius: var(--si-radius-xl);
+  background: var(--si-color-surface);
+  color: var(--si-color-text);
+  font: inherit;
+  text-align: start;
+  text-decoration: none;
+}
+
+.si-kpi__label {
+  padding-inline-end: var(--si-space-32);
+  color: var(--si-color-text-muted);
+  font-size: var(--si-font-size-xs);
+  font-weight: var(--si-font-weight-semibold);
+}
+
+.si-kpi__value {
+  margin-block-start: var(--si-space-4);
+  color: var(--si-color-text);
+  font-size: var(--si-font-size-3xl);
+  font-weight: var(--si-font-weight-bold);
+  line-height: var(--si-font-leading-tight);
+}
+
+.si-kpi__sub {
+  margin-block-start: var(--si-space-4);
+  color: var(--si-color-text-muted);
+  font-size: var(--si-font-size-xs);
+}
+
+.si-kpi__icon {
+  position: absolute;
+  inset-block-start: var(--si-space-12);
+  inset-inline-end: var(--si-space-12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--si-size-control-sm);
+  height: var(--si-size-control-sm);
+  border-radius: var(--si-radius-md);
+  background: var(--si-color-accent-soft);
+  color: var(--si-color-accent-strong);
+}
+
+.si-kpi--success .si-kpi__icon {
+  background: var(--si-color-success-soft);
+  color: var(--si-color-success);
+}
+
+.si-kpi--warning .si-kpi__icon {
+  background: var(--si-color-warning-soft);
+  color: var(--si-color-warning);
+}
+
+.si-kpi--danger .si-kpi__icon {
+  background: var(--si-color-danger-soft);
+  color: var(--si-color-danger);
+}
+
+.si-kpi--info .si-kpi__icon {
+  background: var(--si-color-info-soft);
+  color: var(--si-color-info);
+}
+
+a.si-kpi,
+button.si-kpi {
+  width: 100%;
+  cursor: pointer;
+  transition: border-color var(--si-motion-duration-fast), box-shadow var(--si-motion-duration-fast);
+
+  &:hover {
+    border-color: var(--si-color-accent-line);
+    box-shadow: var(--si-shadow-md);
+  }
+
+  &[aria-pressed="true"] {
+    border-color: var(--si-color-accent);
+  }
+
+  &:focus-visible {
+    outline: var(--si-focus-width) solid var(--si-color-focus-ring);
+    outline-offset: var(--si-focus-offset);
+  }
+}

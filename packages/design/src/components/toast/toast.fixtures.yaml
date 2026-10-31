@@ -1,0 +1,15 @@
+- id: tones
+  title: Tones
+  source: |
+    {% include '@si/toast.html.twig' with {label: 'Notifications', close_label: 'Close', static: true, toasts: [
+      {message: 'The form was saved.', tone: 'success', duration: 0},
+      {message: 'The export is being prepared.', tone: 'info', duration: 0},
+      {message: 'Two fields are still empty.', tone: 'warning', duration: 0},
+      {message: 'The form could not be saved.', tone: 'danger', duration: 0}
+    ]} only %}
+- id: trigger
+  title: Shown by a script
+  height: 90
+  source: |
+    <button type="button" class="si-btn" data-si-toast="The form was saved." data-si-toast-tone="success">Save</button>
+    {% include '@si/toast.html.twig' with {label: 'Notifications', close_label: 'Close'} only %}

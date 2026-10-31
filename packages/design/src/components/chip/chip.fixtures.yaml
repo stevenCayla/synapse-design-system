@@ -1,0 +1,19 @@
+- id: static
+  title: Static
+  source: |
+    <div class="si-cluster">
+      <span class="si-chip">Lyon</span>
+      <span class="si-chip">Nantes</span>
+    </div>
+- id: toggle
+  title: Toggle filter
+  source: |
+    <div class="si-cluster">
+      <button type="button" class="si-chip" aria-pressed="true">Active</button>
+      <button type="button" class="si-chip" aria-pressed="false">Draft</button>
+      <button type="button" class="si-chip" aria-pressed="false" disabled>Archived</button>
+    </div>
+- id: removable
+  title: Removable
+  source: |
+    <span class="si-chip">Lyon <button type="button" class="si-chip__remove" aria-label="Remove Lyon"><i class="bi bi-x" aria-hidden="true"></i></button></span>

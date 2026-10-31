@@ -1,0 +1,102 @@
+.si-toast-region {
+  position: fixed;
+  inset-block-end: var(--si-space-24);
+  inset-inline-start: 50%;
+  z-index: var(--si-z-toast);
+  display: grid;
+  gap: var(--si-space-8);
+  width: min(420px, calc(100vw - var(--si-space-32)));
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.si-toast-region--static {
+  position: static;
+  width: 100%;
+  transform: none;
+}
+
+.si-toast {
+  display: flex;
+  gap: var(--si-space-10);
+  align-items: flex-start;
+  padding: var(--si-space-12) var(--si-space-16);
+  border: 1px solid var(--si-color-border);
+  border-inline-start: 3px solid var(--si-color-accent);
+  border-radius: var(--si-radius-md);
+  background: var(--si-color-surface);
+  box-shadow: var(--si-shadow-md);
+  color: var(--si-color-text);
+  font-size: var(--si-font-size-md);
+  pointer-events: auto;
+  transition: opacity var(--si-motion-duration-base), transform var(--si-motion-duration-base);
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(var(--si-space-8));
+  }
+}
+
+.si-toast__icon {
+  flex: none;
+  color: var(--si-color-accent-strong);
+}
+
+.si-toast__message {
+  flex: 1;
+  min-width: 0;
+}
+
+.si-toast__close {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--si-space-24);
+  height: var(--si-space-24);
+  border: 0;
+  border-radius: var(--si-radius-sm);
+  background: transparent;
+  color: var(--si-color-text-muted);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--si-color-state-hover);
+  }
+
+  &:focus-visible {
+    outline: var(--si-focus-width) solid var(--si-color-focus-ring);
+  }
+}
+
+.si-toast--success {
+  border-inline-start-color: var(--si-color-success);
+
+  & .si-toast__icon {
+    color: var(--si-color-success);
+  }
+}
+
+.si-toast--warning {
+  border-inline-start-color: var(--si-color-warning);
+
+  & .si-toast__icon {
+    color: var(--si-color-warning);
+  }
+}
+
+.si-toast--danger {
+  border-inline-start-color: var(--si-color-danger);
+
+  & .si-toast__icon {
+    color: var(--si-color-danger);
+  }
+}
+
+.si-toast--info {
+  border-inline-start-color: var(--si-color-info);
+
+  & .si-toast__icon {
+    color: var(--si-color-info);
+  }
+}

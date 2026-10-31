@@ -23,7 +23,7 @@ const fixture = (component: string, id: string) => {
 const specimen = {
   alert: await fixture('alert', 'with-title'),
   success: await fixture('alert', 'rich-body'),
-  danger: await fixture('alert', 'danger-role'),
+  buttons: await fixture('button', 'variants'),
   badges: await Promise.all(['default', 'success', 'warning', 'danger'].map((id) => fixture('badge', id))),
 };
 
@@ -54,7 +54,7 @@ const swatches = ['accent', 'success', 'warning', 'danger', 'info'];
       <div class="ds-specimen__badges" set:html={specimen.badges.join('')} />
       <Fragment set:html={specimen.alert} />
       <Fragment set:html={specimen.success} />
-      <Fragment set:html={specimen.danger} />
+      <Fragment set:html={specimen.buttons} />
     </figure>
   </section>
 

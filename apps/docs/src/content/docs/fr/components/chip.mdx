@@ -1,0 +1,52 @@
+---
+title: "Puce"
+description: "Une étiquette compacte que l'on peut sélectionner ou retirer."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Une étiquette compacte que l'on peut sélectionner ou retirer.
+
+## Usage
+
+Utilisez les puces pour les filtres et les valeurs choisies dans un champ. Pour un état, utilisez un [badge](/fr/components/badge/).
+
+## Variantes
+
+- **Statique :** `<span class="si-chip">`.
+- **Bascule :** `<button class="si-chip" aria-pressed>`.
+- **Retirable :** avec `si-chip__remove`.
+
+## États
+
+- `aria-pressed="true"` pour sélectionné, `disabled`, survol et `:focus-visible`.
+
+## Dimensions
+
+Au moins 24px de haut, comme son bouton de retrait.
+
+## Accessibilité
+
+- Une bascule utilise `aria-pressed`, pour que son état soit lu.
+- Le bouton de retrait nomme ce qu'il retire : « Retirer Lyon ».
+
+## Responsive
+
+Regroupez les puces avec `si-cluster`, qui les fait passer à la ligne.
+
+## Exemples
+
+<Examples component="chip" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Limitez le texte à un ou deux mots.</Fragment>
+  <Fragment slot="dont">N'utilisez pas une puce pour une action principale.</Fragment>
+</DoDont>
+
+## API
+
+Pas de partiel. Classes : `si-chip`, `si-chip__remove`.

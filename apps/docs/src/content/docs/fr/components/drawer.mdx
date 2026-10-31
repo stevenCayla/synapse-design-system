@@ -1,0 +1,52 @@
+---
+title: "Tiroir"
+description: "Un panneau à côté de la page, pour des détails ou une tâche plus longue."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Un panneau à côté de la page, pour des détails ou une tâche plus longue.
+
+## Usage
+
+Utilisez un tiroir pour montrer les détails d'un élément ou un formulaire sans quitter la liste.
+
+## Variantes
+
+- Tailles : `sm` (360px), par défaut (480px), `lg` (720px).
+- **Chargé à l'ouverture :** `url`, ou `data-si-load-url` sur le bouton pour l'élément qu'il ouvre.
+
+## États
+
+- Ouvert avec `data-si-open`, fermé par `data-si-close` ou Échap.
+- Pendant le chargement, un message d'attente ; en cas d'échec, une erreur avec `error_title`.
+
+## Dimensions
+
+La hauteur de l'écran. Il prend toute la largeur sur un téléphone.
+
+## Accessibilité
+
+- C'est un `<dialog>` natif : focus piégé, puis rendu.
+- Le message d'attente et l'erreur sont annoncés.
+
+## Responsive
+
+Il prend toute la largeur quand l'écran est plus étroit que sa taille.
+
+## Exemples
+
+<Examples component="drawer" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Gardez la liste visible derrière, pour conserver le contexte.</Fragment>
+  <Fragment slot="dont">Ne l'utilisez pas pour une décision bloquante : utilisez une [modale](/fr/components/modal/).</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/drawer.html.twig` : `id`, `title`, `close_label`, `size`, `url`, `loading_label`, `error_title`, blocs `body`, `footer`. JS : `loadDrawer(drawer, url)`. Demande le script des comportements : `import '.../js/behaviors.js'`.

@@ -1,0 +1,51 @@
+---
+title: "Menu"
+description: "A list of actions behind a button."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+A list of actions behind a button.
+
+## Usage
+
+Use it for the secondary actions of a row or a page.
+
+## Variants
+
+- Links and buttons, a **divider** (`si-menu__divider`) and a **danger** item (`si-menu__item--danger`).
+
+## States
+
+- It opens under its button, or above when there is no room. A disabled item is skipped.
+
+## Dimensions
+
+At least 180px wide, with items of 32px.
+
+## Accessibility
+
+- A native popover: Escape and a click outside close it, and the focus returns to the button.
+- The focus moves to the first item, and arrows move through the items.
+- It is a list of links and buttons, without the `menu` role.
+
+## Responsive
+
+It stays inside the screen.
+
+## Examples
+
+<Examples component="menu" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Put the destructive action last, after a divider.</Fragment>
+  <Fragment slot="dont">Do not hide the main action of a page in it.</Fragment>
+</DoDont>
+
+## API
+
+No partial. Button: `popovertarget`. Menu: `popover`, `data-si-menu`. Classes: `si-menu`, `__list`, `__item`, `__item--danger`, `__divider`. Needs the behaviours script: `import '.../js/behaviors.js'`.

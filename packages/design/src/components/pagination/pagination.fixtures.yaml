@@ -1,0 +1,12 @@
+- id: default
+  title: Default
+  source: |
+    <nav aria-label="Pages of the list">
+      <ul class="si-pagination">
+        <li><a class="si-pagination__link" aria-disabled="true">Previous</a></li>
+        <li><a class="si-pagination__link" href="#1" aria-current="page">1</a></li>
+        <li><a class="si-pagination__link" href="#2">2</a></li>
+        <li><a class="si-pagination__link" href="#3">3</a></li>
+        <li><a class="si-pagination__link" href="#2">Next</a></li>
+      </ul>
+    </nav>

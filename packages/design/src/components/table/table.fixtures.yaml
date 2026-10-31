@@ -1,0 +1,41 @@
+- id: default
+  title: Default
+  source: |
+    <div class="si-table-wrap" tabindex="0" role="region" aria-label="Sites">
+      <table class="si-table">
+        <thead>
+          <tr><th scope="col">Site</th><th scope="col">Status</th><th scope="col" class="si-table__number">Patients</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Lyon</td><td>{% include '@si/badge.html.twig' with {label: 'Active', tone: 'success'} only %}</td><td class="si-table__number">42</td></tr>
+          <tr><td>Nantes</td><td>{% include '@si/badge.html.twig' with {label: 'Draft', tone: 'neutral'} only %}</td><td class="si-table__number">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+- id: compact
+  title: Compact
+  source: |
+    <div class="si-table-wrap" tabindex="0" role="region" aria-label="Visits">
+      <table class="si-table si-table--compact">
+        <caption>Visits of the study</caption>
+        <thead><tr><th scope="col">Visit</th><th scope="col">Window</th></tr></thead>
+        <tbody>
+          <tr><td>Inclusion</td><td>Day 0</td></tr>
+          <tr><td>Follow-up</td><td>Month 3</td></tr>
+        </tbody>
+      </table>
+    </div>
+- id: toolbar
+  title: With a toolbar
+  source: |
+    <div class="si-toolbar">
+      <input class="si-input si-input--sm si-toolbar__search" type="search" aria-label="Search a user" placeholder="Search">
+      <select class="si-input si-input--sm si-toolbar__filter" aria-label="Role"><option>All roles</option><option>Monitor</option></select>
+      <span class="si-toolbar__count">42 of 142</span>
+    </div>
+    <div class="si-table-wrap" tabindex="0" role="region" aria-label="Users">
+      <table class="si-table">
+        <thead><tr><th scope="col">Name</th><th scope="col">Role</th></tr></thead>
+        <tbody><tr><td>Alex Martin</td><td>Monitor</td></tr></tbody>
+      </table>
+    </div>

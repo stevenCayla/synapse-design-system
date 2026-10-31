@@ -14,6 +14,8 @@ This repository is the source of truth for the Synapse interface. It is early wo
 | Application variables | `packages/design/tokens/migration/TABLE.md`: what each `synapse-app` variable becomes |
 | Documentation | `apps/docs/src/content/docs/`: English at the root, French under `fr/`. Keep both up to date |
 | Text for tools | Built site: `/llms.txt`, `/llms-full.txt`, `/tokens.json` |
+| Behaviours | `<name>.js` next to the component, gathered in `packages/design/src/behaviors.js` |
+| Browser tests | `tests/browser/`: accessibility, behaviour, width at 320px and screenshots, on every fixture |
 | Example pages | `/examples/<component>/<fixture>/`, generated from the fixtures |
 
 ## Choosing
@@ -35,10 +37,10 @@ This repository is the source of truth for the Synapse interface. It is early wo
 
 ## Definition of done
 
-A component has its CSS, its fixtures for each variant and state, and its documentation page. These pass:
+A component has its CSS, its fixtures for each variant and state, and its documentation page in English and French with all its sections. A behaviour has its test in `tests/browser/behaviour.spec.mjs`. These pass, and the screenshots are updated with `sh tooling/test-visual.sh --update` when a change is intended:
 
 ```bash
-pnpm validate && pnpm lint && pnpm typecheck && pnpm test && pnpm test:parity && pnpm build && pnpm validate:docs
+pnpm validate && pnpm lint && pnpm typecheck && pnpm test && pnpm test:parity && pnpm build && pnpm validate:docs && pnpm test:browser
 ```
 
 ## Commits and pull requests

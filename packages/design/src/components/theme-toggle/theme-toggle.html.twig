@@ -1,0 +1,12 @@
+{#
+  Button that switches between the light and dark themes. The icon follows the theme in CSS.
+
+  Parameters
+  ----------
+  to_dark   string  translated label, "Switch to the dark theme"
+  to_light  string  translated label, "Switch to the light theme"
+#}
+<button type="button" class="si-btn si-btn--icon si-theme-toggle" data-si-theme-toggle data-si-to-dark="{{ to_dark }}" data-si-to-light="{{ to_light }}" aria-label="{{ to_dark }}">
+    <i class="si-theme-toggle__light bi bi-moon" aria-hidden="true"></i>
+    <i class="si-theme-toggle__dark bi bi-sun" aria-hidden="true"></i>
+</button>

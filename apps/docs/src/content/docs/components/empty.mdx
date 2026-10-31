@@ -1,0 +1,52 @@
+---
+title: "Empty state"
+description: "Replaces content that is missing or could not load."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Replaces content that is missing or could not load.
+
+## Usage
+
+Use it when a list has nothing to show, when a search finds nothing, or when loading fails. Say why, and what to do.
+
+## Variants
+
+- **Nothing yet:** with an action to start.
+- **No result:** `compact`, inside a list.
+- **Error:** `tone: danger`, with a way to try again.
+
+## States
+
+- Static. For a wait, use [loading](/components/loading/).
+
+## Dimensions
+
+Centred, with `compact` for less padding in a card or a drawer.
+
+## Accessibility
+
+- Choose the heading level with `level`.
+- `role: alert` when it appears as the result of an action.
+
+## Responsive
+
+The text is limited to a readable width.
+
+## Examples
+
+<Examples component="empty" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Offer the next step when there is one.</Fragment>
+  <Fragment slot="dont">Do not leave a blank area, or blame the user.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/empty.html.twig`: `title`, `text`, `icon`, `tone`, `compact`, `role`, `level`, block `actions`.

@@ -1,0 +1,4 @@
+- id: default
+  title: Default
+  source: |
+    {% include '@si/theme-toggle.html.twig' with {to_dark: 'Switch to the dark theme', to_light: 'Switch to the light theme'} only %}

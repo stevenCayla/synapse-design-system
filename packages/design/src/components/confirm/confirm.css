@@ -1,0 +1,7 @@
+.si-confirm__reason {
+  margin-block-start: var(--si-space-12);
+}
+
+.si-confirm__reason[hidden] {
+  display: none;
+}

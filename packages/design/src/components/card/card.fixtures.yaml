@@ -1,0 +1,25 @@
+- id: default
+  title: Default
+  source: |
+    {% embed '@si/card.html.twig' with {title: 'Protocol', subtitle: 'Version 3, signed'} only %}
+      {% block body %}<p>The protocol applies to all the sites of the study.</p>{% endblock %}
+    {% endembed %}
+- id: entity
+  title: With an icon and figures
+  source: |
+    {% embed '@si/card.html.twig' with {title: 'Inclusion form', subtitle: 'Ophthalmology', icon: 'bi bi-file-earmark-text', accent: true, stats: [{label: 'Sections', value: 6}, {label: 'Fields', value: 48}]} only %}
+      {% block body %}<p>Filled at the first visit of every patient.</p>{% endblock %}
+    {% endembed %}
+- id: footer
+  title: With actions
+  source: |
+    {% embed '@si/card.html.twig' with {title: 'Site of Lyon'} only %}
+      {% block body %}<p>12 patients included.</p>{% endblock %}
+      {% block footer %}<button type="button" class="si-btn si-btn--sm">Edit</button>{% endblock %}
+    {% endembed %}
+- id: link
+  title: Clickable
+  source: |
+    {% embed '@si/card.html.twig' with {title: 'Monitoring report', subtitle: 'Opens the report', href: '#report'} only %}
+      {% block body %}<p>Last updated this week.</p>{% endblock %}
+    {% endembed %}

@@ -1,0 +1,55 @@
+- id: variants
+  title: Variants
+  source: |
+    <div class="si-cluster">
+      <button type="button" class="si-btn si-btn--primary">Save</button>
+      <button type="button" class="si-btn">Cancel</button>
+      <button type="button" class="si-btn si-btn--ghost">Skip</button>
+      <button type="button" class="si-btn si-btn--danger">Delete</button>
+    </div>
+- id: sizes
+  title: Sizes
+  source: |
+    <div class="si-cluster">
+      <button type="button" class="si-btn si-btn--primary si-btn--sm">Small</button>
+      <button type="button" class="si-btn si-btn--primary">Medium</button>
+      <button type="button" class="si-btn si-btn--primary si-btn--lg">Large</button>
+    </div>
+- id: disabled
+  title: Disabled
+  source: |
+    <div class="si-cluster">
+      <button type="button" class="si-btn si-btn--primary" disabled>Save</button>
+      <button type="button" class="si-btn" disabled>Cancel</button>
+      <button type="button" class="si-btn si-btn--danger" disabled>Delete</button>
+    </div>
+- id: loading
+  title: Loading
+  source: |
+    <button type="button" class="si-btn si-btn--primary" aria-busy="true" aria-disabled="true">
+      <span class="si-spinner si-spinner--sm" aria-hidden="true"></span>
+      Saving
+    </button>
+- id: with-icon
+  title: With an icon
+  source: |
+    <div class="si-cluster">
+      <button type="button" class="si-btn si-btn--primary"><i class="bi bi-plus-lg" aria-hidden="true"></i> Add a site</button>
+      <button type="button" class="si-btn si-btn--icon" aria-label="Edit"><i class="bi bi-pencil" aria-hidden="true"></i></button>
+    </div>
+- id: link
+  title: As a link
+  source: |
+    <a class="si-btn" href="#report">Open the report</a>
+- id: group
+  title: Group
+  source: |
+    <div class="si-btn-group" role="group" aria-label="View">
+      <button type="button" class="si-btn">Day</button>
+      <button type="button" class="si-btn">Week</button>
+      <button type="button" class="si-btn">Month</button>
+    </div>
+- id: block
+  title: Full width
+  source: |
+    <button type="button" class="si-btn si-btn--primary si-btn--block">Continue</button>
