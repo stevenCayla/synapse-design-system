@@ -7,7 +7,7 @@
 **Décisions déjà prises :**
 
 - URL cible : `design.synapse-medical.fr` (remplace `design.synapse.com` de la mission).
-- La disponibilité de `@synapse/design` doit être vérifiée, avec une solution de repli (§9.3).
+- Nom du package npm : `@synapse-medical/design` (§9.3).
 - Le site reprend aussi le contenu de `/settings/design`, en plus du reste de la mission ; le périmètre de l'audit reste toute l'interface. La page reste dans l'application jusqu'à sa condition de retrait (§4.2).
 
 ## Décisions
@@ -40,7 +40,7 @@ Synapse a déjà un vrai système visuel, mais dispersé. Il n'y a pas une sourc
 **Ce que je propose, en cinq choix structurants :**
 
 1. **Design System CSS d'abord, sans framework à terme.** L'application est en Twig sans build Node : des composants React ou Web Components imposeraient une réécriture sans bénéfice proportionné. Un composant, c'est du CSS `si-*`, un contrat HTML, un partiel Twig quand la structure le justifie, et un petit module JS si besoin. Bootstrap reste en place le temps de la migration, puis disparaît ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)).
-2. **Un seul package, `@synapse/design`,** au lieu de `tokens` et `design` séparés. Un seul numéro de version, et des points d'entrée distincts pour ceux qui ne veulent que les jetons.
+2. **Un seul package, `@synapse-medical/design`,** au lieu de `tokens` et `design` séparés. Un seul numéro de version, et des points d'entrée distincts pour ceux qui ne veulent que les jetons.
 3. **L'application reçoit une version figée du package,** sans registre npm ni Node côté serveur (§9.2).
 4. **Une fixture par état de composant.** Elle produit à la fois l'aperçu de la documentation, le test d'accessibilité et le test visuel. C'est ce qui rend Storybook inutile pour l'instant.
 5. **Migration sans changement visuel au départ.** On introduit des alias (`--app-text: var(--si-color-text)`) avec les valeurs actuelles et une référence de captures d'écran prise avant. Les corrections visuelles, dont celles de contraste, viennent ensuite dans des releases séparées.
@@ -315,7 +315,7 @@ Une architecture proche de ta proposition, avec trois écarts :
 
 | Écart | Raison |
 |---|---|
-| **Un seul package** au lieu de `packages/tokens` et `packages/design` | Un seul consommateur aujourd'hui, un seul versionnement, moins de cérémonie. Les sites qui ne veulent que les jetons importent `@synapse/design/tokens.css`. On pourra scinder plus tard sans casser ce point d'entrée |
+| **Un seul package** au lieu de `packages/tokens` et `packages/design` | Un seul consommateur aujourd'hui, un seul versionnement, moins de cérémonie. Les sites qui ne veulent que les jetons importent `@synapse-medical/design/tokens.css`. On pourra scinder plus tard sans casser ce point d'entrée |
 | **Pas de dossier `examples/`** | Les fixtures vivent avec le composant et deviennent des pages d'exemple du site : une seule copie de chaque exemple |
 | **`tooling/` réduit** | Quelques scripts qui répondent chacun à un besoin : validation, audit, synchronisation |
 
@@ -336,7 +336,7 @@ synapse-design-system/
 ├── pnpm-workspace.yaml
 ├── .github/workflows/           # ci.yaml, release.yaml
 │
-├── packages/design/             # @synapse/design
+├── packages/design/             # @synapse-medical/design
 │   ├── package.json             # exports, peerDependencies : bootstrap 5.3
 │   ├── tokens/
 │   │   ├── primitive/           # color, space, radius, font, shadow, motion, z, breakpoint
@@ -456,12 +456,12 @@ Chaque couleur d'état a ses variantes `-soft` et `-line` (reprises de `--cfg-*`
 
 ---
 
-## 9. Architecture du package `@synapse/design`
+## 9. Architecture du package `@synapse-medical/design`
 
 ### 9.1 Contenu
 
 ```text
-@synapse/design
+@synapse-medical/design
 ├── dist/synapse-design.css     # foundations, utilitaires, composants, pont Bootstrap temporaire
 ├── dist/tokens.css             # sans Bootstrap, utilisable seul
 ├── dist/js/*.js                # modules ESM, sans style ni script en ligne
@@ -506,19 +506,13 @@ synapse-app             composer require synapse/design  ◄────┘
 
 L'essai 2 de la Phase 1 valide ce montage avec un vrai build Docker. **Si Composer échoue,** l'archive commitée reste le repli : les templates utilisant `@si/...`, ils ne changeraient pas.
 
-### 9.3 Disponibilité du nom
+### 9.3 Nom du package
 
-**Constaté le 31/10/2026 :** `@synapse/design` et `@synapse-medical/design` renvoient 404 sur le registre npm, et une recherche du scope `synapse` ne trouve aucun package public. **Cela ne prouve pas que le scope est libre :** il peut appartenir à un utilisateur ou à une organisation sans package public, et la page d'organisation npm n'a pas pu être lue (réponse 403). Sur GitHub, `synapse` n'est pas résolu comme organisation, et cela ne dit rien du scope npm.
+**Décision :** `@synapse-medical/design`, sous l'organisation npm `synapse-medical` créée par Steven le 31/10/2026, cohérente avec le domaine. La mission parlait de `@synapse-medical/design` : c'est le seul écart.
 
-**Contrôle, à faire par toi avec ton compte npm, en Phase 1 :** essayer de créer l'organisation `synapse` sur npmjs.com. C'est le seul test concluant.
-
-| Résultat | Nom |
-|---|---|
-| L'organisation est créée | `@synapse/design` ; publier un `0.0.0` vide pour réserver le nom |
-| Le scope est pris | **`@synapse-medical/design`**, cohérent avec le domaine ; même test sur `synapse-medical` |
-| Publication sur GitHub Packages | Le scope doit correspondre au propriétaire du dépôt : `@stevencayla/design`, ou créer une organisation GitHub |
-
-**Pourquoi ne pas s'en passer :** utiliser en privé un scope `@synapse` qui ne nous appartient pas expose à une confusion de dépendances si quelqu'un publie ensuite ce nom sur le registre public. Le risque ne concerne pas l'application si elle reçoit une archive, mais il concernerait les sites Astro. Le nom sert aux imports : **il doit être figé avant le premier consommateur Node.** Tant qu'il ne l'est pas, ce plan écrit `@synapse/design`.
+- **Rien à publier pour l'instant :** l'organisation réserve le scope. Le package reste `private` tant qu'aucun consommateur Node ne l'attend. La première publication, pour `www` ou `docs`, demandera un `npm login` ou un jeton en CI.
+- **Sites :** `pnpm add @synapse-medical/design`.
+- **Application PHP :** le package Composer garde le nom `synapse/design` (§9.2). Il n'est pas publié sur Packagist, et ne dépend donc pas de ce scope.
 
 ---
 
@@ -782,7 +776,6 @@ Le plan n'impose aucun gel. Fusionner les PR à leur rythme. Une PR fusionnée a
 | Migration inachevée laissant les alias et l'ancien code en place | **Élevée** | Moyen | Cliquet, compteurs publics, retrait d'alias suivi par famille |
 | Conflits avec le travail produit en cours | Élevée | Moyen | PR courtes et ciblées ; aucun gel |
 | Changement de marque partiel : deux couleurs visibles dans l'application | Moyenne | Moyen | Retirer les valeurs en dur avant de basculer le jeton (étape 2 ter) |
-| Scope npm non disponible | Moyenne | Faible | Test en Phase 1, repli `@synapse-medical/design` |
 | Coût de la documentation pour une seule personne | Moyenne | Moyen | Pages générées autant que possible, gabarit court, priorité aux composants réellement utilisés |
 | Version en retard dans l'application | Moyenne | Faible | Dependabot, ou alerte en CI si sa configuration ne couvre pas ce dépôt |
 
@@ -813,7 +806,7 @@ Tailles relatives (S, M, L) : ce sont des estimations, pas des engagements. J'ai
   - `README.md`, `AGENTS.md` initial, `CONTRIBUTING.md`, `CHANGELOG.md`.
   - **Essai 1 :** rendre badge, alerte et modale en Twing, dans une iframe, et comparer avec Twig PHP.
   - **Essai 2 :** sur une branche jetable de l'application, installer le package avec Composer, déclarer les chemins, faire tourner `asset-map:compile` et le build Docker.
-  - **Essai 3 :** vérifier la disponibilité du nom (§9.3, à faire par toi).
+  - **Essai 3 :** réserver le nom npm (§9.3, à faire par toi).
 - **Fichiers :** racine, `apps/docs/`, `packages/design/package.json`, `.github/workflows/ci.yaml`.
 - **Dépendances :** Phase 0.
 - **Risques :** Twing inadapté (repli prêt).
@@ -831,7 +824,7 @@ pnpm validate    jetons et documentation            pnpm sync:app    copie vers 
 
 - **Essai 1, réussi :** les 10 fixtures de badge, alerte et modale sont identiques entre Twing 7.3.1 et Twig 3.30 (la version de l'application), en `include` et en `embed`. Le comparateur détecte bien un écart : `{{ 1/3 }}` diffère entre les deux moteurs, d'où la règle interdisant l'arithmétique dans les partiels.
 - **Essai 2, réussi :** sur une branche jetable, l'image de production de l'application se construit sans jeton avec `synapse/design` installé par Composer. `asset-map:compile` publie le CSS, et le vrai kernel en production rend `@si/badge.html.twig` et `@si/modal.html.twig`.
-- **Essai 3, en attente :** création de l'organisation npm, à faire par Steven. Ne bloque que le premier consommateur Node.
+- **Essai 3, réussi :** organisation npm `synapse-medical` créée (§9.3).
 - **Appris :** `&--modifier` n'existe qu'en Sass et le CSS natif ignore la règle. Les sélecteurs BEM s'écrivent en entier, et Stylelint interdit l'autre forme.
 
 ### Phase 2 : Foundations et tokens, M
