@@ -35,8 +35,11 @@ test('a drawer opens beside the page and gives the focus back', async ({ page })
   await opener.click();
   const drawer = page.getByRole('dialog', { name: 'Alex Martin' });
   await expect(drawer).toBeVisible();
-  const box = await drawer.boundingBox();
-  expect(Math.round(box.x + box.width)).toBe(page.viewportSize().width);
+  // Polls: the drawer slides in.
+  await expect.poll(async () => {
+    const box = await drawer.boundingBox();
+    return Math.round(box.x + box.width);
+  }).toBe(page.viewportSize().width);
   await page.keyboard.press('Escape');
   await expect(opener).toBeFocused();
 });
