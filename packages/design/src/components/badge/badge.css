@@ -9,19 +9,19 @@
   font-size: 12px;
   font-weight: 600;
   line-height: 1.5;
+}
 
-  &--success {
-    background: var(--si-color-success-soft);
-    color: var(--si-color-success);
-  }
+.si-badge--success {
+  background: var(--si-color-success-soft);
+  color: var(--si-color-success);
+}
 
-  &--warning {
-    background: var(--si-color-warning-soft);
-    color: var(--si-color-warning);
-  }
+.si-badge--warning {
+  background: var(--si-color-warning-soft);
+  color: var(--si-color-warning);
+}
 
-  &--danger {
-    background: var(--si-color-danger-soft);
-    color: var(--si-color-danger);
-  }
+.si-badge--danger {
+  background: var(--si-color-danger-soft);
+  color: var(--si-color-danger);
 }

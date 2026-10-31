@@ -5,6 +5,8 @@ export default {
     // BEM names (block__element--modifier), see CONTRIBUTING.md.
     'selector-class-pattern': null,
     'custom-property-pattern': '^si-[a-z0-9-]+$',
+    // `&--modifier` only exists in Sass: native CSS ignores the rule. Write the full BEM selector.
+    'selector-disallowed-list': ['/&[_-]/'],
     'color-no-hex': true,
     'color-named': 'never',
     'function-disallowed-list': ['rgb', 'rgba', 'hsl', 'hsla'],

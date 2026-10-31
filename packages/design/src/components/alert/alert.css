@@ -3,25 +3,25 @@
   border-radius: var(--si-radius-sm);
   background: var(--si-color-accent-soft);
   color: var(--si-color-text);
+}
 
-  &__title {
-    margin: 0 0 var(--si-space-1);
-    font-weight: 600;
-  }
+.si-alert__title {
+  margin: 0 0 var(--si-space-1);
+  font-weight: 600;
+}
 
-  &__body > :last-child {
-    margin-bottom: 0;
-  }
+.si-alert__body > :last-child {
+  margin-bottom: 0;
+}
 
-  &--success {
-    background: var(--si-color-success-soft);
-  }
+.si-alert--success {
+  background: var(--si-color-success-soft);
+}
 
-  &--warning {
-    background: var(--si-color-warning-soft);
-  }
+.si-alert--warning {
+  background: var(--si-color-warning-soft);
+}
 
-  &--danger {
-    background: var(--si-color-danger-soft);
-  }
+.si-alert--danger {
+  background: var(--si-color-danger-soft);
 }

@@ -28,7 +28,7 @@ This repository is the source of truth for the Synapse interface. It is early wo
 - Partials use standard Twig only: no application function, no translation filter, no number arithmetic. Text arrives already translated, as parameters.
 - No inline script or style: the applications enforce a strict CSP.
 - WCAG 2.2 AA contrast in both themes. Never convey a state by colour alone.
-- CSS follows BEM with native nesting, and the `si-` prefix for classes and variables.
+- CSS follows BEM with full selectors (`.si-badge--success`, never `&--success`, which only exists in Sass). Native nesting is for states (`&:hover`). The prefix is `si-` for classes and variables.
 
 ## Definition of done
 

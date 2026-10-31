@@ -41,7 +41,7 @@ PHP applications install the package with Composer, from a tagged release:
 ```json
 {
     "repositories": [{ "type": "vcs", "url": "https://github.com/stevenCayla/synapse-design-system" }],
-    "require": { "synapse/design": "0.0.1-alpha.1" }
+    "require": { "synapse/design": "0.0.1-alpha.2" }
 }
 ```
 

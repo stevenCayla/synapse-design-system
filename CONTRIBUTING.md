@@ -22,7 +22,7 @@ The Design System does not take every component of every application.
 
 In `packages/design/src/components/<name>/`:
 
-- `<name>.css`, imported from `src/index.css`. BEM with native nesting, `--si-*` tokens only.
+- `<name>.css`, imported from `src/index.css`. BEM with full selectors (`.si-badge--success`, never `&--success`), `--si-*` tokens only.
 - `<name>.html.twig`, when the structure justifies a partial. Parameters documented at the top of the file.
 - `<name>.fixtures.yaml`: one entry per variant and state. The `source` is the code a developer would write. It produces the example page, the code sample and the tests.
 
