@@ -1,0 +1,16 @@
+{#
+  Parameters
+  ----------
+  id     string  element id, also the base of the title id
+  title  string  translated title
+  open   bool    render it open, without a backdrop (documentation only)
+
+  Blocks: body, footer. Opening and closing belong to the modal behaviour (Phase 6).
+#}
+<dialog class="si-modal" id="{{ id }}" aria-labelledby="{{ id }}-title"{% if open is defined and open %} open{% endif %}>
+    <header class="si-modal__header">
+        <h2 class="si-modal__title" id="{{ id }}-title">{{ title }}</h2>
+    </header>
+    <div class="si-modal__body">{% block body %}{% endblock %}</div>
+    <footer class="si-modal__footer">{% block footer %}{% endblock %}</footer>
+</dialog>
