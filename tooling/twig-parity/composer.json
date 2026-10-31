@@ -1,0 +1,13 @@
+{
+    "name": "synapse/twig-parity",
+    "description": "Renders the fixtures with PHP Twig, to compare them with the documentation rendering.",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.3",
+        "twig/twig": "3.30.0"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

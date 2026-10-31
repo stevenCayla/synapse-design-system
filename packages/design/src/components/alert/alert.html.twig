@@ -1,0 +1,12 @@
+{#
+  Parameters
+  ----------
+  tone   string  '' | 'success' | 'warning' | 'danger'
+  title  string  optional translated title
+  text   string  translated text, or override the "body" block with embed
+  role   string  'status' (default) or 'alert' for what needs immediate attention
+#}
+<div class="si-alert{% if tone is defined and tone %} si-alert--{{ tone }}{% endif %}" role="{{ role|default('status') }}">
+    {%- if title is defined and title %}<p class="si-alert__title">{{ title }}</p>{% endif -%}
+    <div class="si-alert__body">{% block body %}{{ text|default('') }}{% endblock %}</div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "synapse-design-system",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.5.3",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "pnpm --filter docs dev",
+    "build": "pnpm --filter @synapse/design build && pnpm --filter docs build",
+    "lint": "stylelint \"packages/design/src/**/*.css\" && eslint .",
+    "typecheck": "pnpm --filter docs typecheck",
+    "test": "node --test \"packages/design/test/*.test.mjs\"",
+    "test:parity": "node tooling/twig-parity/run.mjs",
+    "release": "node tooling/release.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "globals": "^17.0.0",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+- id: default
+  title: Default
+  source: |
+    {% include '@si/alert.html.twig' with {text: 'The study is being configured.'} only %}
+- id: with-title
+  title: With a title
+  source: |
+    {% include '@si/alert.html.twig' with {tone: 'warning', title: 'Consent missing', text: 'Two patients have no signed consent.'} only %}
+- id: danger-role
+  title: Needs immediate attention
+  source: |
+    {% include '@si/alert.html.twig' with {tone: 'danger', role: 'alert', text: 'The form could not be saved.'} only %}
+- id: rich-body
+  title: Rich content, with embed
+  source: |
+    {% embed '@si/alert.html.twig' with {tone: 'success', title: 'Import finished'} only %}
+      {% block body %}<p>42 patients imported. <a href="#report">Open the report</a></p>{% endblock %}
+    {% endembed %}
