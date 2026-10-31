@@ -1,0 +1,348 @@
+/* Homepage: only tokens. */
+
+/* The homepage has its own heading: no empty title panel above it. */
+.content-panel:first-child:not(:has(*)) {
+  display: none;
+}
+
+.content-panel:first-child:not(:has(*)) + .content-panel {
+  border-top: 0;
+}
+
+.ds-home {
+  color: var(--si-color-text);
+  font-size: var(--si-font-size-lg);
+}
+
+.ds-home h1,
+.ds-home h2,
+.ds-home h3,
+.ds-home p {
+  margin: 0;
+  color: inherit;
+}
+
+.ds-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--si-space-48);
+  align-items: center;
+  padding-block: var(--si-space-32) var(--si-space-48);
+}
+
+.ds-home .ds-eyebrow {
+  display: inline-flex;
+  gap: var(--si-space-8);
+  align-items: center;
+  margin-block-end: var(--si-space-16);
+  padding: var(--si-space-4) var(--si-space-12) var(--si-space-4) var(--si-space-4);
+  border: 1px solid var(--si-color-border);
+  border-radius: var(--si-radius-pill);
+  color: var(--si-color-text-muted);
+  font-size: var(--si-font-size-sm);
+}
+
+.ds-eyebrow b {
+  padding: var(--si-space-2) var(--si-space-8);
+  border-radius: var(--si-radius-pill);
+  background: var(--si-color-accent-soft);
+  color: var(--si-color-accent-strong);
+  font-weight: var(--si-font-weight-semibold);
+}
+
+.ds-hero h1 {
+  max-width: 16ch;
+  color: var(--si-color-text);
+  font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+  font-weight: var(--si-font-weight-bold);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+.ds-home .ds-lede {
+  max-width: 52ch;
+  margin-block-start: var(--si-space-20);
+  color: var(--si-color-text-muted);
+  font-size: var(--si-font-size-xl);
+  line-height: 1.5;
+}
+
+.ds-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--si-space-12);
+  margin-block-start: var(--si-space-24);
+}
+
+.ds-link {
+  padding: var(--si-space-10) var(--si-space-20);
+  border: 1px solid var(--si-color-border-strong);
+  border-radius: var(--si-radius-md);
+  color: var(--si-color-text);
+  font-weight: var(--si-font-weight-semibold);
+  text-decoration: none;
+  transition: background var(--si-motion-duration-fast);
+}
+
+.ds-link:hover {
+  background: var(--si-color-state-hover);
+}
+
+.ds-link--primary {
+  border-color: var(--si-color-accent);
+  background: var(--si-color-accent);
+  color: var(--si-color-accent-on);
+}
+
+.ds-link--primary:hover {
+  border-color: var(--si-color-accent-strong);
+  background: var(--si-color-accent-strong);
+  color: var(--si-color-accent-on);
+}
+
+.ds-link:focus-visible,
+.ds-card:focus-visible,
+.ds-tile:focus-visible {
+  outline: var(--si-focus-width) solid var(--si-color-focus-ring);
+  outline-offset: var(--si-focus-offset);
+}
+
+.ds-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--si-space-32);
+  margin: var(--si-space-32) 0 0;
+}
+
+.ds-stats > div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.ds-stats dt {
+  color: var(--si-color-text-muted);
+  font-size: var(--si-font-size-sm);
+  font-weight: var(--si-font-weight-regular);
+}
+
+.ds-stats dd {
+  margin: 0;
+  color: var(--si-color-text);
+  font-size: var(--si-font-size-3xl);
+  font-weight: var(--si-font-weight-bold);
+}
+
+.ds-specimen {
+  display: grid;
+  gap: var(--si-space-16);
+  margin: 0;
+  padding: var(--si-space-24);
+  border: 1px solid var(--si-color-border);
+  border-radius: var(--si-radius-2xl);
+  background: var(--si-color-surface-raised);
+  box-shadow: var(--si-shadow-lg);
+  font-size: var(--si-font-size-md);
+}
+
+.ds-specimen figcaption {
+  color: var(--si-color-text-muted);
+  font-size: var(--si-font-size-xs);
+  font-weight: var(--si-font-weight-semibold);
+}
+
+.ds-specimen__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--si-space-8);
+}
+
+.ds-section {
+  padding-block: var(--si-space-32);
+  border-block-start: 1px solid var(--si-color-border);
+}
+
+.ds-section h2 {
+  color: var(--si-color-text);
+  font-size: var(--si-font-size-3xl);
+  font-weight: var(--si-font-weight-bold);
+  letter-spacing: -0.015em;
+}
+
+.ds-home .ds-section__sub {
+  margin-block-start: var(--si-space-4);
+  color: var(--si-color-text-muted);
+}
+
+.ds-cards,
+.ds-principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--si-space-16);
+  margin-block-start: var(--si-space-20);
+}
+
+.ds-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--si-space-8);
+  padding: var(--si-space-20);
+  border: 1px solid var(--si-color-border);
+  border-radius: var(--si-radius-xl);
+  color: var(--si-color-text);
+  text-decoration: none;
+  transition: border-color var(--si-motion-duration-fast), box-shadow var(--si-motion-duration-fast);
+}
+
+.ds-card:hover {
+  border-color: var(--si-color-accent-line);
+  box-shadow: var(--si-shadow-md);
+}
+
+.ds-home .ds-card h3,
+.ds-principles h3 {
+  color: var(--si-color-text);
+  font-size: var(--si-font-size-lg);
+  font-weight: var(--si-font-weight-semibold);
+}
+
+.ds-home .ds-card p,
+.ds-principles p {
+  color: var(--si-color-text-muted);
+  font-size: var(--si-font-size-md);
+  line-height: var(--si-font-leading-normal);
+}
+
+.ds-principles p {
+  margin-block-start: var(--si-space-4);
+}
+
+.ds-card__cta {
+  margin-block-start: auto;
+  padding-block-start: var(--si-space-8);
+  color: var(--si-color-accent-strong);
+  font-size: var(--si-font-size-md);
+  font-weight: var(--si-font-weight-semibold);
+}
+
+.ds-foundations {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--si-space-12);
+  margin-block-start: var(--si-space-20);
+}
+
+.ds-tile {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--si-color-border);
+  border-radius: var(--si-radius-xl);
+  color: var(--si-color-text);
+  text-decoration: none;
+  transition: border-color var(--si-motion-duration-fast);
+}
+
+.ds-tile:hover {
+  border-color: var(--si-color-accent-line);
+}
+
+.ds-tile__art {
+  display: flex;
+  gap: var(--si-space-6);
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  background: var(--si-color-surface-raised);
+}
+
+.ds-tile__art--spacing {
+  flex-direction: column;
+  align-items: flex-start;
+  padding-inline: var(--si-space-32);
+}
+
+.ds-tile__title {
+  display: block;
+  padding: var(--si-space-10) var(--si-space-12);
+  font-size: var(--si-font-size-md);
+  font-weight: var(--si-font-weight-semibold);
+}
+
+.ds-dot {
+  width: var(--si-space-16);
+  height: var(--si-space-16);
+  border-radius: var(--si-radius-pill);
+}
+
+.ds-dot--accent { background: var(--si-color-accent); }
+.ds-dot--success { background: var(--si-color-success); }
+.ds-dot--warning { background: var(--si-color-warning); }
+.ds-dot--danger { background: var(--si-color-danger); }
+.ds-dot--info { background: var(--si-color-info); }
+
+.ds-aa {
+  color: var(--si-color-accent-strong);
+  font-size: var(--si-font-size-4xl);
+  font-weight: var(--si-font-weight-bold);
+}
+
+.ds-bar {
+  height: var(--si-space-8);
+  border-radius: var(--si-radius-xs);
+  background: var(--si-color-accent);
+}
+
+.ds-bar--8 { width: var(--si-space-8); }
+.ds-bar--16 { width: var(--si-space-16); }
+.ds-bar--24 { width: var(--si-space-24); }
+.ds-bar--32 { width: var(--si-space-32); }
+
+.ds-corner {
+  width: var(--si-space-24);
+  height: var(--si-space-24);
+  border: 2px solid var(--si-color-accent);
+}
+
+.ds-corner--sm { border-radius: var(--si-radius-sm); }
+.ds-corner--lg { border-radius: var(--si-radius-lg); }
+.ds-corner--2xl { border-radius: var(--si-radius-2xl); }
+.ds-corner--pill { border-radius: var(--si-radius-pill); }
+
+.ds-tile__art--shadows {
+  gap: var(--si-space-12);
+}
+
+.ds-lift {
+  width: var(--si-space-24);
+  height: var(--si-space-24);
+  border-radius: var(--si-radius-sm);
+  background: var(--si-color-surface);
+}
+
+.ds-lift--sm { box-shadow: var(--si-shadow-sm); }
+.ds-lift--md { box-shadow: var(--si-shadow-md); }
+.ds-lift--lg { box-shadow: var(--si-shadow-lg); }
+
+.ds-pulse {
+  width: var(--si-space-24);
+  height: var(--si-space-24);
+  border-radius: var(--si-radius-pill);
+  background: var(--si-color-accent);
+  transition: transform var(--si-motion-transition);
+}
+
+.ds-tile:hover .ds-pulse {
+  transform: scale(1.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-home * {
+    transition: none;
+  }
+}
+
+@media (width <= 992px) {
+  .ds-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--si-space-32);
+  }
+}

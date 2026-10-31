@@ -1,0 +1,13 @@
+---
+title: "Icônes"
+description: "L'usage des icônes dans Synapse."
+---
+
+Les applications utilisent pour l'instant [Bootstrap Icons](https://icons.getbootstrap.com/) 1.11.3, chargé par chacune d'elles. Le passage des icônes utilisées à un sprite SVG à nous reste à décider ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)) : cette page donne donc des règles plutôt qu'un catalogue.
+
+## Règles
+
+- **Icône décorative :** à côté d'un texte qui dit la même chose, ajoutez `aria-hidden="true"`.
+- **Icône seule :** sur un bouton ou un lien, donnez à l'élément un `aria-label` dans la langue de l'utilisateur.
+- **État :** une icône peut porter un état, mais associez-lui un texte dès qu'il y a la place.
+- **Couleur :** les icônes héritent de la couleur du texte. Ne leur donnez pas de couleur propre, sauf pour porter un état.

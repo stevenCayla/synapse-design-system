@@ -1,3 +1,8 @@
+/* Example pages only: an open dialog takes part in the page flow, so the page can measure it. */
+.si-example dialog[open] {
+  position: static;
+}
+
 .si-example {
   margin: 0;
   padding: var(--si-space-16);

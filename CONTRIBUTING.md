@@ -26,7 +26,7 @@ In `packages/design/src/components/<name>/`:
 - `<name>.html.twig`, when the structure justifies a partial. Parameters documented at the top of the file.
 - `<name>.fixtures.yaml`: one entry per variant and state. The `source` is the code a developer would write. It produces the example page, the code sample and the tests.
 
-Then add its page in `apps/docs/src/content/docs/components/`, and the French version when it is ready: a missing page falls back to English.
+Then add its page in `apps/docs/src/content/docs/components/`, its French version in `fr/components/`, and its entry in the sidebar of `apps/docs/astro.config.mjs`. `pnpm validate:docs` requires both pages.
 
 ## Changing a token
 

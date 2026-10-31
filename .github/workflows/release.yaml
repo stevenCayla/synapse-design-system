@@ -53,3 +53,33 @@ jobs:
           flags=""
           case "$VERSION" in *-*) flags="--prerelease" ;; esac
           gh release create "v$VERSION" --verify-tag --title "v$VERSION" --notes "See [CHANGELOG.md](https://github.com/stevenCayla/synapse-design-system/blob/main/CHANGELOG.md)." $flags
+
+  # A final version updates design.synapse-medical.fr. A prerelease does not.
+  deploy:
+    needs: release
+    if: ${{ !contains(inputs.version, '-') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: https://design.synapse-medical.fr
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm validate:docs
+      - name: Deploy to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: sh apps/docs/scripts/deploy.sh prod

@@ -1,0 +1,29 @@
+---
+// Raw palette, shown for reference: components never read it.
+import { primitives } from '@synapse-medical/design/tokens';
+
+const groups = new Map<string, typeof primitives>();
+for (const primitive of primitives) {
+  const group = primitive.path.split('.')[1] ?? '';
+  groups.set(group, [...(groups.get(group) ?? []), primitive]);
+}
+---
+
+<div class="si-doc-palette not-content">
+  {
+    [...groups].map(([name, colours]) => (
+      <div>
+        <p class="si-doc-palette__name">{name}</p>
+        <ul class="si-doc-palette__list">
+          {colours.map((colour) => (
+            <li>
+              <span class="si-doc-swatch si-doc-swatch--large" style={`--swatch:${colour.value}`} />
+              <code>{colour.path.replace(`color.${name}.`, '')}</code>
+              <code>{colour.value}</code>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>

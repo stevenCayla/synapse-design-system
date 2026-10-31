@@ -1,0 +1,56 @@
+---
+title: "Installation"
+description: "Install the package in a PHP application or read the tokens from a Node project."
+---
+
+## In a PHP application
+
+The package installs with Composer, from a tagged release, with no token and no Node in the application.
+
+```json
+{
+    "repositories": [{ "type": "vcs", "url": "https://github.com/stevenCayla/synapse-design-system" }],
+    "require": { "synapse/design": "0.0.1-alpha.3" }
+}
+```
+
+```yaml
+# config/packages/asset_mapper.yaml
+framework:
+    asset_mapper:
+        paths:
+            assets/: ''
+            # The namespace keeps its fonts and images apart from those of the application.
+            vendor/synapse/design/dist: synapse-design
+```
+
+```yaml
+# config/packages/twig.yaml
+twig:
+    paths:
+        vendor/synapse/design/twig: si
+```
+
+Then load the styles and use the partials. The theme comes from the `data-theme` attribute of `<html>`, `light` or `dark`.
+
+```twig
+<html data-theme="light">
+<link rel="stylesheet" href="{{ asset('synapse-design/synapse-design.css') }}">
+
+{% include '@si/badge.html.twig' with {label: 'Published', tone: 'success'} only %}
+```
+
+## Tokens in CSS
+
+Every value is a CSS variable named `--si-*`. Spacing tokens are named by their value: `--si-space-16` is 16px.
+
+```css
+@import "@synapse-medical/design/tokens.css";
+
+.my-element {
+  color: var(--si-color-text-muted);
+  padding: var(--si-space-16);
+}
+```
+
+A Node project can install `@synapse-medical/design` once it is published. It is not published yet.

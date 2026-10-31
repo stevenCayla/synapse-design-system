@@ -1,0 +1,56 @@
+---
+title: "Couleurs"
+description: "Jetons de couleur sémantiques des thèmes clair et sombre, avec leur contraste mesuré."
+---
+
+import ColorTokens from '../../../../components/foundations/ColorTokens.astro';
+import Palette from '../../../../components/foundations/Palette.astro';
+import ContrastTable from '../../../../components/foundations/ContrastTable.astro';
+
+Utilisez les jetons sémantiques. Ils portent un sens et changent avec le thème. Une page imprimée utilise toujours les valeurs claires.
+
+## Surfaces
+
+<ColorTokens prefixes={['color.bg', 'color.surface', 'color.input']} />
+
+## Texte
+
+<ColorTokens prefixes={['color.text']} />
+
+## Bordures
+
+`--si-color-border-strong` sert à ce qui doit être vu pour être utilisé, comme le contour d'un champ : il atteint 3:1.
+
+<ColorTokens prefixes={['color.border']} />
+
+## Marque
+
+<ColorTokens prefixes={['color.accent']} />
+
+## États
+
+N'exprimez jamais un état par la seule couleur : associez-lui un texte ou une icône.
+
+<ColorTokens prefixes={['color.success', 'color.warning', 'color.danger', 'color.info']} />
+
+## Interaction
+
+<ColorTokens prefixes={['color.state', 'color.focus', 'color.disabled', 'color.backdrop']} />
+
+## Coquille de l'application
+
+Le menu latéral de l'application reste sombre dans les deux thèmes.
+
+<ColorTokens prefixes={['color.shell']} />
+
+## Contraste
+
+Mesuré à partir des jetons par le même calcul que le contrôle en CI, qui échoue sous le minimum.
+
+<ContrastTable />
+
+## Palette
+
+Les couleurs brutes derrière les jetons sémantiques, pour référence. Les composants ne les lisent jamais, et elles n'existent pas en variables CSS.
+
+<Palette />

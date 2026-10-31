@@ -1,0 +1,13 @@
+---
+title: "Icons"
+description: "How icons are used in Synapse."
+---
+
+The applications use [Bootstrap Icons](https://icons.getbootstrap.com/) 1.11.3 for now, loaded by each application. Moving the icons in use to our own SVG sprite is still to be decided ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)), so this page gives rules rather than a catalogue.
+
+## Rules
+
+- **Decorative icon:** next to a text that says the same thing, add `aria-hidden="true"`.
+- **Icon alone:** on a button or link, give the element an `aria-label` in the user's language.
+- **Status:** an icon can carry a status, but pair it with a text whenever there is room.
+- **Colour:** icons inherit the text colour. Do not give them a colour of their own, unless they carry a status.

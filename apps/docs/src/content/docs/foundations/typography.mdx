@@ -1,0 +1,38 @@
+---
+title: "Typography"
+description: "Font families, sizes, weights and text colours."
+---
+
+import ScaleTable from '../../../components/foundations/ScaleTable.astro';
+import ColorTokens from '../../../components/foundations/ColorTokens.astro';
+
+Inter is the interface font. Text never goes below `--si-font-size-xs`, 12px.
+
+## Families
+
+Fraunces is available until the choice of the heading font, before version 1.0. Nunito is only for the application wordmark.
+
+<ScaleTable prefix="font.body" sample="font-family" />
+<ScaleTable prefix="font.display" sample="font-family" />
+<ScaleTable prefix="font.mono" sample="font-family" />
+<ScaleTable prefix="font.wordmark" sample="font-family" />
+
+## Sizes
+
+<ScaleTable prefix="font.size" sample="font-size" />
+
+## Weights
+
+<ScaleTable prefix="font.weight" sample="font-weight" />
+
+## Line height
+
+<ScaleTable prefix="font.leading" />
+
+## Text colours
+
+<ColorTokens prefixes={['color.text']} />
+
+## Code
+
+Use `--si-font-mono`, with `<code>` for inline code and `<pre>` for a block. It is a system font, so no file is loaded.

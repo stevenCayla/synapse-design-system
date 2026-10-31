@@ -1,0 +1,38 @@
+---
+title: "Typographie"
+description: "Familles de polices, tailles, graisses et couleurs de texte."
+---
+
+import ScaleTable from '../../../../components/foundations/ScaleTable.astro';
+import ColorTokens from '../../../../components/foundations/ColorTokens.astro';
+
+Inter est la police de l'interface. Le texte ne descend jamais sous `--si-font-size-xs`, soit 12px.
+
+## Familles
+
+Fraunces reste disponible jusqu'au choix de la police de titres, avant la version 1.0. Nunito sert uniquement au logotype de l'application.
+
+<ScaleTable prefix="font.body" sample="font-family" />
+<ScaleTable prefix="font.display" sample="font-family" />
+<ScaleTable prefix="font.mono" sample="font-family" />
+<ScaleTable prefix="font.wordmark" sample="font-family" />
+
+## Tailles
+
+<ScaleTable prefix="font.size" sample="font-size" />
+
+## Graisses
+
+<ScaleTable prefix="font.weight" sample="font-weight" />
+
+## Interlignage
+
+<ScaleTable prefix="font.leading" />
+
+## Couleurs de texte
+
+<ColorTokens prefixes={['color.text']} />
+
+## Code
+
+Utilisez `--si-font-mono`, avec `<code>` pour le code en ligne et `<pre>` pour un bloc. C'est une police système, aucun fichier n'est chargé.

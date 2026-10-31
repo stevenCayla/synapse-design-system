@@ -1,0 +1,56 @@
+---
+title: "Colors"
+description: "Semantic colour tokens for the light and dark themes, with their measured contrast."
+---
+
+import ColorTokens from '../../../components/foundations/ColorTokens.astro';
+import Palette from '../../../components/foundations/Palette.astro';
+import ContrastTable from '../../../components/foundations/ContrastTable.astro';
+
+Use the semantic tokens. They carry a meaning and change with the theme. A printed page always uses the light values.
+
+## Surfaces
+
+<ColorTokens prefixes={['color.bg', 'color.surface', 'color.input']} />
+
+## Text
+
+<ColorTokens prefixes={['color.text']} />
+
+## Borders
+
+`--si-color-border-strong` is for what must be seen to be used, such as the outline of a field: it reaches 3:1.
+
+<ColorTokens prefixes={['color.border']} />
+
+## Brand
+
+<ColorTokens prefixes={['color.accent']} />
+
+## Status
+
+Never convey a status by colour alone: pair it with text or an icon.
+
+<ColorTokens prefixes={['color.success', 'color.warning', 'color.danger', 'color.info']} />
+
+## Interaction
+
+<ColorTokens prefixes={['color.state', 'color.focus', 'color.disabled', 'color.backdrop']} />
+
+## Application shell
+
+The application sidebar stays dark in both themes.
+
+<ColorTokens prefixes={['color.shell']} />
+
+## Contrast
+
+Measured from the tokens by the same computation as the CI check, which fails below the minimum.
+
+<ContrastTable />
+
+## Palette
+
+The raw colours behind the semantic tokens, for reference. Components never read them, and they are not available as CSS variables.
+
+<Palette />

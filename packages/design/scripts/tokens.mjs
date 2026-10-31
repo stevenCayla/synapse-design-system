@@ -28,6 +28,15 @@ const isPrimitiveColor = (token) => token.filePath.includes('primitive') && toke
 const isDocumentation = (token) => token.path[0] === 'breakpoint';
 const key = (token) => token.path.join('.');
 
+/** Raw palette, for the documentation only: components never read it. */
+export async function loadPrimitives() {
+  const light = await resolveTheme('light');
+  return light
+    .filter(isPrimitiveColor)
+    .map((token) => ({ path: key(token), value: String(token.$value) }))
+    .sort((a, b) => a.path.localeCompare(b.path));
+}
+
 /** Public tokens with their value per theme. */
 export async function loadTokens() {
   const [light, dark] = await Promise.all(THEMES.map(resolveTheme));
@@ -133,10 +142,11 @@ export async function generate() {
   write('tokens.css', tokensCss(tokens));
   write('aliases.css', aliasesCss(tokens, { target: false }));
   write('aliases-target.css', aliasesCss(tokens, { target: true }));
-  const data = { name: '@synapse-medical/design', tokens };
+  const primitives = await loadPrimitives();
+  const data = { name: '@synapse-medical/design', tokens, primitives };
   write('tokens.json', `${JSON.stringify(data, null, 2)}\n`);
-  write('tokens.js', `// Generated from packages/design/tokens. Do not edit.\nexport const tokens = ${JSON.stringify(tokens, null, 2)};\n`);
-  write('tokens.d.ts', `export interface Token {\n  path: string;\n  variable: string;\n  type: string;\n  description?: string;\n  layer: 'scale' | 'semantic';\n  light: string;\n  dark: string;\n  css: boolean;\n}\nexport const tokens: Token[];\n`);
+  write('tokens.js', `// Generated from packages/design/tokens. Do not edit.\nexport const tokens = ${JSON.stringify(tokens, null, 2)};\nexport const primitives = ${JSON.stringify(primitives, null, 2)};\n`);
+  write('tokens.d.ts', `export interface Token {\n  path: string;\n  variable: string;\n  type: string;\n  description?: string;\n  layer: 'scale' | 'semantic';\n  light: string;\n  dark: string;\n  css: boolean;\n}\nexport const tokens: Token[];\nexport const primitives: { path: string; value: string }[];\n`);
   writeFileSync(join(tokensDir, 'migration/TABLE.md'), migrationTable(tokens));
   return tokens;
 }

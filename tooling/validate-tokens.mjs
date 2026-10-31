@@ -2,6 +2,7 @@
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { contrastReport } from '../packages/design/scripts/contrast.mjs';
 import { aliasesCss, loadMigration, loadTokens, migrationTable } from '../packages/design/scripts/tokens.mjs';
 
 const dir = 'packages/design/tokens';
@@ -38,47 +39,13 @@ for (const [name] of leaves(read('primitive/color.tokens.json'))) {
 }
 
 // Contrast.
-function parseColor(value) {
-  const hex = value.match(/^#([0-9a-f]{6})$/i);
-  if (hex) return [0, 2, 4].map((start) => parseInt(hex[1].slice(start, start + 2), 16)).concat(1);
-  const rgba = value.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/);
-  if (rgba) return [Number(rgba[1]), Number(rgba[2]), Number(rgba[3]), rgba[4] === undefined ? 1 : Number(rgba[4])];
-  throw new Error(`Colour not understood: ${value}`);
-}
-const over = (top, bottom) => [0, 1, 2].map((index) => top[index] * top[3] + bottom[index] * (1 - top[3])).concat(1);
-function luminance([red, green, blue]) {
-  const [r, g, b] = [red, green, blue].map((channel) => {
-    const value = channel / 255;
-    return value <= 0.03928 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
-  });
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-}
-const contrast = (one, two) => {
-  const [high, low] = [luminance(one), luminance(two)].sort((a, b) => b - a);
-  return (high + 0.05) / (low + 0.05);
-};
-
 const tokens = await loadTokens();
 const byPath = new Map(tokens.map((token) => [token.path, token]));
-let checked = 0;
-for (const pair of read('contrast-pairs.json').pairs) {
-  for (const background of pair.on) {
-    for (const theme of ['light', 'dark']) {
-      const value = (path) => {
-        const token = byPath.get(path);
-        if (!token) throw new Error(`Unknown token in contrast-pairs.json: ${path}`);
-        return token[theme] ? parseColor(token[theme]) : null;
-      };
-      const canvas = value(pair.fg.startsWith('color.shell') ? 'color.shell.bg' : 'color.surface.default');
-      const [foreground, backdrop] = [value(pair.fg), value(background)];
-      // A token missing from a theme is already reported above.
-      if (!canvas || !foreground || !backdrop) continue;
-      const bottom = over(backdrop, canvas);
-      const ratio = contrast(over(foreground, bottom), bottom);
-      checked += 1;
-      if (ratio < pair.min) errors.push(`${theme}: ${pair.fg} on ${background} is ${ratio.toFixed(2)}:1, needs ${pair.min}:1.`);
-    }
-  }
+const report = contrastReport(tokens, read('contrast-pairs.json').pairs);
+const checked = report.length;
+for (const row of report) {
+  // A token missing from a theme is already reported above.
+  if (row.ratio !== null && row.ratio < row.min) errors.push(`${row.theme}: ${row.fg} on ${row.on} is ${row.ratio.toFixed(2)}:1, needs ${row.min}:1.`);
 }
 
 // Migration: every application variable has a decision, and the current aliases keep the current values.

@@ -1,12 +1,26 @@
 ---
-title: Introduction
-description: What the Synapse Design System contains and how applications consume it.
+title: "Introduction"
+description: "What the Synapse Design System contains and how to use it."
 ---
 
-The Synapse Design System is the source of truth for the Synapse interface. It provides design tokens, CSS components, Twig partials and usage rules.
+The Synapse Design System is the source of truth for the Synapse interface. It provides design tokens, CSS components, Twig partials and usage rules, for the people and the coding agents who build Synapse screens.
 
-Before implementing UI, check the Synapse Design System.
+**Before implementing UI, check the Synapse Design System.**
 
-## Status
+## What it contains
 
-Early work: the three components documented here validate the rendering chain. Their API can still change.
+- **[Foundations](/foundations/colors/):** colours, typography, spacing, layout, radius, shadows, motion and icons, as tokens.
+- **[Components](/components/badge/):** CSS, a Twig partial when the structure justifies it, and real examples.
+- **[Accessibility rules](/accessibility/rules/):** WCAG 2.2 AA, in both themes.
+- **[Files for tools](/resources/files/):** tokens as JSON, and the whole documentation as text.
+
+## Current status
+
+This is an early release, and the applications do not use it yet. The foundations are defined; badge, alert and modal are experimental and their API can still change. More components and the patterns come next.
+
+## Choosing what to use
+
+1. A component or pattern exists: reuse it.
+2. A variant of an existing component would do: propose the variant, if the need recurs.
+3. It is specific to one application: keep it there, using the tokens.
+4. It is generic, with at least two real or close uses: propose an addition in a pull request.

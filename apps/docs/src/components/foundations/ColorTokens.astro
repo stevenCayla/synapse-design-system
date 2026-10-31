@@ -1,0 +1,28 @@
+---
+// Semantic colours of a group, with both themes side by side.
+import { tokens } from '@synapse-medical/design/tokens';
+import { t } from '../../lib/i18n';
+
+interface Props {
+  prefixes: string[];
+}
+
+const { prefixes } = Astro.props;
+const labels = t(Astro.currentLocale);
+const list = tokens.filter((token) => token.type === 'color' && prefixes.some((prefix) => token.path.startsWith(prefix)));
+---
+
+<table class="si-doc-table">
+  <thead><tr><th>{labels.token}</th><th>{labels.light}</th><th>{labels.dark}</th></tr></thead>
+  <tbody>
+    {
+      list.map((token) => (
+        <tr>
+          <td><code>{token.variable}</code></td>
+          <td><span class="si-doc-swatch" style={`--swatch:${token.light}`} /><code>{token.light}</code></td>
+          <td><span class="si-doc-swatch" style={`--swatch:${token.dark}`} /><code>{token.dark}</code></td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

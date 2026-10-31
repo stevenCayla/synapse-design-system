@@ -1,0 +1,29 @@
+---
+title: "Règles d'accessibilité"
+description: "Les règles d'accessibilité suivies par chaque composant et chaque écran."
+---
+
+La référence est le niveau AA des WCAG 2.2. Synapse est un produit clinique : un écran qu'on ne peut ni lire ni utiliser peut conduire à une erreur de donnée.
+
+## Règles
+
+| Sujet | Règle |
+|---|---|
+| Contraste | 4,5:1 pour le texte, 3:1 pour le grand texte et les éléments d'interface, dans les deux thèmes. [Mesuré sur les jetons](/fr/foundations/colors/#contraste) |
+| Clavier | Tout fonctionne au clavier, dans un ordre logique, sans piège hors d'une modale |
+| Focus | `:focus-visible` est visible, avec `--si-color-focus-ring`, et jamais masqué |
+| Modales et tiroirs | Focus piégé puis restauré, Échap ferme, titre relié par `aria-labelledby` |
+| Libellés | Chaque champ a un label, et les erreurs sont reliées par `aria-describedby` |
+| ARIA | HTML natif d'abord, ARIA seulement si nécessaire |
+| État désactivé | Reste lisible, et aucune information portée par la seule couleur |
+| Mouvement | `prefers-reduced-motion` est respecté |
+| Responsive | Pas de défilement horizontal à 320px, zoom à 200 %, cibles d'au moins 24px |
+| Sémantique | Titres en ordre, repères, `lang` correct |
+
+## Sécurité clinique
+
+Un état ou une alerte n'est jamais exprimé par la seule couleur. Changer la tonalité d'un état clinique exige une revue explicite.
+
+## Ce qui est contrôlé
+
+Le contraste des jetons est contrôlé en CI dès aujourd'hui. Les contrôles automatiques sur les exemples de composants arrivent avec les composants de base. Les outils automatiques ne détectent qu'une partie des problèmes : chaque composant interactif passe aussi un contrôle manuel au clavier et au lecteur d'écran.

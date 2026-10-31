@@ -1,0 +1,39 @@
+---
+// A scale read from the tokens, with a sample drawn from the token itself.
+import { tokens } from '@synapse-medical/design/tokens';
+import { t } from '../../lib/i18n';
+
+interface Props {
+  prefix: string;
+  sample?: 'space' | 'radius' | 'shadow' | 'font-size' | 'font-weight' | 'font-family' | 'none';
+}
+
+const { prefix, sample = 'none' } = Astro.props;
+const labels = t(Astro.currentLocale);
+const list = tokens.filter((token) => token.path.startsWith(`${prefix}.`) || token.path === prefix);
+// Numeric order for scales named by value.
+const order = (path: string) => Number(path.split('.').pop());
+if (list.every((token) => !Number.isNaN(order(token.path)))) list.sort((a, b) => order(a.path) - order(b.path));
+---
+
+<table class="si-doc-table">
+  <thead>
+    <tr><th>{labels.token}</th><th>{labels.value}</th>{sample !== 'none' && <th>{labels.sample}</th>}</tr>
+  </thead>
+  <tbody>
+    {
+      list.map((token) => (
+        <tr>
+          <td><code>{token.variable}</code></td>
+          <td><code>{token.light}</code>{token.dark !== token.light && <><br /><code>{token.dark}</code></>}</td>
+          {sample === 'space' && <td><span class="si-doc-bar" style={`width:var(${token.variable})`} /></td>}
+          {sample === 'radius' && <td><span class="si-doc-shape" style={`border-radius:var(${token.variable})`} /></td>}
+          {sample === 'shadow' && <td><span class="si-doc-shape si-doc-shape--raised" style={`box-shadow:var(${token.variable})`} /></td>}
+          {sample === 'font-size' && <td><span style={`font-size:var(${token.variable})`}>{labels.sampleText}</span></td>}
+          {sample === 'font-weight' && <td><span style={`font-weight:var(${token.variable})`}>{labels.sampleText}</span></td>}
+          {sample === 'font-family' && <td><span style={`font-family:var(${token.variable})`}>{labels.sampleText}</span></td>}
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
