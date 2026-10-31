@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "pnpm --filter docs dev",
-    "build": "pnpm --filter @synapse/design build && pnpm --filter docs build",
+    "build": "pnpm --filter @synapse-medical/design build && pnpm --filter docs build",
     "lint": "stylelint \"packages/design/src/**/*.css\" && eslint .",
     "typecheck": "pnpm --filter docs typecheck",
     "test": "node --test \"packages/design/test/*.test.mjs\"",

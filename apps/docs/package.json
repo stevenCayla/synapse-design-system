@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.42.8",
-    "@synapse/design": "workspace:*",
+    "@synapse-medical/design": "workspace:*",
     "astro": "^7.4.4",
     "sharp": "^0.35.5"
   },
