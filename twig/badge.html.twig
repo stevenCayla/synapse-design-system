@@ -1,0 +1,7 @@
+{#
+  Parameters
+  ----------
+  label  string  translated text
+  tone   string  '' | 'success' | 'warning' | 'danger'
+#}
+<span class="si-badge{% if tone is defined and tone %} si-badge--{{ tone }}{% endif %}">{{ label }}</span>

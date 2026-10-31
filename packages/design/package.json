@@ -1,6 +1,6 @@
 {
   "name": "@synapse/design",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.2",
   "private": true,
   "description": "Synapse Design System: styles, tokens, assets and Twig partials.",
   "license": "MIT",
