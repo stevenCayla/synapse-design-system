@@ -33,16 +33,17 @@ Design tokens, CSS components, Twig partials and usage rules, documented in Engl
 
 The Synapse Design System is a monorepo with one package and its documentation site,
 built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
-It is early work: no application uses it yet, and the components can still change.
+It is early work: no application uses it yet, and all its components stay experimental until one does.
 [`DESIGN_SYSTEM_EXTRACTION_PLAN.md`](DESIGN_SYSTEM_EXTRACTION_PLAN.md) gives the roadmap.
 
 | Area | What it provides |
 |------|------------------|
 | Tokens | Colours, typography, spacing, radius, shadows, motion and layout, in JSON, generated as CSS, JavaScript and JSON |
-| Components | CSS, a Twig partial when the structure justifies it, and one fixture per variant and state |
+| Components | 21 components: CSS, a Twig partial when the structure justifies it, and one fixture per variant and state |
+| Behaviours | Small modules on native `<dialog>`, `<details>` and `popover` |
 | Documentation | Foundations read from the tokens, with measured contrast, and real examples in an iframe |
 | Tools | `/tokens.json`, `/llms.txt`, `/llms-full.txt` and [`AGENTS.md`](AGENTS.md) for coding agents |
-| Checks | Theme parity, WCAG AA contrast pairs, documentation and links, and Twig rendering compared with PHP |
+| Checks | Theme parity, WCAG AA contrast pairs, documentation and links, Twig rendering compared with PHP, and browser tests on every fixture |
 
 The components do not depend on Bootstrap or on any other UI framework
 ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)).
@@ -68,7 +69,12 @@ pnpm typecheck            # type-check the site
 pnpm test                 # component and fixture tests
 pnpm validate             # check the tokens: parity, contrast, migration table, usage
 pnpm validate:docs        # after a build: documentation, links, content readable by tools
+pnpm test:browser         # after a build: axe, width at 320px and behaviours, on every fixture
+pnpm test:visual          # reference screenshots, in a Docker image
 ```
+
+The browser tests need Chromium once: `pnpm exec playwright install chromium`. After an
+intended visual change, run `sh tooling/test-visual.sh --update` and review the images.
 
 Comparing the rendering with PHP Twig also needs PHP and Composer:
 
@@ -94,7 +100,8 @@ pnpm test:parity
 │   ├── src/components/<name>/     CSS, Twig partial, fixtures
 │   ├── src/foundations/           Base styles and self-hosted fonts
 │   └── tokens/                    Token sources, contrast pairs, migration table
-├── tooling/                       Token and documentation checks, Twig parity, release script
+├── tests/browser/                 Accessibility, behaviour, width and screenshots
+├── tooling/                       Token and documentation checks, Twig parity, release, visual tests
 ├── AGENTS.md                      Rules for coding agents
 ├── composer.json                  Composer package synapse/design
 └── DESIGN_SYSTEM_EXTRACTION_PLAN.md
@@ -196,7 +203,7 @@ pnpm deploy:prod
 - There is one long-lived branch, `main`. Work branches start from it (`feat/…`,
   `fix/…`, `docs/…`, `ci/…`, `chore/…`) and their pull request targets it. Commits
   follow Conventional Commits.
-- `main` is protected: changes go through a pull request whose `build` check passes;
+- `main` is protected: changes go through a pull request whose `build` and `browser` checks pass;
   force-push and deletion are blocked.
 - To release, add the version to `CHANGELOG.md` through a pull request, then run the
   workflow: *Actions → Release → Run workflow*. It checks, builds, commits `dist/`,
