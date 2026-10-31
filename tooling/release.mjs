@@ -19,7 +19,7 @@ if (run('git', 'tag', '--list', `v${version}`)) fail(`The tag v${version} alread
 
 const start = run('git', 'symbolic-ref', '--short', 'HEAD');
 
-run('pnpm', '--filter', '@synapse/design', 'build');
+run('pnpm', '--filter', '@synapse-medical/design', 'build');
 run('git', 'checkout', '--detach');
 try {
   const file = 'packages/design/package.json';
