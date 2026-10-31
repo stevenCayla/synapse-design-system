@@ -1,0 +1,30 @@
+---
+// One standalone page per fixture: shown in an iframe by the documentation, and the target of the
+// accessibility and visual tests.
+import '@synapse/design/styles.css';
+import { listFixtures, renderFixture } from '@synapse/design/fixtures';
+
+export function getStaticPaths() {
+  return listFixtures().map((fixture) => ({
+    params: { component: fixture.component, fixture: fixture.id },
+    props: { fixture },
+  }));
+}
+
+const { fixture } = Astro.props;
+const html = await renderFixture(fixture);
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{fixture.component}: {fixture.title}</title>
+    <script is:inline src="/example-theme.js"></script>
+  </head>
+  <body class="si-example">
+    <main set:html={html} />
+  </body>
+</html>

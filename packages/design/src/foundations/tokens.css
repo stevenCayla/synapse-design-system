@@ -1,0 +1,43 @@
+/* Temporary: the values come from §8.4 of the extraction plan until Phase 2 generates this file. */
+:root {
+  --si-color-surface: #fff;
+  --si-color-text: #1a1d2e;
+  --si-color-text-muted: #4f566b;
+  --si-color-border: #e3e6ef;
+  --si-color-accent: #4f46e5;
+  --si-color-accent-soft: #eeedfd;
+  --si-color-accent-strong: #4338ca;
+  --si-color-accent-on: #fff;
+  --si-color-success: #15803d;
+  --si-color-success-soft: rgb(21 128 61 / 10%);
+  --si-color-warning: #b45309;
+  --si-color-warning-soft: rgb(180 83 9 / 10%);
+  --si-color-danger: #b91c1c;
+  --si-color-danger-soft: rgb(185 28 28 / 8%);
+  --si-color-backdrop: rgb(8 13 26 / 50%);
+  --si-font-body: "Inter", system-ui, sans-serif;
+  --si-radius-sm: 6px;
+  --si-radius-lg: 12px;
+  --si-space-1: 4px;
+  --si-space-2: 8px;
+  --si-space-3: 12px;
+  --si-space-4: 16px;
+  --si-space-5: 24px;
+}
+
+html[data-theme="dark"] {
+  --si-color-surface: #0f1629;
+  --si-color-text: #e6ebf5;
+  --si-color-text-muted: #b0bacd;
+  --si-color-border: rgb(255 255 255 / 10%);
+  --si-color-accent: #818cf8;
+  --si-color-accent-soft: #1e1c44;
+  --si-color-accent-strong: #a5b4fc;
+  --si-color-accent-on: #0f1629;
+  --si-color-success: #4ade80;
+  --si-color-success-soft: rgb(74 222 128 / 12%);
+  --si-color-warning: #fbbf24;
+  --si-color-warning-soft: rgb(251 191 36 / 12%);
+  --si-color-danger: #fca5a5;
+  --si-color-danger-soft: rgb(248 113 113 / 12%);
+}

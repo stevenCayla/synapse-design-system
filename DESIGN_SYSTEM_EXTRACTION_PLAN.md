@@ -827,6 +827,13 @@ pnpm typecheck   tsc                                pnpm tokens      génère le
 pnpm validate    jetons et documentation            pnpm sync:app    copie vers ../synapse-app (essai)
 ```
 
+**Résultats (31/10/2026) :**
+
+- **Essai 1, réussi :** les 10 fixtures de badge, alerte et modale sont identiques entre Twing 7.3.1 et Twig 3.30 (la version de l'application), en `include` et en `embed`. Le comparateur détecte bien un écart : `{{ 1/3 }}` diffère entre les deux moteurs, d'où la règle interdisant l'arithmétique dans les partiels.
+- **Essai 2, réussi :** sur une branche jetable, l'image de production de l'application se construit sans jeton avec `synapse/design` installé par Composer. `asset-map:compile` publie le CSS, et le vrai kernel en production rend `@si/badge.html.twig` et `@si/modal.html.twig`.
+- **Essai 3, en attente :** création de l'organisation npm, à faire par Steven. Ne bloque que le premier consommateur Node.
+- **Appris :** `&--modifier` n'existe qu'en Sass et le CSS natif ignore la règle. Les sélecteurs BEM s'écrivent en entier, et Stylelint interdit l'autre forme.
+
 ### Phase 2 : Foundations et tokens, M
 
 - **Objectif :** source unique des valeurs, sans rien changer à l'écran.

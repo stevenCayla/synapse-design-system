@@ -1,0 +1,25 @@
+{
+  "name": "@synapse/design",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Synapse Design System: styles, tokens, assets and Twig partials.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./styles.css": "./src/index.css",
+    "./fixtures": {
+      "types": "./scripts/fixtures.d.ts",
+      "default": "./scripts/fixtures.mjs"
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "twing": "7.3.1",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "lightningcss": "^1.33.0"
+  }
+}

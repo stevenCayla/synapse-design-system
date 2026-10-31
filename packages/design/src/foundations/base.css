@@ -1,0 +1,9 @@
+.si-example {
+  margin: 0;
+  padding: var(--si-space-4);
+  background: var(--si-color-surface);
+  color: var(--si-color-text);
+  font-family: var(--si-font-body);
+  font-size: 14px;
+  line-height: 1.45;
+}

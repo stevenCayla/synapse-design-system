@@ -1,0 +1,50 @@
+---
+// Real rendering of every fixture of a component, in an iframe that isolates its styles from the site.
+import { Code } from '@astrojs/starlight/components';
+import { listFixtures } from '@synapse/design/fixtures';
+
+interface Props {
+  component: string;
+}
+
+const { component } = Astro.props;
+const fixtures = listFixtures().filter((fixture) => fixture.component === component);
+---
+
+{
+  fixtures.map((fixture) => (
+    <section class="si-doc-example">
+      <h3>{fixture.title}</h3>
+      <iframe
+        data-example
+        src={`/examples/${component}/${fixture.id}/`}
+        title={`${component}: ${fixture.title}`}
+        loading="lazy"
+        height={fixture.height ?? 90}
+      />
+      <Code code={fixture.source.trim()} lang="twig" />
+    </section>
+  ))
+}
+
+<style>
+  iframe {
+    width: 100%;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 8px;
+  }
+</style>
+
+<script>
+  // The examples follow the theme of the site.
+  const sync = () => {
+    const theme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+    for (const frame of document.querySelectorAll<HTMLIFrameElement>('iframe[data-example]')) {
+      const base = frame.getAttribute('src')?.split('?')[0];
+      const next = `${base}?theme=${theme}`;
+      if (frame.getAttribute('src') !== next) frame.setAttribute('src', next);
+    }
+  };
+  sync();
+  new MutationObserver(sync).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+</script>

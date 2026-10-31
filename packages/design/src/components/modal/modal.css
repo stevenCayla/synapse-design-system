@@ -1,0 +1,35 @@
+.si-modal {
+  width: min(560px, calc(100vw - 32px));
+  padding: 0;
+  border: 1px solid var(--si-color-border);
+  border-radius: var(--si-radius-lg);
+  background: var(--si-color-surface);
+  color: var(--si-color-text);
+
+  &::backdrop {
+    background: var(--si-color-backdrop);
+  }
+}
+
+.si-modal__header,
+.si-modal__body,
+.si-modal__footer {
+  padding: var(--si-space-4) var(--si-space-5);
+}
+
+.si-modal__header {
+  border-bottom: 1px solid var(--si-color-border);
+}
+
+.si-modal__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.si-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--si-space-2);
+  border-top: 1px solid var(--si-color-border);
+}

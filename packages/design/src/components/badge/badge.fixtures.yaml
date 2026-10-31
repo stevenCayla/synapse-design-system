@@ -1,0 +1,20 @@
+- id: default
+  title: Default
+  source: |
+    {% include '@si/badge.html.twig' with {label: 'Draft'} only %}
+- id: success
+  title: Success
+  source: |
+    {% include '@si/badge.html.twig' with {label: 'Published', tone: 'success'} only %}
+- id: warning
+  title: Warning
+  source: |
+    {% include '@si/badge.html.twig' with {label: 'Expiring', tone: 'warning'} only %}
+- id: danger
+  title: Danger
+  source: |
+    {% include '@si/badge.html.twig' with {label: 'Expired', tone: 'danger'} only %}
+- id: escaped
+  title: Text is escaped
+  source: |
+    {% include '@si/badge.html.twig' with {label: 'R&D <b>team</b> "A"'} only %}

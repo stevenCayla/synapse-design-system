@@ -1,0 +1,27 @@
+.si-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--si-space-1);
+  padding: 2px var(--si-space-2);
+  border-radius: var(--si-radius-sm);
+  background: var(--si-color-accent-soft);
+  color: var(--si-color-accent-strong);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.si-badge--success {
+  background: var(--si-color-success-soft);
+  color: var(--si-color-success);
+}
+
+.si-badge--warning {
+  background: var(--si-color-warning-soft);
+  color: var(--si-color-warning);
+}
+
+.si-badge--danger {
+  background: var(--si-color-danger-soft);
+  color: var(--si-color-danger);
+}
