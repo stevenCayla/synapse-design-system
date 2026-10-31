@@ -10,6 +10,6 @@ export default [
   },
   {
     files: ['apps/docs/public/**/*.js'],
-    languageOptions: { globals: { ...globals.browser } },
+    languageOptions: { globals: { ...globals.browser, ResizeObserver: 'readonly' } },
   },
 ];

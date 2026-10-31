@@ -1,0 +1,45 @@
+---
+// Real rendering of one fixture, in an iframe that isolates its styles from the site, with its code.
+import { Code } from '@astrojs/starlight/components';
+import type { Fixture } from '@synapse-medical/design/fixtures';
+
+interface Props {
+  fixture: Fixture;
+}
+
+const { fixture } = Astro.props;
+---
+
+<figure class="si-doc-preview not-content">
+  <iframe
+    data-example
+    src={`/examples/${fixture.component}/${fixture.id}/`}
+    title={`${fixture.component}: ${fixture.title}`}
+    loading="lazy"
+    height={fixture.height ?? 72}></iframe>
+</figure>
+<Code code={fixture.source.trim()} lang="twig" />
+
+<script>
+  const frames = () => document.querySelectorAll<HTMLIFrameElement>('iframe[data-example]');
+
+  // The examples follow the theme of the site.
+  const sync = () => {
+    const theme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+    for (const frame of frames()) {
+      const base = frame.getAttribute('src')?.split('?')[0];
+      const next = `${base}?theme=${theme}`;
+      if (frame.getAttribute('src') !== next) frame.setAttribute('src', next);
+    }
+  };
+  sync();
+  new MutationObserver(sync).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+  // Each example reports its height.
+  addEventListener('message', (event) => {
+    if (event.origin !== location.origin || typeof event.data?.exampleHeight !== 'number') return;
+    for (const frame of frames()) {
+      if (frame.contentWindow === event.source) frame.height = String(event.data.exampleHeight);
+    }
+  });
+</script>

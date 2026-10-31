@@ -1,0 +1,29 @@
+---
+title: "Accessibility rules"
+description: "The accessibility rules every component and screen follows."
+---
+
+The reference is WCAG 2.2 level AA. Synapse is a clinical product: a screen that cannot be read or operated can lead to a data error.
+
+## Rules
+
+| Subject | Rule |
+|---|---|
+| Contrast | 4.5:1 for text, 3:1 for large text and interface elements, in both themes. [Measured on the tokens](/foundations/colors/#contrast) |
+| Keyboard | Everything works with the keyboard, in a logical order, with no trap outside a modal |
+| Focus | `:focus-visible` is visible, using `--si-color-focus-ring`, and never hidden |
+| Modals and drawers | Focus is trapped then restored, Escape closes, the title is linked with `aria-labelledby` |
+| Labels | Every field has a label, and errors are linked with `aria-describedby` |
+| ARIA | Native HTML first, ARIA only when needed |
+| Disabled state | Stays readable, and no information is carried by colour alone |
+| Motion | `prefers-reduced-motion` is respected |
+| Responsive | No horizontal scroll at 320px, 200% zoom, targets of at least 24px |
+| Semantics | Headings in order, landmarks, correct `lang` |
+
+## Clinical safety
+
+A status or an alert is never conveyed by colour alone. Changing the tone of a clinical status requires an explicit review.
+
+## What is checked
+
+The contrast of the tokens is checked in CI today. Automated checks on the component examples come with the core components. Automated tools only catch part of the problems, so each interactive component also needs a manual check with the keyboard and a screen reader.

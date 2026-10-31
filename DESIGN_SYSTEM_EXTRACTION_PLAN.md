@@ -854,6 +854,13 @@ pnpm validate    jetons et documentation            pnpm sync:app    copie vers 
 - **Risques :** thème Starlight trop contraint pour l'accueil, résolu par une page hors gabarit.
 - **Critères d'acceptation :** déploiement automatique de la préproduction ; pré-production `noindex` ; onglets Typographie et Couleurs de la page design couverts ; aperçus sans capture d'écran ; aucune erreur CSP.
 
+**Résultats (31/10/2026) :**
+
+- Site en anglais et en français : 45 pages générées, dont l'accueil, 8 pages de fondations lues depuis les jetons, les règles d'accessibilité et les fichiers pour les outils.
+- Testé sur le runtime Workers local avec les vrais en-têtes : aucune erreur CSP, aucune anomalie axe sur 13 pages dans les deux thèmes, aucun défilement horizontal à 320px. Les pages de composants restent à contrôler dans leurs iframes, en Phase 5.
+- Onglets Typographie et Couleurs de `/settings/design` couverts. Les « gris Bootstrap » disparaissent au profit de la palette.
+- **Limite :** la modale n'apparaît pas sur l'accueil : ses boutons ne seront stylés qu'avec le composant Button, en Phase 5.
+
 ### Phase 4 : Première consommation par l'application, M
 
 - **Objectif :** étapes 1 et 2 du §18.3.

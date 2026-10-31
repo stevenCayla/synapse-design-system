@@ -1,0 +1,8 @@
+---
+// The homepage has its own heading.
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+const isHome = Astro.locals.starlightRoute.entry.data.template === 'splash';
+---
+
+{!isHome && <Default />}

@@ -12,7 +12,8 @@ This repository is the source of truth for the Synapse interface. It is early wo
 | Token sources | `packages/design/tokens/`: `primitive/`, `semantic/` (`base`, `light`, `dark`), `contrast-pairs.json` |
 | Generated tokens | `pnpm tokens` writes `packages/design/generated/` (`tokens.css`, `tokens.json`, `tokens.js`). Never edit it |
 | Application variables | `packages/design/tokens/migration/TABLE.md`: what each `synapse-app` variable becomes |
-| Documentation | `apps/docs/src/content/docs/`: English at the root, French under `fr/` |
+| Documentation | `apps/docs/src/content/docs/`: English at the root, French under `fr/`. Keep both up to date |
+| Text for tools | Built site: `/llms.txt`, `/llms-full.txt`, `/tokens.json` |
 | Example pages | `/examples/<component>/<fixture>/`, generated from the fixtures |
 
 ## Choosing
@@ -37,7 +38,7 @@ This repository is the source of truth for the Synapse interface. It is early wo
 A component has its CSS, its fixtures for each variant and state, and its documentation page. These pass:
 
 ```bash
-pnpm validate && pnpm lint && pnpm typecheck && pnpm test && pnpm test:parity && pnpm build
+pnpm validate && pnpm lint && pnpm typecheck && pnpm test && pnpm test:parity && pnpm build && pnpm validate:docs
 ```
 
 ## Commits and pull requests

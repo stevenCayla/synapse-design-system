@@ -16,4 +16,11 @@ export default {
     'color-named': 'never',
     'function-disallowed-list': ['rgb', 'rgba', 'hsl', 'hsla'],
   },
+  overrides: [
+    {
+      // The site maps Starlight variables, and its homepage heading scales with the screen.
+      files: ['apps/docs/src/styles/**/*.css'],
+      rules: { 'custom-property-pattern': null, 'declaration-property-unit-disallowed-list': null, 'declaration-block-single-line-max-declarations': null, 'no-descending-specificity': null },
+    },
+  ],
 };

@@ -1,0 +1,56 @@
+---
+title: "Installation"
+description: "Installer le package dans une application PHP ou lire les jetons depuis un projet Node."
+---
+
+## Dans une application PHP
+
+Le package s'installe avec Composer, depuis une release taguée, sans jeton et sans Node dans l'application.
+
+```json
+{
+    "repositories": [{ "type": "vcs", "url": "https://github.com/stevenCayla/synapse-design-system" }],
+    "require": { "synapse/design": "0.0.1-alpha.3" }
+}
+```
+
+```yaml
+# config/packages/asset_mapper.yaml
+framework:
+    asset_mapper:
+        paths:
+            assets/: ''
+            # The namespace keeps its fonts and images apart from those of the application.
+            vendor/synapse/design/dist: synapse-design
+```
+
+```yaml
+# config/packages/twig.yaml
+twig:
+    paths:
+        vendor/synapse/design/twig: si
+```
+
+Chargez ensuite les styles et utilisez les partiels. Le thème vient de l'attribut `data-theme` de `<html>`, `light` ou `dark`.
+
+```twig
+<html data-theme="light">
+<link rel="stylesheet" href="{{ asset('synapse-design/synapse-design.css') }}">
+
+{% include '@si/badge.html.twig' with {label: 'Published', tone: 'success'} only %}
+```
+
+## Les jetons en CSS
+
+Chaque valeur est une variable CSS nommée `--si-*`. Les jetons d'espacement portent leur valeur dans leur nom : `--si-space-16` vaut 16px.
+
+```css
+@import "@synapse-medical/design/tokens.css";
+
+.my-element {
+  color: var(--si-color-text-muted);
+  padding: var(--si-space-16);
+}
+```
+
+Un projet Node pourra installer `@synapse-medical/design` une fois le package publié. Il ne l'est pas encore.

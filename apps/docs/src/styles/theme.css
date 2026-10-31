@@ -1,0 +1,143 @@
+/* Starlight reads the Synapse tokens: its colours follow the same light and dark themes. */
+@import url("@synapse-medical/design/tokens.css");
+@import url("@synapse-medical/design/fonts.css");
+
+:root {
+  --sl-font: var(--si-font-body);
+  --sl-font-mono: var(--si-font-mono);
+  --sl-color-accent-low: var(--si-color-accent-soft);
+  --sl-color-accent: var(--si-color-accent);
+  --sl-color-accent-high: var(--si-color-accent-strong);
+  --sl-color-white: var(--si-color-text);
+  --sl-color-gray-1: var(--si-color-text);
+  --sl-color-gray-2: var(--si-color-text-muted);
+  --sl-color-gray-3: var(--si-color-text-muted);
+  --sl-color-gray-4: var(--si-color-text-faint);
+  --sl-color-gray-5: var(--si-color-border);
+  --sl-color-gray-6: var(--si-color-surface-sunken);
+  --sl-color-gray-7: var(--si-color-surface-raised);
+  --sl-color-black: var(--si-color-surface);
+  --sl-color-text: var(--si-color-text-muted);
+  --sl-color-text-accent: var(--si-color-accent-strong);
+  --sl-color-text-invert: var(--si-color-accent-on);
+  --sl-color-bg: var(--si-color-surface);
+  --sl-color-bg-nav: var(--si-color-surface);
+  --sl-color-bg-sidebar: var(--si-color-surface-raised);
+  --sl-color-bg-inline-code: var(--si-color-surface-sunken);
+  --sl-color-bg-accent: var(--si-color-accent);
+  --sl-color-hairline: var(--si-color-border);
+  --sl-color-hairline-light: var(--si-color-border);
+  --sl-color-hairline-shade: var(--si-color-border);
+}
+
+.si-doc-preview {
+  margin-block: var(--si-space-16) var(--si-space-8);
+}
+
+.si-doc-preview iframe {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--si-color-border);
+  border-radius: var(--si-radius-md);
+}
+
+.sl-markdown-content table.si-doc-table {
+  display: table;
+  width: 100%;
+  font-size: var(--si-font-size-sm);
+}
+
+.si-doc-table code {
+  font-size: var(--si-font-size-xs);
+  overflow-wrap: anywhere;
+}
+
+.si-doc-swatch {
+  display: inline-block;
+  width: var(--si-space-16);
+  height: var(--si-space-16);
+  margin-inline-end: var(--si-space-8);
+  border: 1px solid var(--si-color-border-strong);
+  border-radius: var(--si-radius-xs);
+  background: var(--swatch);
+  vertical-align: middle;
+}
+
+.si-doc-swatch--large {
+  display: block;
+  width: 100%;
+  height: var(--si-space-32);
+  margin: 0 0 var(--si-space-4);
+}
+
+.si-doc-palette {
+  display: grid;
+  gap: var(--si-space-20);
+  margin-block: var(--si-space-16);
+}
+
+.si-doc-palette__name {
+  margin: 0 0 var(--si-space-8);
+  color: var(--si-color-text);
+  font-weight: var(--si-font-weight-semibold);
+  text-transform: capitalize;
+}
+
+.si-doc-palette__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: var(--si-space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.si-doc-palette__list code {
+  display: block;
+  font-size: var(--si-font-size-xs);
+}
+
+.si-doc-bar {
+  display: block;
+  height: var(--si-space-12);
+  border-radius: var(--si-radius-xs);
+  background: var(--si-color-accent);
+}
+
+.si-doc-shape {
+  display: block;
+  width: var(--si-space-48);
+  height: var(--si-space-48);
+  border: 1px solid var(--si-color-border-strong);
+  background: var(--si-color-accent-soft);
+}
+
+.si-doc-shape--raised {
+  margin: var(--si-space-8);
+  border-color: var(--si-color-border);
+  border-radius: var(--si-radius-md);
+  background: var(--si-color-surface);
+}
+
+.si-doc-dodont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--si-space-16);
+}
+
+.si-doc-dodont > div {
+  padding: var(--si-space-12) var(--si-space-16);
+  border-top: 3px solid var(--si-color-success);
+  border-radius: var(--si-radius-sm);
+  background: var(--si-color-surface-raised);
+}
+
+.si-doc-dodont > .si-doc-dodont__dont {
+  border-top-color: var(--si-color-danger);
+}
+
+.si-doc-dodont__label {
+  margin: 0;
+  color: var(--si-color-text);
+  font-weight: var(--si-font-weight-semibold);
+}

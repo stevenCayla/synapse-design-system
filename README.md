@@ -2,7 +2,7 @@
 
 The source of truth for the Synapse interface: design tokens, CSS components, Twig partials, patterns and usage rules.
 
-Documentation: <https://design.synapse-medical.fr> (not published yet).
+Documentation: <https://design.synapse-medical.fr> (not published yet). Staging: <https://dev-design.synapse-medical.fr>.
 
 > Early work. The components here validate the rendering chain and can still change. The roadmap is in [`DESIGN_SYSTEM_EXTRACTION_PLAN.md`](./DESIGN_SYSTEM_EXTRACTION_PLAN.md).
 
@@ -23,6 +23,7 @@ pnpm dev
 | `pnpm build` | Package (`dist/`, `twig/`) and documentation site |
 | `pnpm tokens` | Generate the tokens from their JSON sources |
 | `pnpm validate` | Check the tokens: theme parity, contrast, migration table and usage |
+| `pnpm validate:docs` | After a build: every component is documented, links resolve, tools can read the content |
 | `pnpm lint` | Stylelint and ESLint |
 | `pnpm typecheck` | Type-check the documentation site |
 | `pnpm test` | Component and fixture tests |

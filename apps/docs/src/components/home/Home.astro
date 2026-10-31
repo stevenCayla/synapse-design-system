@@ -1,0 +1,104 @@
+---
+// Homepage. Its components are the real ones, rendered from their fixtures, and its figures are read
+// from the tokens: nothing here can drift from the package.
+import '@synapse-medical/design/styles.css';
+import '../../styles/home.css';
+import { contrastReport } from '@synapse-medical/design/contrast';
+import pairs from '@synapse-medical/design/contrast-pairs.json';
+import { listComponents, listFixtures, renderFixture } from '@synapse-medical/design/fixtures';
+import { tokens } from '@synapse-medical/design/tokens';
+import { langOf } from '../../lib/i18n';
+import { latestVersion } from '../../lib/version';
+import { homeContent } from './content';
+
+const lang = langOf(Astro.currentLocale);
+const c = homeContent[lang];
+const base = lang === 'fr' ? '/fr/' : '/';
+
+const fixture = (component: string, id: string) => {
+  const found = listFixtures().find((item) => item.component === component && item.id === id);
+  if (!found) throw new Error(`Unknown fixture: ${component}/${id}`);
+  return renderFixture(found);
+};
+const specimen = {
+  alert: await fixture('alert', 'with-title'),
+  success: await fixture('alert', 'rich-body'),
+  danger: await fixture('alert', 'danger-role'),
+  badges: await Promise.all(['default', 'success', 'warning', 'danger'].map((id) => fixture('badge', id))),
+};
+
+const stats = [
+  { value: tokens.length, label: c.stats.tokens },
+  { value: contrastReport(tokens, pairs.pairs).length, label: c.stats.checks },
+  { value: listComponents().length, label: c.stats.components },
+];
+const swatches = ['accent', 'success', 'warning', 'danger', 'info'];
+---
+
+<div class="ds-home not-content">
+  <section class="ds-hero">
+    <div class="ds-hero__text">
+      <p class="ds-eyebrow"><b>v{latestVersion()}</b><span>{c.eyebrow}</span></p>
+      <h1>{c.title}</h1>
+      <p class="ds-lede">{c.lede}</p>
+      <div class="ds-actions">
+        <a class="ds-link ds-link--primary" href={`${base}getting-started/introduction/`}>{c.start}</a>
+        <a class="ds-link" href={`${base}foundations/colors/`}>{c.browse}</a>
+      </div>
+      <dl class="ds-stats">
+        {stats.map((stat) => <div><dt>{stat.label}</dt><dd>{stat.value}</dd></div>)}
+      </dl>
+    </div>
+    <figure class="ds-specimen">
+      <figcaption>{c.specimen.label}</figcaption>
+      <div class="ds-specimen__badges" set:html={specimen.badges.join('')} />
+      <Fragment set:html={specimen.alert} />
+      <Fragment set:html={specimen.success} />
+      <Fragment set:html={specimen.danger} />
+    </figure>
+  </section>
+
+  <section class="ds-section">
+    <h2>{c.audiences.heading}</h2>
+    <div class="ds-cards">
+      {
+        c.audiences.items.map((item) => (
+          <a class="ds-card" href={`${base}${item.href}`}>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <span class="ds-card__cta">{item.cta} <span aria-hidden="true">→</span></span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="ds-section">
+    <h2>{c.foundations.heading}</h2>
+    <p class="ds-section__sub">{c.foundations.sub}</p>
+    <div class="ds-foundations">
+      {
+        c.foundations.items.map((item) => (
+          <a class="ds-tile" href={`${base}foundations/${item.key}/`}>
+            <div class={`ds-tile__art ds-tile__art--${item.key}`} aria-hidden="true">
+              {item.key === 'colors' && swatches.map((name) => <span class={`ds-dot ds-dot--${name}`} />)}
+              {item.key === 'typography' && <span class="ds-aa">Aa</span>}
+              {item.key === 'spacing' && [8, 16, 24, 32].map((size) => <span class={`ds-bar ds-bar--${size}`} />)}
+              {item.key === 'radius' && ['sm', 'lg', '2xl', 'pill'].map((size) => <span class={`ds-corner ds-corner--${size}`} />)}
+              {item.key === 'shadows' && ['sm', 'md', 'lg'].map((size) => <span class={`ds-lift ds-lift--${size}`} />)}
+              {item.key === 'motion' && <span class="ds-pulse" />}
+            </div>
+            <span class="ds-tile__title">{item.title}</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="ds-section">
+    <h2>{c.principles.heading}</h2>
+    <div class="ds-principles">
+      {c.principles.items.map((item) => <div><h3>{item.title}</h3><p>{item.text}</p></div>)}
+    </div>
+  </section>
+</div>

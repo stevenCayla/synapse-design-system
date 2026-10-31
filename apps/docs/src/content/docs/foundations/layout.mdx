@@ -1,0 +1,26 @@
+---
+title: "Layout"
+description: "Container, breakpoints, grid and stacking order."
+---
+
+import ScaleTable from '../../../components/foundations/ScaleTable.astro';
+
+## Breakpoints
+
+A CSS variable cannot be used in a media query, so breakpoints are not CSS variables: write the value, and read it here or in `tokens.json`.
+
+<ScaleTable prefix="breakpoint" />
+
+## Responsive behaviour
+
+Design from the narrowest screen. There must be no horizontal scroll at 320px, and content must stay usable at 200% zoom.
+
+## Container
+
+<ScaleTable prefix="layout" />
+
+## Stacking order
+
+Use these values for `z-index`, not a number of your own.
+
+<ScaleTable prefix="z" />

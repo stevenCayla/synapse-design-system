@@ -1,12 +1,26 @@
 ---
-title: Introduction
-description: Ce que contient le Synapse Design System et comment les applications le consomment.
+title: "Introduction"
+description: "Ce que contient le Synapse Design System et comment l’utiliser."
 ---
 
-Le Synapse Design System est la source de vérité de l'interface Synapse. Il fournit les jetons de design, les composants CSS, les partiels Twig et les règles d'usage.
+Le Synapse Design System est la source de vérité de l'interface Synapse. Il fournit les jetons de design, les composants CSS, les partiels Twig et les règles d'usage, pour les personnes et les agents de code qui construisent les écrans Synapse.
 
-Avant d'implémenter une interface, consulter le Synapse Design System.
+**Avant d'implémenter une interface, consulter le Synapse Design System.**
 
-## État
+## Ce qu'il contient
 
-Travaux préliminaires : les trois composants documentés ici valident la chaîne de rendu. Leur API peut encore changer.
+- **[Fondations](/fr/foundations/colors/) :** couleurs, typographie, espacements, mise en page, radius, ombres, mouvement et icônes, sous forme de jetons.
+- **[Composants](/fr/components/badge/) :** CSS, partiel Twig quand la structure le justifie, et exemples réels.
+- **[Règles d'accessibilité](/fr/accessibility/rules/) :** WCAG 2.2 AA, dans les deux thèmes.
+- **[Fichiers pour les outils](/fr/resources/files/) :** jetons en JSON et documentation complète en texte.
+
+## État actuel
+
+C'est une version préliminaire, et les applications ne l'utilisent pas encore. Les fondations sont définies ; le badge, l'alerte et la modale sont expérimentaux et leur API peut encore changer. D'autres composants et les patterns arrivent ensuite.
+
+## Choisir quoi utiliser
+
+1. Un composant ou un pattern existe : le réutiliser.
+2. Une variante d'un composant existant conviendrait : la proposer, si le besoin revient.
+3. C'est propre à une application : le garder dans celle-ci, avec les jetons.
+4. C'est générique, avec au moins deux usages réels ou proches : proposer un ajout par pull request.

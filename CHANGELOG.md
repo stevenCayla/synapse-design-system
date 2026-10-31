@@ -11,6 +11,8 @@ All notable changes to this project are documented here. The format follows [Kee
 - Migration table for the 174 variables of `synapse-app`, with `aliases.css` (current values) and `aliases-target.css` (tokens).
 - Inter, Fraunces and Nunito fonts, and the logo in the brand colour `#4f46e5`.
 - Stylelint rejects hard-coded colours, spacing, radii and font sizes.
+- Documentation site, in English and French: homepage, foundations generated from the tokens, accessibility rules, `/tokens.json`, `/llms.txt` and `/llms-full.txt`.
+- Deployment of the site to Cloudflare Workers: `main` to staging, a final release to production.
 
 ### Changed
 

@@ -16,7 +16,13 @@
     "./fixtures": {
       "types": "./scripts/fixtures.d.ts",
       "default": "./scripts/fixtures.mjs"
-    }
+    },
+    "./fonts.css": "./src/foundations/fonts.css",
+    "./contrast": {
+      "types": "./scripts/contrast.d.ts",
+      "default": "./scripts/contrast.mjs"
+    },
+    "./contrast-pairs.json": "./tokens/contrast-pairs.json"
   },
   "scripts": {
     "tokens": "node scripts/tokens.mjs",

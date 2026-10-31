@@ -1,6 +1,5 @@
 - id: confirmation
   title: Confirmation
-  height: 280
   source: |
     {% embed '@si/modal.html.twig' with {id: 'confirm-withdrawal', title: 'Withdraw the patient?', open: true} only %}
       {% block body %}<p>The patient stays in the study history.</p>{% endblock %}
