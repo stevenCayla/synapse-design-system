@@ -1,0 +1,30 @@
+{#
+  Parameters
+  ----------
+  title     string  translated title
+  subtitle  string  optional translated subtitle
+  icon      string  optional icon classes, decorative
+  accent    bool    coloured top edge. Set --si-card-accent on the card for another colour
+  href      string  makes the whole card a link
+  stats     array   optional [{label, value}]
+  level     int     heading level, 3 by default
+
+  Blocks: body, footer. Do not put a link or button inside a card that has href.
+#}
+{%- set level = level|default(3) -%}
+<{{ href is defined and href ? 'a' : 'article' }} class="si-card{% if accent is defined and accent %} si-card--accent{% endif %}{% if href is defined and href %} si-card--link{% endif %}"{% if href is defined and href %} href="{{ href }}"{% endif %}>
+    <div class="si-card__header">
+        {%- if icon is defined and icon %}<span class="si-card__icon"><i class="{{ icon }}" aria-hidden="true"></i></span>{% endif -%}
+        <div class="si-card__heading">
+            <h{{ level }} class="si-card__title">{{ title }}</h{{ level }}>
+            {%- if subtitle is defined and subtitle %}<p class="si-card__subtitle">{{ subtitle }}</p>{% endif -%}
+        </div>
+    </div>
+    <div class="si-card__body">{% block body %}{% endblock %}</div>
+    {%- if stats is defined and stats %}
+    <dl class="si-card__stats">
+        {%- for stat in stats %}<div class="si-card__stat"><dt>{{ stat.label }}</dt><dd>{{ stat.value }}</dd></div>{% endfor -%}
+    </dl>
+    {%- endif -%}
+    {%- block footer_wrapper %}{% if block('footer') is defined %}<div class="si-card__footer">{{ block('footer') }}</div>{% endif %}{% endblock -%}
+</{{ href is defined and href ? 'a' : 'article' }}>

@@ -44,9 +44,34 @@ jobs:
           include-hidden-files: true
           retention-days: 7
 
+  # Accessibility, behaviour, width and screenshots, in the image the references were made with.
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container: mcr.microsoft.com/playwright:v1.64.1-noble
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm exec playwright test
+      - name: Upload the differences
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-results
+          path: test-results/
+          retention-days: 7
+
   # main → dev-design. Production comes from a release, see release.yaml.
   deploy:
-    needs: build
+    needs: [build, browser]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10

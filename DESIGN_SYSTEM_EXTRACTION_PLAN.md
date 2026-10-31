@@ -861,6 +861,16 @@ pnpm validate    jetons et documentation            pnpm sync:app    copie vers 
 - Onglets Typographie et Couleurs de `/settings/design` couverts. Les « gris Bootstrap » disparaissent au profit de la palette.
 - **Limite :** la modale n'apparaît pas sur l'accueil : ses boutons ne seront stylés qu'avec le composant Button, en Phase 5.
 
+### Complément avant la Phase 4 (31/10/2026)
+
+Décision de Steven : compléter tout le catalogue de composants avant de toucher à l'application. La part « Design System » des Phases 5 et 6 est donc faite avant la Phase 4 ; il reste à ces phases leur part dans l'application.
+
+- **21 composants :** alerte, avatar, badge, bouton, carte, confirmation, champ, état vide, KPI, chargement, menu, modale, en-tête de page, pagination, puce, tableau, onglets, bascule de thème, tiroir, toast, volet dépliant. Aucun ne dépend de Bootstrap ; modale, tiroir et confirmation reposent sur `<dialog>`, le volet sur `<details>`, le menu sur `popover`. Tous restent `experimental` tant qu'une application ne les utilise pas.
+- **Tests sur chaque fixture :** axe dans les deux thèmes, largeur à 320px, captures de référence dans une image Docker, et scénarios clavier pour les comportements.
+- **Restent pour la migration :** thème de formulaire Symfony, utilitaires et grille copiés de Bootstrap, couche de compatibilité `window.showToast` et `window.confirmModal`, et remplacement dans les templates.
+- **Couverture de `/settings/design` :** les onglets de composants sont couverts. Restent le vocabulaire de statuts, les listes CRUD, les formulaires et la mise en page à deux colonnes, qui sont des patterns (Phase 7). Le sélecteur d'icône reste dans l'application : il ne sert qu'aux écrans eCRF.
+- **Limites :** la pile de toasts de l'application, où les toasts se superposent, devient une simple liste. Les contrôles manuels au lecteur d'écran restent à faire (Phase 9).
+
 ### Phase 4 : Première consommation par l'application, M
 
 - **Objectif :** étapes 1 et 2 du §18.3.

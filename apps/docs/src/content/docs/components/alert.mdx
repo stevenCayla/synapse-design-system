@@ -4,10 +4,50 @@ description: "A message about a state or the result of an action."
 status: experimental
 ---
 
+import DoDont from '../../../components/DoDont.astro';
 import Examples from '../../../components/Examples.astro';
 
-Use an alert for a message that concerns a whole page or section. Use the `alert` role only for what needs immediate attention.
+A message about a state or the result of an action.
+
+## Usage
+
+Use an alert for a message that concerns a whole page or section. For a short confirmation that leaves on its own, use a [toast](/components/toast/).
+
+## Variants
+
+- **Tones:** default, `success`, `warning`, `danger`, `info`.
+- **Note** (`variant: note`): a remark inside a page or a form.
+- **Banner** (`variant: banner`): a message at the top of a page.
+- **Icon**, **title** and rich content with `embed`.
+
+## States
+
+- **Dismissible:** `dismiss_label` adds a close button, with the behaviours script.
+
+## Dimensions
+
+It takes the width of its container.
+
+## Accessibility
+
+- `role="status"` by default. Use `role: alert` only for what needs immediate attention.
+- An icon is decorative: the text says the state.
+
+## Responsive
+
+The text wraps; the width follows the container.
 
 ## Examples
 
 <Examples component="alert" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Say what happened and what to do next.</Fragment>
+  <Fragment slot="dont">Do not stack several alerts, or use one for what a field error should say.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/alert.html.twig`: `tone`, `variant`, `title`, `text`, `icon`, `role`, `dismiss_label`, block `body`.

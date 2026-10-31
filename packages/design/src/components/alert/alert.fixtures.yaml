@@ -16,3 +16,19 @@
     {% embed '@si/alert.html.twig' with {tone: 'success', title: 'Import finished'} only %}
       {% block body %}<p>42 patients imported. <a href="#report">Open the report</a></p>{% endblock %}
     {% endembed %}
+- id: info-icon
+  title: Info, with an icon
+  source: |
+    {% include '@si/alert.html.twig' with {tone: 'info', icon: 'bi bi-info-circle-fill', text: 'A new version of the form is available.'} only %}
+- id: note
+  title: Note
+  source: |
+    {% include '@si/alert.html.twig' with {variant: 'note', text: 'The study eye is set once, at inclusion.'} only %}
+- id: banner
+  title: Banner
+  source: |
+    {% include '@si/alert.html.twig' with {tone: 'warning', variant: 'banner', icon: 'bi bi-exclamation-triangle-fill', text: 'Maintenance tonight from 10 pm.'} only %}
+- id: dismissible
+  title: Dismissible
+  source: |
+    {% include '@si/alert.html.twig' with {tone: 'info', text: 'Your changes were saved.', dismiss_label: 'Close'} only %}

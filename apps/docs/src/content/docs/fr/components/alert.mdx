@@ -4,10 +4,50 @@ description: "Un message sur un état ou le résultat d'une action."
 status: experimental
 ---
 
+import DoDont from '../../../../components/DoDont.astro';
 import Examples from '../../../../components/Examples.astro';
 
-Utilisez une alerte pour un message qui concerne toute une page ou une section. Réservez le rôle `alert` à ce qui demande une attention immédiate.
+Un message sur un état ou le résultat d'une action.
+
+## Usage
+
+Utilisez une alerte pour un message qui concerne toute une page ou une section. Pour une brève confirmation qui disparaît seule, utilisez un [toast](/fr/components/toast/).
+
+## Variantes
+
+- **Tonalités :** par défaut, `success`, `warning`, `danger`, `info`.
+- **Note** (`variant: note`) : une remarque dans une page ou un formulaire.
+- **Bannière** (`variant: banner`) : un message en haut de page.
+- **Icône**, **titre** et contenu riche avec `embed`.
+
+## États
+
+- **Fermable :** `dismiss_label` ajoute un bouton de fermeture, avec le script des comportements.
+
+## Dimensions
+
+Elle prend la largeur de son conteneur.
+
+## Accessibilité
+
+- `role="status"` par défaut. Réservez `role: alert` à ce qui demande une attention immédiate.
+- L'icône est décorative : le texte dit l'état.
+
+## Responsive
+
+Le texte passe à la ligne ; la largeur suit le conteneur.
 
 ## Exemples
 
 <Examples component="alert" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Dites ce qui s'est passé et quoi faire ensuite.</Fragment>
+  <Fragment slot="dont">N'empilez pas plusieurs alertes, et n'en utilisez pas à la place d'une erreur de champ.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/alert.html.twig` : `tone`, `variant`, `title`, `text`, `icon`, `role`, `dismiss_label`, bloc `body`.

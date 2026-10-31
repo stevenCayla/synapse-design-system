@@ -1,0 +1,87 @@
+- id: text
+  title: Text
+  source: |
+    {% embed '@si/field.html.twig' with {id: 'site-name', label: 'Site name', hint: 'As shown in the study documents.'} only %}
+      {% block control %}<input class="si-input" id="site-name" type="text" aria-describedby="site-name-hint">{% endblock %}
+    {% endembed %}
+- id: required
+  title: Required
+  source: |
+    {% embed '@si/field.html.twig' with {id: 'protocol', label: 'Protocol number', required: true, required_label: 'required'} only %}
+      {% block control %}<input class="si-input" id="protocol" type="text" required>{% endblock %}
+    {% endembed %}
+- id: invalid
+  title: Invalid
+  source: |
+    {% embed '@si/field.html.twig' with {id: 'visit-date', label: 'Visit date', error: 'The visit date cannot be in the future.'} only %}
+      {% block control %}<input class="si-input" id="visit-date" type="date" value="2030-01-15" aria-invalid="true" aria-describedby="visit-date-error">{% endblock %}
+    {% endembed %}
+- id: disabled
+  title: Disabled and read-only
+  source: |
+    <div class="si-stack">
+      {% embed '@si/field.html.twig' with {id: 'disabled-field', label: 'Disabled'} only %}
+        {% block control %}<input class="si-input" id="disabled-field" type="text" value="Not editable" disabled>{% endblock %}
+      {% endembed %}
+      {% embed '@si/field.html.twig' with {id: 'readonly-field', label: 'Read-only'} only %}
+        {% block control %}<input class="si-input" id="readonly-field" type="text" value="Locked after signature" readonly>{% endblock %}
+      {% endembed %}
+    </div>
+- id: select
+  title: Select
+  source: |
+    {% embed '@si/field.html.twig' with {id: 'site', label: 'Site'} only %}
+      {% block control %}<select class="si-input" id="site"><option>Lyon</option><option>Nantes</option></select>{% endblock %}
+    {% endembed %}
+- id: textarea
+  title: Textarea
+  source: |
+    {% embed '@si/field.html.twig' with {id: 'reason', label: 'Reason for change'} only %}
+      {% block control %}<textarea class="si-input" id="reason" rows="3"></textarea>{% endblock %}
+    {% endembed %}
+- id: checkbox
+  title: Checkbox
+  source: |
+    <fieldset class="si-fieldset">
+      <legend>Forms to include</legend>
+      <label class="si-check"><input class="si-check__input" type="checkbox" checked> Inclusion</label>
+      <label class="si-check"><input class="si-check__input" type="checkbox"> Follow-up</label>
+      <label class="si-check"><input class="si-check__input" type="checkbox" disabled> Closure</label>
+    </fieldset>
+- id: radio
+  title: Radio
+  source: |
+    <fieldset class="si-fieldset">
+      <legend>Study eye</legend>
+      <label class="si-check"><input class="si-check__input" type="radio" name="eye" checked> Right</label>
+      <label class="si-check"><input class="si-check__input" type="radio" name="eye"> Left</label>
+    </fieldset>
+- id: switch
+  title: Switch
+  source: |
+    <div class="si-stack">
+      <label class="si-check"><input class="si-check__input si-check__input--switch" type="checkbox" role="switch" checked> Email notifications</label>
+      <label class="si-check"><input class="si-check__input si-check__input--switch" type="checkbox" role="switch"> Weekly summary</label>
+      <label class="si-check"><input class="si-check__input si-check__input--switch" type="checkbox" role="switch" disabled> Locked option</label>
+    </div>
+- id: input-group
+  title: Input group
+  source: |
+    <div class="si-stack">
+      <div class="si-input-group">
+        <span class="si-input-group__addon" id="weight-unit">kg</span>
+        <input class="si-input" type="number" aria-label="Weight" aria-describedby="weight-unit">
+      </div>
+      <div class="si-input-group">
+        <input class="si-input" type="search" aria-label="Search a site">
+        <button type="button" class="si-btn">Search</button>
+      </div>
+    </div>
+- id: dropzone
+  title: File drop zone
+  source: |
+    <label class="si-dropzone">
+      <span class="si-dropzone__title">Choose a file or drop it here</span>
+      <span>CSV or XLSX, up to 20 MB</span>
+      <input class="si-sr-only" type="file">
+    </label>

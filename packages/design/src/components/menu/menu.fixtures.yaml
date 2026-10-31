@@ -1,0 +1,13 @@
+- id: actions
+  title: Actions
+  height: 220
+  source: |
+    <button type="button" class="si-btn si-btn--icon" popovertarget="row-actions" aria-label="Actions"><i class="bi bi-three-dots" aria-hidden="true"></i></button>
+    <div class="si-menu" id="row-actions" popover data-si-menu>
+      <ul class="si-menu__list">
+        <li><a class="si-menu__item" href="#edit"><i class="bi bi-pencil" aria-hidden="true"></i> Edit</a></li>
+        <li><button type="button" class="si-menu__item"><i class="bi bi-envelope" aria-hidden="true"></i> Send again</button></li>
+        <li class="si-menu__divider" role="presentation"></li>
+        <li><button type="button" class="si-menu__item si-menu__item--danger"><i class="bi bi-trash" aria-hidden="true"></i> Remove</button></li>
+      </ul>
+    </div>

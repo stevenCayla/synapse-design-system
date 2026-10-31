@@ -4,10 +4,49 @@ description: "A short label for a status or a category."
 status: experimental
 ---
 
+import DoDont from '../../../components/DoDont.astro';
 import Examples from '../../../components/Examples.astro';
 
-Use a badge to show a state or a category next to the element it describes. Do not rely on the colour alone: the text carries the meaning.
+A short label for a status or a category.
+
+## Usage
+
+Use a badge to show a state or a category next to the element it describes. The text carries the meaning, not the colour.
+
+## Variants
+
+- **Tones:** default, `success`, `warning`, `danger`, `info`, `neutral`.
+- **Pill** (`pill: true`) and **status dot** (`dot: true`).
+- **Icon:** `icon`, decorative.
+
+## States
+
+- A badge is static. To filter, use a [chip](/components/chip/).
+
+## Dimensions
+
+12px text in a line of about 22px.
+
+## Accessibility
+
+- The text says the state: never a colour alone.
+- Text is escaped, and each tone reaches 4.5:1 on its own background.
+
+## Responsive
+
+It stays on one line and follows the text around it.
 
 ## Examples
 
 <Examples component="badge" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Use the same tone for the same meaning across all screens.</Fragment>
+  <Fragment slot="dont">Do not make a badge clickable, or write a sentence in it.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/badge.html.twig`: `label`, `tone`, `pill`, `dot`, `icon`. The application maps its statuses to tones.

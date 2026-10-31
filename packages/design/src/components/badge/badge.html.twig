@@ -2,6 +2,12 @@
   Parameters
   ----------
   label  string  translated text
-  tone   string  '' | 'success' | 'warning' | 'danger'
+  tone   string  '' | 'success' | 'warning' | 'danger' | 'info' | 'neutral'
+  pill   bool    fully rounded
+  dot    bool    status dot before the text
+  icon   string  optional icon classes, decorative
 #}
-<span class="si-badge{% if tone is defined and tone %} si-badge--{{ tone }}{% endif %}">{{ label }}</span>
+<span class="si-badge{% if tone is defined and tone %} si-badge--{{ tone }}{% endif %}{% if pill is defined and pill %} si-badge--pill{% endif %}">
+    {%- if dot is defined and dot %}<span class="si-dot" aria-hidden="true"></span>{% endif -%}
+    {%- if icon is defined and icon %}<i class="{{ icon }}" aria-hidden="true"></i>{% endif -%}
+    {{ label }}</span>

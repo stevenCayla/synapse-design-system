@@ -1,0 +1,57 @@
+---
+title: "Bouton"
+description: "Lance une action sur la page."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Lance une action sur la page.
+
+## Usage
+
+Utilisez un bouton pour une action, et un lien pour aller ailleurs. Une zone d'écran a au plus un bouton principal.
+
+## Variantes
+
+- **Principal** (`si-btn--primary`) : l'action principale de la zone.
+- **Par défaut** (`si-btn`) : toute autre action.
+- **Discret** (`si-btn--ghost`) : une action peu mise en avant, par exemple dans une barre d'outils.
+- **Danger** (`si-btn--danger`) : une action qui supprime ou ne peut pas être annulée.
+- **Icône** (`si-btn--icon`), **pleine largeur** (`si-btn--block`) et **groupe** (`si-btn-group`).
+
+## États
+
+- Le survol, l'état actif et `:focus-visible` viennent du CSS.
+- **Désactivé :** l'attribut `disabled`, lisible dans les deux thèmes.
+- **Chargement :** `aria-busy="true"` et `aria-disabled="true"`, avec un indicateur, et l'application bloque l'action.
+
+## Dimensions
+
+`si-btn--sm` mesure 32px de haut, le format par défaut 36px et `si-btn--lg` 44px. Utilisez le grand format pour une action principale sur écran tactile.
+
+## Accessibilité
+
+- Utilisez `<button type="button">` ou un vrai lien, pas un `<div>`.
+- Une icône seule demande un `aria-label` dans la langue de l'utilisateur.
+- Le nom dit l'action : « Supprimer le centre », pas « OK ».
+
+## Responsive
+
+Le texte ne passe pas à la ligne. Sur écran étroit, utilisez `si-btn--block` ou laissez `si-cluster` répartir les boutons.
+
+## Exemples
+
+<Examples component="button" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Nommez l'action par un verbe, et gardez un seul bouton principal par zone.</Fragment>
+  <Fragment slot="dont">Ne désactivez pas un bouton sans dire pourquoi, et n'utilisez pas le style danger pour une action sans risque.</Fragment>
+</DoDont>
+
+## API
+
+Pas de partiel : le HTML ci-dessus est le contrat. Classes : `si-btn`, `si-btn--primary`, `--danger`, `--ghost`, `--sm`, `--lg`, `--icon`, `--block`, `si-btn-group`.

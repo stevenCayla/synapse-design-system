@@ -1,0 +1,53 @@
+---
+title: "Tabs"
+description: "Switches between views of the same subject."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Switches between views of the same subject.
+
+## Usage
+
+Use tabs when the views are at the same level and people rarely need them side by side.
+
+## Variants
+
+- **Panels in the page:** `data-si-tabs`, with the tab roles.
+- **Links between pages:** a `<nav>` with `aria-current="page"`.
+- **Count:** `si-tabs__count`.
+
+## States
+
+- Selected, hover and `:focus-visible`.
+
+## Dimensions
+
+Tabs are 36px high.
+
+## Accessibility
+
+- Arrows move between tabs and select them, Home and End go to the ends.
+- Only the selected tab is in the Tab order, then its panel.
+- Links between pages do not use the tab roles.
+
+## Responsive
+
+Tabs wrap on a narrow screen.
+
+## Examples
+
+<Examples component="tabs" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Write short labels, and keep the first tab the most used.</Fragment>
+  <Fragment slot="dont">Do not use tabs for steps to follow in order.</Fragment>
+</DoDont>
+
+## API
+
+No partial. Classes: `si-tabs`, `__list`, `__tab`, `__count`, `__panel`. Needs the behaviours script: `import '.../js/behaviors.js'`.

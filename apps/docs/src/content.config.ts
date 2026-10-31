@@ -7,7 +7,7 @@ export const collections = {
     loader: docsLoader(),
     schema: docsSchema({
       extend: z.object({
-        // Stable components must document every section (tooling/validate-docs.mjs).
+        // Experimental until an application uses the component in production.
         status: z.enum(['experimental', 'stable']).optional(),
       }),
     }),

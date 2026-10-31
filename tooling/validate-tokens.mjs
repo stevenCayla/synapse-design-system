@@ -69,8 +69,11 @@ if (readFileSync(join(dir, 'migration/TABLE.md'), 'utf8') !== migrationTable(tok
 const declared = new Set(tokens.filter((token) => token.css).map((token) => token.variable));
 const cssFiles = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', 'packages/design/src'], { encoding: 'utf8' }).split('\n').filter((file) => file.endsWith('.css'));
 for (const file of cssFiles) {
-  for (const [, name] of readFileSync(file, 'utf8').matchAll(/var\((--si-[\w-]+)/g)) {
-    if (!declared.has(name)) errors.push(`${file} reads an unknown token: ${name}.`);
+  const text = readFileSync(file, 'utf8');
+  // A component can declare its own settings, such as --si-card-accent.
+  const local = new Set([...text.matchAll(/(--si-[\w-]+)\s*:/g)].map((match) => match[1]));
+  for (const [, name] of text.matchAll(/var\((--si-[\w-]+)/g)) {
+    if (!declared.has(name) && !local.has(name)) errors.push(`${file} reads an unknown token: ${name}.`);
   }
 }
 

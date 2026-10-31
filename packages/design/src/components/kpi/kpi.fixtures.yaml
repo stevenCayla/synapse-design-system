@@ -1,0 +1,20 @@
+- id: row
+  title: Row
+  source: |
+    <div class="si-kpi-row">
+      {% include '@si/kpi.html.twig' with {label: 'Patients', value: '128', icon: 'bi bi-people'} only %}
+      {% include '@si/kpi.html.twig' with {label: 'Completed forms', value: '94%', sub: '12 left to fill', icon: 'bi bi-check2-circle', tone: 'success'} only %}
+      {% include '@si/kpi.html.twig' with {label: 'Open queries', value: '7', icon: 'bi bi-question-circle', tone: 'warning'} only %}
+      {% include '@si/kpi.html.twig' with {label: 'Expired consents', value: '2', icon: 'bi bi-exclamation-triangle', tone: 'danger'} only %}
+    </div>
+- id: filter
+  title: As a filter
+  source: |
+    <div class="si-kpi-row">
+      {% include '@si/kpi.html.twig' with {label: 'All', value: '42', pressed: true} only %}
+      {% include '@si/kpi.html.twig' with {label: 'Invited', value: '5', pressed: false} only %}
+    </div>
+- id: link
+  title: As a link
+  source: |
+    {% include '@si/kpi.html.twig' with {label: 'Sites', value: '9', icon: 'bi bi-hospital', tone: 'info', href: '#sites'} only %}

@@ -25,3 +25,25 @@
   background: var(--si-color-danger-soft);
   color: var(--si-color-danger);
 }
+
+.si-badge--info {
+  background: var(--si-color-info-soft);
+  color: var(--si-color-info);
+}
+
+.si-badge--neutral {
+  background: var(--si-color-state-active);
+  color: var(--si-color-text-muted);
+}
+
+.si-badge--pill {
+  border-radius: var(--si-radius-pill);
+}
+
+.si-dot {
+  flex: none;
+  width: var(--si-space-6);
+  height: var(--si-space-6);
+  border-radius: var(--si-radius-pill);
+  background: currentcolor;
+}

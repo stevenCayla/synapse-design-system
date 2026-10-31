@@ -1,3 +1,4 @@
+import { readdirSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
@@ -5,6 +6,10 @@ import starlightLlmsTxt from 'starlight-llms-txt';
 import externalizeInlineScripts from './integrations/externalize-inline-scripts.mjs';
 
 const section = (label, fr, items) => ({ label, translations: { fr }, items });
+const components = readdirSync(new URL('../../packages/design/src/components', import.meta.url), { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name)
+  .sort();
 
 export default defineConfig({
   site: 'https://design.synapse-medical.fr',
@@ -44,7 +49,7 @@ export default defineConfig({
       sidebar: [
         section('Getting started', 'Démarrer', [{ slug: 'getting-started/introduction' }, { slug: 'getting-started/installation' }]),
         section('Foundations', 'Fondations', ['colors', 'typography', 'spacing', 'layout', 'radius', 'shadows', 'motion', 'icons'].map((name) => ({ slug: `foundations/${name}` }))),
-        section('Components', 'Composants', ['alert', 'badge', 'modal'].map((name) => ({ slug: `components/${name}` }))),
+        section('Components', 'Composants', components.map((name) => ({ slug: `components/${name}` }))),
         section('Accessibility', 'Accessibilité', [{ slug: 'accessibility/rules' }]),
         section('Resources', 'Ressources', [{ slug: 'resources/files' }, { slug: 'ai/coding-agents' }]),
       ],

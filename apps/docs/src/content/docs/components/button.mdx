@@ -1,0 +1,57 @@
+---
+title: "Button"
+description: "Starts an action on the page."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Starts an action on the page.
+
+## Usage
+
+Use a button for an action, and a link to go somewhere. A screen area has at most one primary button.
+
+## Variants
+
+- **Primary** (`si-btn--primary`): the main action of the area.
+- **Default** (`si-btn`): any other action.
+- **Ghost** (`si-btn--ghost`): a low-emphasis action, such as in a toolbar.
+- **Danger** (`si-btn--danger`): an action that deletes or cannot be undone.
+- **Icon** (`si-btn--icon`), **full width** (`si-btn--block`) and **group** (`si-btn-group`).
+
+## States
+
+- Hover, active and `:focus-visible` come from CSS.
+- **Disabled:** the `disabled` attribute, readable in both themes.
+- **Loading:** `aria-busy="true"` and `aria-disabled="true"`, with a spinner, and the action stays blocked by the application.
+
+## Dimensions
+
+`si-btn--sm` is 32px, the default 36px and `si-btn--lg` 44px high. Use the large size for a main action on a touch screen.
+
+## Accessibility
+
+- Use `<button type="button">` or a real link, not a `<div>`.
+- An icon alone needs an `aria-label` in the language of the user.
+- The name says the action: "Delete the site", not "OK".
+
+## Responsive
+
+Text does not wrap. On a narrow screen, use `si-btn--block` or let `si-cluster` wrap the buttons.
+
+## Examples
+
+<Examples component="button" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Name the action with a verb, and keep one primary button per area.</Fragment>
+  <Fragment slot="dont">Do not disable a button without saying why, or use the danger style for a safe action.</Fragment>
+</DoDont>
+
+## API
+
+No partial: the HTML above is the contract. Classes: `si-btn`, `si-btn--primary`, `--danger`, `--ghost`, `--sm`, `--lg`, `--icon`, `--block`, `si-btn-group`.

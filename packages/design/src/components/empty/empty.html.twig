@@ -1,0 +1,22 @@
+{#
+  Empty state, or a state that replaces missing content, such as a loading error.
+
+  Parameters
+  ----------
+  title    string  translated title
+  text     string  optional translated explanation
+  icon     string  optional icon classes, decorative
+  tone     string  '' | 'danger' for an error
+  compact  bool    less padding, inside a card or a drawer
+  role     string  'alert' when it appears as the result of an action
+  level    int     heading level, 3 by default
+
+  Block: actions.
+#}
+{%- set level = level|default(3) -%}
+<div class="si-empty{% if tone is defined and tone %} si-empty--{{ tone }}{% endif %}{% if compact is defined and compact %} si-empty--compact{% endif %}"{% if role is defined and role %} role="{{ role }}"{% endif %}>
+    {%- if icon is defined and icon %}<i class="si-empty__icon {{ icon }}" aria-hidden="true"></i>{% endif -%}
+    <h{{ level }} class="si-empty__title">{{ title }}</h{{ level }}>
+    {%- if text is defined and text %}<p class="si-empty__text">{{ text }}</p>{% endif -%}
+    {%- block actions_wrapper %}{% if block('actions') is defined %}<div class="si-empty__actions">{{ block('actions') }}</div>{% endif %}{% endblock -%}
+</div>

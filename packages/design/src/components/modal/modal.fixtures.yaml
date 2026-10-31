@@ -1,7 +1,16 @@
 - id: confirmation
-  title: Confirmation
+  title: Rendered in the page
   source: |
-    {% embed '@si/modal.html.twig' with {id: 'confirm-withdrawal', title: 'Withdraw the patient?', open: true} only %}
+    {% embed '@si/modal.html.twig' with {id: 'confirm-withdrawal', title: 'Withdraw the patient?', close_label: 'Close', open: true} only %}
       {% block body %}<p>The patient stays in the study history.</p>{% endblock %}
-      {% block footer %}<button type="button">Cancel</button><button type="button">Withdraw</button>{% endblock %}
+      {% block footer %}<button type="button" class="si-btn" data-si-close>Cancel</button><button type="button" class="si-btn si-btn--danger" data-si-close>Withdraw</button>{% endblock %}
+    {% endembed %}
+- id: trigger
+  title: Opened by a button
+  height: 280
+  source: |
+    <button type="button" class="si-btn si-btn--primary" data-si-open="site-modal">Add a site</button>
+    {% embed '@si/modal.html.twig' with {id: 'site-modal', title: 'Add a site', close_label: 'Close', size: 'sm'} only %}
+      {% block body %}<p>The new site starts as a draft.</p>{% endblock %}
+      {% block footer %}<button type="button" class="si-btn" data-si-close>Cancel</button><button type="button" class="si-btn si-btn--primary" data-si-close>Add</button>{% endblock %}
     {% endembed %}

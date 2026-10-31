@@ -1,0 +1,24 @@
+- id: panels
+  title: Panels in the page
+  height: 150
+  source: |
+    <div class="si-tabs" data-si-tabs>
+      <div class="si-tabs__list" role="tablist" aria-label="People">
+        <button type="button" class="si-tabs__tab" role="tab" id="tab-members" aria-controls="panel-members" aria-selected="true">Members <span class="si-tabs__count">12</span></button>
+        <button type="button" class="si-tabs__tab" role="tab" id="tab-invitations" aria-controls="panel-invitations" aria-selected="false" tabindex="-1">Invitations</button>
+        <button type="button" class="si-tabs__tab" role="tab" id="tab-history" aria-controls="panel-history" aria-selected="false" tabindex="-1">History</button>
+      </div>
+      <div class="si-tabs__panel" role="tabpanel" id="panel-members" aria-labelledby="tab-members" tabindex="0"><p>The members of the organisation.</p></div>
+      <div class="si-tabs__panel" role="tabpanel" id="panel-invitations" aria-labelledby="tab-invitations" tabindex="0" hidden><p>The invitations waiting for an answer.</p></div>
+      <div class="si-tabs__panel" role="tabpanel" id="panel-history" aria-labelledby="tab-history" tabindex="0" hidden><p>The changes made to the organisation.</p></div>
+    </div>
+- id: links
+  title: Links between pages
+  source: |
+    <nav class="si-tabs" aria-label="Study">
+      <ul class="si-tabs__list">
+        <li><a class="si-tabs__tab" href="#overview" aria-current="page">Overview</a></li>
+        <li><a class="si-tabs__tab" href="#patients">Patients</a></li>
+        <li><a class="si-tabs__tab" href="#forms">Forms</a></li>
+      </ul>
+    </nav>

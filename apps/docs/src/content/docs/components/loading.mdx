@@ -1,0 +1,52 @@
+---
+title: "Loading"
+description: "Shows that content is on its way."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Shows that content is on its way.
+
+## Usage
+
+Use the skeleton when the layout of the content is known, and the spinner otherwise. In a button, see [button](/components/button/).
+
+## Variants
+
+- **Spinner with a label:** the partial.
+- **Spinner alone:** `si-spinner`, `si-spinner--sm`.
+- **Skeleton:** `si-skeleton--text`, `si-skeleton--block`.
+
+## States
+
+- Animated, and still under `prefers-reduced-motion`.
+
+## Dimensions
+
+Spinner of 20px, or 14px in small. A skeleton takes the size of its container.
+
+## Accessibility
+
+- `role="status"` announces the wait: give it a name.
+- A decorative spinner has `aria-hidden="true"`.
+
+## Responsive
+
+It follows its container.
+
+## Examples
+
+<Examples component="loading" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Say what is loading.</Fragment>
+  <Fragment slot="dont">Do not show a spinner for what appears at once.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/loading.html.twig`: `label`. Classes: `si-spinner`, `si-skeleton`.

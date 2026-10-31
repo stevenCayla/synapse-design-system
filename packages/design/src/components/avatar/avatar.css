@@ -1,0 +1,44 @@
+.si-avatar {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--si-size-avatar-md);
+  height: var(--si-size-avatar-md);
+  overflow: hidden;
+  border-radius: var(--si-radius-md);
+  background: var(--si-color-accent-soft);
+  color: var(--si-color-accent-strong);
+  font-size: var(--si-font-size-xs);
+  font-weight: var(--si-font-weight-semibold);
+  text-transform: uppercase;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.si-avatar--sm {
+  width: var(--si-size-avatar-sm);
+  height: var(--si-size-avatar-sm);
+  border-radius: var(--si-radius-sm);
+}
+
+.si-avatar--lg {
+  width: var(--si-size-avatar-lg);
+  height: var(--si-size-avatar-lg);
+  font-size: var(--si-font-size-md);
+}
+
+.si-avatar--xl {
+  width: var(--si-size-avatar-xl);
+  height: var(--si-size-avatar-xl);
+  border-radius: var(--si-radius-xl);
+  font-size: var(--si-font-size-xl);
+}
+
+.si-avatar--round {
+  border-radius: var(--si-radius-pill);
+}

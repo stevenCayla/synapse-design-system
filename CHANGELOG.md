@@ -13,10 +13,14 @@ All notable changes to this project are documented here. The format follows [Kee
 - Stylelint rejects hard-coded colours, spacing, radii and font sizes.
 - Documentation site, in English and French: homepage, foundations generated from the tokens, accessibility rules, `/tokens.json`, `/llms.txt` and `/llms-full.txt`.
 - Deployment of the site to Cloudflare Workers: `main` to staging, a final release to production.
+- Components: avatar, button, card, chip, confirmation, disclosure, drawer, empty state, field, KPI, loading, menu, page header, pagination, table, tabs, theme toggle and toast. All are experimental until an application uses them.
+- Behaviours in `behaviors.js`, on native `<dialog>`, `<details>` and `popover`: `confirmDialog`, `showToast`, `loadDrawer`, `setTheme`.
+- Browser tests on every fixture: axe in both themes, width at 320px and reference screenshots, plus keyboard and focus scenarios.
 
 ### Changed
 
 - Components read the generated tokens. Spacing tokens are named by their value (`--si-space-16`).
+- Badge, alert and modal: more tones and variants, and every component page documents usage, variants, states, dimensions, accessibility, responsive behaviour, examples and API.
 
 ## [0.0.1-alpha.3] - 2026-10-31
 

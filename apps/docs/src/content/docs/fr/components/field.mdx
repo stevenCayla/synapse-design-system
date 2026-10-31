@@ -1,0 +1,58 @@
+---
+title: "Champ"
+description: "Un contrôle de formulaire avec son libellé, son aide et son erreur."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Un contrôle de formulaire avec son libellé, son aide et son erreur.
+
+## Usage
+
+Utilisez-le pour chaque saisie. Le partiel ajoute le libellé, l'aide et l'erreur ; le contrôle reste le vôtre, n'importe quelle saisie convient donc.
+
+## Variantes
+
+- **Input, select, textarea :** `si-input` sur l'élément natif.
+- **Case à cocher et bouton radio :** `si-check`, regroupés dans `si-fieldset` avec une `<legend>`.
+- **Interrupteur :** `si-check__input--switch` avec `role="switch"`, pour un réglage appliqué aussitôt.
+- **Groupe de saisie :** `si-input-group`, avec un texte ou un bouton.
+- **Zone de dépôt :** `si-dropzone`, autour d'une vraie saisie de fichier.
+
+## États
+
+- **Obligatoire :** `required` sur le contrôle, et `required: true` pour la marque.
+- **Invalide :** `aria-invalid="true"`, avec l'erreur reliée par `aria-describedby`.
+- **Désactivé** et **lecture seule :** les attributs natifs.
+
+## Dimensions
+
+Un contrôle mesure 36px de haut, ou 32px avec `si-input--sm`. Les cases mesurent 16px, dans un libellé qui reste cliquable.
+
+## Accessibilité
+
+- Chaque contrôle a un libellé visible, relié par `for` et `id`.
+- Une erreur dit quoi faire, et elle est reliée au contrôle.
+- La marque d'obligation ne suffit pas seule : passez `required_label`.
+- Un groupe d'options va dans un `<fieldset>` avec une `<legend>`.
+
+## Responsive
+
+Les contrôles remplissent leur conteneur. Disposez plusieurs champs avec `si-stack` ou votre grille.
+
+## Exemples
+
+<Examples component="field" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Gardez le libellé visible, et écrivez l'erreur à côté du champ.</Fragment>
+  <Fragment slot="dont">N'utilisez pas un texte indicatif comme libellé, et n'indiquez pas une erreur par la seule couleur.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/field.html.twig` : `id`, `label`, `required`, `required_label`, `hint`, `error`, bloc `control`. Un thème de formulaire Symfony arrive avec la migration de l'application.

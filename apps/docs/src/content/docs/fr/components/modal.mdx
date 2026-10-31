@@ -4,10 +4,49 @@ description: "Une boîte de dialogue qui interrompt la page pour demander une d�
 status: experimental
 ---
 
+import DoDont from '../../../../components/DoDont.astro';
 import Examples from '../../../../components/Examples.astro';
 
-Utilisez une modale uniquement pour une décision à prendre avant de continuer. Son comportement d'ouverture et de fermeture arrive avec les composants complexes.
+Une boîte de dialogue qui interrompt la page pour demander une décision.
+
+## Usage
+
+Utilisez une modale uniquement pour une décision ou une courte tâche à terminer avant de continuer. Pour un long contenu à côté de la page, utilisez un [tiroir](/fr/components/drawer/).
+
+## Variantes
+
+- Tailles : `sm`, par défaut, `lg`.
+- Avec un bouton de fermeture dans l'en-tête (`close_label`).
+
+## États
+
+- Ouverte par un bouton avec `data-si-open`, fermée par `data-si-close` ou Échap.
+
+## Dimensions
+
+400px (`sm`), 560px, 800px (`lg`), et jamais plus large que l'écran. Un long contenu défile.
+
+## Accessibilité
+
+- C'est un `<dialog>` natif : le navigateur piège le focus et le rend à la fermeture.
+- Le titre est relié par `aria-labelledby`.
+- Le reste de la page est inerte tant qu'elle est ouverte.
+
+## Responsive
+
+Elle garde une marge de 16px sur les plus petits écrans.
 
 ## Exemples
 
 <Examples component="modal" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Donnez des libellés clairs : « Retirer », pas « OK ».</Fragment>
+  <Fragment slot="dont">N'ouvrez pas une modale depuis une modale, et n'en utilisez pas pour une simple information.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/modal.html.twig` : `id`, `title`, `size`, `close_label`, `open`, blocs `body`, `footer`. Demande le script des comportements : `import '.../js/behaviors.js'`.

@@ -22,7 +22,8 @@
       "types": "./scripts/contrast.d.ts",
       "default": "./scripts/contrast.mjs"
     },
-    "./contrast-pairs.json": "./tokens/contrast-pairs.json"
+    "./contrast-pairs.json": "./tokens/contrast-pairs.json",
+    "./behaviors": "./src/behaviors.js"
   },
   "scripts": {
     "tokens": "node scripts/tokens.mjs",

@@ -1,0 +1,53 @@
+---
+title: "Table"
+description: "Compares items across the same columns."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Compares items across the same columns.
+
+## Usage
+
+Use a table for data to compare. For a few items with different content, use a list or cards.
+
+## Variants
+
+- **Default** and **compact** (`si-table--compact`).
+- **Toolbar** (`si-toolbar`): search, filters and count.
+- `si-table__number` aligns figures.
+
+## States
+
+- Row hover. For no data, use an [empty state](/components/empty/) in place of the table; while loading, a [skeleton](/components/loading/).
+
+## Dimensions
+
+Text of 13px. Compact reduces the cell padding.
+
+## Accessibility
+
+- Headers use `<th scope="col">`.
+- `si-table-wrap` scrolls on its own: it needs `tabindex="0"`, `role="region"` and a name, so the keyboard can reach it.
+- A `<caption>` names the table when no title does.
+
+## Responsive
+
+The table scrolls inside `si-table-wrap`; the page does not.
+
+## Examples
+
+<Examples component="table" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Align figures on the right, and keep the actions in the last column.</Fragment>
+  <Fragment slot="dont">Do not use a table for layout.</Fragment>
+</DoDont>
+
+## API
+
+No partial: the HTML is the contract. Classes: `si-table-wrap`, `si-table`, `--compact`, `si-table__number`, `si-toolbar`, `__search`, `__filter`, `__count`.

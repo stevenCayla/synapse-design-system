@@ -1,0 +1,52 @@
+---
+title: "Toast"
+description: "A short message that does not interrupt."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+A short message that does not interrupt.
+
+## Usage
+
+Use it to confirm the result of an action. For a message to keep on the page, use an [alert](/components/alert/).
+
+## Variants
+
+- **Tones:** default, `success`, `warning`, `danger`, `info`.
+- **From the server** (flash messages), with the partial, or **from a script** with `showToast`.
+
+## States
+
+- It leaves after 6 seconds, and waits while the pointer or the focus is on it.
+- An error stays until it is closed.
+
+## Dimensions
+
+Up to 420px wide, at the bottom of the screen.
+
+## Accessibility
+
+- The region is `aria-live="polite"`, and an error has `role="alert"`.
+- Never put a required action in a toast: it leaves.
+
+## Responsive
+
+It leaves a 16px margin on the smallest screens.
+
+## Examples
+
+<Examples component="toast" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Keep it to one short sentence.</Fragment>
+  <Fragment slot="dont">Do not use it for an error the person must correct in a form.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/toast.html.twig`: `label`, `close_label`, `toasts` as `[{message, tone, duration}]`. JS: `showToast(message, {tone, duration})`. Attribute: `data-si-toast`. Needs the behaviours script: `import '.../js/behaviors.js'`.

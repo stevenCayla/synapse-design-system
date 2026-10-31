@@ -1,0 +1,52 @@
+---
+title: "Chargement"
+description: "Indique qu'un contenu arrive."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Indique qu'un contenu arrive.
+
+## Usage
+
+Utilisez le squelette quand la disposition du contenu est connue, et l'indicateur sinon. Dans un bouton, voir [bouton](/fr/components/button/).
+
+## Variantes
+
+- **Indicateur avec libellé :** le partiel.
+- **Indicateur seul :** `si-spinner`, `si-spinner--sm`.
+- **Squelette :** `si-skeleton--text`, `si-skeleton--block`.
+
+## États
+
+- Animé, et immobile avec `prefers-reduced-motion`.
+
+## Dimensions
+
+Indicateur de 20px, ou 14px en petit. Un squelette prend la taille de son conteneur.
+
+## Accessibilité
+
+- `role="status"` annonce l'attente : donnez-lui un nom.
+- Un indicateur décoratif a `aria-hidden="true"`.
+
+## Responsive
+
+Il suit son conteneur.
+
+## Exemples
+
+<Examples component="loading" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Dites ce qui se charge.</Fragment>
+  <Fragment slot="dont">N'affichez pas d'indicateur pour ce qui apparaît aussitôt.</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/loading.html.twig` : `label`. Classes : `si-spinner`, `si-skeleton`.

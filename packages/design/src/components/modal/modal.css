@@ -1,14 +1,31 @@
 .si-modal {
   width: min(560px, calc(100vw - var(--si-space-32)));
+  max-height: calc(100dvh - var(--si-space-32));
   padding: 0;
+  overflow: hidden;
   border: 1px solid var(--si-color-border);
   border-radius: var(--si-radius-xl);
   background: var(--si-color-surface);
+  box-shadow: var(--si-shadow-lg);
   color: var(--si-color-text);
+  font-size: var(--si-font-size-md);
+
+  &[open] {
+    display: flex;
+    flex-direction: column;
+  }
 
   &::backdrop {
     background: var(--si-color-backdrop);
   }
+}
+
+.si-modal--sm {
+  width: min(400px, calc(100vw - var(--si-space-32)));
+}
+
+.si-modal--lg {
+  width: min(800px, calc(100vw - var(--si-space-32)));
 }
 
 .si-modal__header,
@@ -18,6 +35,11 @@
 }
 
 .si-modal__header {
+  display: flex;
+  flex: none;
+  gap: var(--si-space-12);
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid var(--si-color-border);
 }
 
@@ -27,9 +49,28 @@
   font-weight: var(--si-font-weight-semibold);
 }
 
+.si-modal__body {
+  flex: 1;
+  overflow-y: auto;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
 .si-modal__footer {
   display: flex;
-  justify-content: flex-end;
+  flex: none;
+  flex-wrap: wrap;
   gap: var(--si-space-8);
+  justify-content: flex-end;
   border-top: 1px solid var(--si-color-border);
+}
+
+html:has(dialog:modal) {
+  overflow: hidden;
 }

@@ -1,0 +1,52 @@
+---
+title: "Drawer"
+description: "A panel beside the page, for details or a longer task."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+A panel beside the page, for details or a longer task.
+
+## Usage
+
+Use a drawer to show the details of an item or a form without leaving the list.
+
+## Variants
+
+- Sizes: `sm` (360px), default (480px), `lg` (720px).
+- **Loaded on opening:** `url`, or `data-si-load-url` on the button for the item it opens.
+
+## States
+
+- Opened with `data-si-open`, closed by `data-si-close` or Escape.
+- While it loads, a loading message; if it fails, an error with `error_title`.
+
+## Dimensions
+
+The height of the screen. It takes the full width on a phone.
+
+## Accessibility
+
+- It is a native `<dialog>`: focus trapped, then given back.
+- The loading message and the error are announced.
+
+## Responsive
+
+It takes the full width when the screen is narrower than its size.
+
+## Examples
+
+<Examples component="drawer" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Keep the list visible behind it, so the context stays.</Fragment>
+  <Fragment slot="dont">Do not use it for a decision that blocks: use a [modal](/components/modal/).</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/drawer.html.twig`: `id`, `title`, `close_label`, `size`, `url`, `loading_label`, `error_title`, blocks `body`, `footer`. JS: `loadDrawer(drawer, url)`. Needs the behaviours script: `import '.../js/behaviors.js'`.

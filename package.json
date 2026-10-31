@@ -16,13 +16,17 @@
     "test:parity": "node tooling/twig-parity/run.mjs",
     "validate": "pnpm tokens && node tooling/validate-tokens.mjs",
     "validate:docs": "node tooling/validate-docs.mjs",
-    "release": "node tooling/release.mjs"
+    "release": "node tooling/release.mjs",
+    "test:browser": "playwright test --project=browser",
+    "test:visual": "sh tooling/test-visual.sh"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.14.0",
     "globals": "^17.0.0",
     "stylelint": "^17.16.0",
-    "stylelint-config-standard": "^40.0.0"
+    "stylelint-config-standard": "^40.0.0",
+    "@playwright/test": "1.64.1",
+    "@axe-core/playwright": "4.14.0"
   }
 }

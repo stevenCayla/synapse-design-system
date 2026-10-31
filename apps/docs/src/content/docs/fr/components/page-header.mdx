@@ -1,0 +1,49 @@
+---
+title: "En-tête de page"
+description: "Le titre d'une page, avec son contexte et ses actions."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Le titre d'une page, avec son contexte et ses actions.
+
+## Usage
+
+Utilisez-le une seule fois, en haut d'un écran.
+
+## Variantes
+
+- Avec un **surtitre**, un **sous-titre** et des **actions**, ou le titre seul.
+
+## États
+
+- Statique.
+
+## Dimensions
+
+Titre en `--si-font-size-3xl`.
+
+## Accessibilité
+
+- Il contient le seul `<h1>` de la page.
+
+## Responsive
+
+Les actions passent sous le titre quand la place manque.
+
+## Exemples
+
+<Examples component="page-header" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Gardez l'action principale à droite, et un titre court.</Fragment>
+  <Fragment slot="dont">N'y mettez pas plus de quelques actions : utilisez un [menu](/fr/components/menu/).</Fragment>
+</DoDont>
+
+## API
+
+Partiel `@si/page-header.html.twig` : `title`, `eyebrow`, `subtitle`, bloc `actions`.

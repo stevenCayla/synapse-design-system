@@ -1,0 +1,12 @@
+- id: spinner
+  title: With a label
+  source: |
+    {% include '@si/loading.html.twig' with {label: 'Loading the sites'} only %}
+- id: skeleton
+  title: Skeleton
+  source: |
+    <div class="si-stack" role="status" aria-label="Loading the list">
+      <span class="si-skeleton si-skeleton--text"></span>
+      <span class="si-skeleton si-skeleton--text"></span>
+      <span class="si-skeleton si-skeleton--block"></span>
+    </div>

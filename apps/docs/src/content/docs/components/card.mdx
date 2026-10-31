@@ -1,0 +1,54 @@
+---
+title: "Card"
+description: "Groups the content about one subject."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Groups the content about one subject.
+
+## Usage
+
+Use a card for an item in a grid, or a block of related content. A plain section with a heading is often enough.
+
+## Variants
+
+- With an **icon**, **subtitle** and **figures** (`stats`).
+- **Accent** (`accent: true`): a coloured top edge, set by `--si-card-accent`.
+- **Footer** (block `footer`) for actions.
+- **Clickable** (`href`): the whole card is a link.
+
+## States
+
+- A clickable card has hover and `:focus-visible` states.
+
+## Dimensions
+
+It fills its container. Spacing comes from the tokens.
+
+## Accessibility
+
+- Choose the heading level with `level`, to keep the order of the page.
+- A clickable card contains no other link or button.
+- An accent colour is decorative.
+
+## Responsive
+
+Lay out cards with your own grid. Figures wrap.
+
+## Examples
+
+<Examples component="card" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Keep one subject per card.</Fragment>
+  <Fragment slot="dont">Do not nest cards.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/card.html.twig`: `title`, `subtitle`, `icon`, `accent`, `href`, `stats`, `level`, blocks `body`, `footer`.

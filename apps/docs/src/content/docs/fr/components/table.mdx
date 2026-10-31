@@ -1,0 +1,53 @@
+---
+title: "Tableau"
+description: "Compare des éléments selon les mêmes colonnes."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Compare des éléments selon les mêmes colonnes.
+
+## Usage
+
+Utilisez un tableau pour des données à comparer. Pour quelques éléments au contenu différent, utilisez une liste ou des cartes.
+
+## Variantes
+
+- **Par défaut** et **compact** (`si-table--compact`).
+- **Barre d'outils** (`si-toolbar`) : recherche, filtres et compteur.
+- `si-table__number` aligne les chiffres.
+
+## États
+
+- Survol des lignes. Sans donnée, utilisez un [état vide](/fr/components/empty/) à la place du tableau ; pendant le chargement, un [squelette](/fr/components/loading/).
+
+## Dimensions
+
+Texte de 13px. Le format compact réduit les marges des cellules.
+
+## Accessibilité
+
+- Les en-têtes utilisent `<th scope="col">`.
+- `si-table-wrap` défile tout seul : il demande `tabindex="0"`, `role="region"` et un nom, pour être atteint au clavier.
+- Un `<caption>` nomme le tableau quand aucun titre ne le fait.
+
+## Responsive
+
+Le tableau défile dans `si-table-wrap` ; la page non.
+
+## Exemples
+
+<Examples component="table" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Alignez les chiffres à droite, et gardez les actions dans la dernière colonne.</Fragment>
+  <Fragment slot="dont">N'utilisez pas un tableau pour la mise en page.</Fragment>
+</DoDont>
+
+## API
+
+Pas de partiel : le HTML est le contrat. Classes : `si-table-wrap`, `si-table`, `--compact`, `si-table__number`, `si-toolbar`, `__search`, `__filter`, `__count`.

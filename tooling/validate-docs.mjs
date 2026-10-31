@@ -7,10 +7,13 @@ const contentDir = 'apps/docs/src/content/docs';
 const distDir = 'apps/docs/dist';
 const errors = [];
 
-const STABLE_SECTIONS = ['Usage', 'Variants', 'States', 'Dimensions', 'Accessibility', 'Responsive', 'Examples', "Do and don't", 'API'];
+const SECTIONS = {
+  '': ['Usage', 'Variants', 'States', 'Dimensions', 'Accessibility', 'Responsive', 'Examples', "Do and don't", 'API'],
+  'fr/': ['Usage', 'Variantes', 'États', 'Dimensions', 'Accessibilité', 'Responsive', 'Exemples', 'À faire et à éviter', 'API'],
+};
 
 for (const component of listComponents()) {
-  for (const locale of ['', 'fr/']) {
+  for (const [locale, sections] of Object.entries(SECTIONS)) {
     const file = join(contentDir, `${locale}components/${component}.mdx`);
     if (!existsSync(file)) {
       errors.push(`${file} is missing.`);
@@ -18,10 +21,8 @@ for (const component of listComponents()) {
     }
     const text = readFileSync(file, 'utf8');
     if (!text.includes(`<Examples component="${component}"`)) errors.push(`${file} does not show its examples.`);
-    if (locale === '' && /^status: stable$/m.test(text)) {
-      for (const section of STABLE_SECTIONS) {
-        if (!text.includes(`## ${section}`)) errors.push(`${file} is stable but has no "${section}" section.`);
-      }
+    for (const section of sections) {
+      if (!text.includes(`## ${section}`)) errors.push(`${file} has no "${section}" section.`);
     }
   }
 }

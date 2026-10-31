@@ -1,0 +1,22 @@
+{#
+  Parameters
+  ----------
+  label    string  translated label
+  value    string  the figure
+  sub      string  optional translated line under the figure
+  icon     string  optional icon classes, decorative
+  tone     string  '' | 'success' | 'warning' | 'danger' | 'info'
+  href     string  makes it a link
+  pressed  bool    makes it a filter button, in the given state
+
+  Do not rely on the tone alone: the label says what the figure means.
+#}
+{%- set tag = href is defined and href ? 'a' : (pressed is defined ? 'button' : 'div') -%}
+<{{ tag }} class="si-kpi{% if tone is defined and tone %} si-kpi--{{ tone }}{% endif %}"
+    {%- if tag == 'a' %} href="{{ href }}"{% endif %}
+    {%- if tag == 'button' %} type="button" aria-pressed="{{ pressed ? 'true' : 'false' }}"{% endif %}>
+    {%- if icon is defined and icon %}<span class="si-kpi__icon"><i class="{{ icon }}" aria-hidden="true"></i></span>{% endif -%}
+    <div class="si-kpi__label">{{ label }}</div>
+    <div class="si-kpi__value">{{ value }}</div>
+    {%- if sub is defined and sub %}<div class="si-kpi__sub">{{ sub }}</div>{% endif -%}
+</{{ tag }}>

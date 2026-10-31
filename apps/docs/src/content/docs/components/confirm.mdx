@@ -1,0 +1,53 @@
+---
+title: "Confirmation"
+description: "Asks before an action that cannot be undone."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Asks before an action that cannot be undone.
+
+## Usage
+
+Use it for what deletes or has a lasting effect. Put the dialog once in the page, then ask from a form, a link or a script.
+
+## Variants
+
+- On a **form or link**: `data-si-confirm="message"`.
+- **With a required reason:** `data-si-confirm-reason-name`, sent in that field.
+- **From a script:** `confirmDialog(message, options)`.
+
+## States
+
+- The focus starts on Cancel, the safe choice. Escape cancels.
+- A missing reason keeps the dialog open and marks the field invalid.
+
+## Dimensions
+
+The size of a small modal.
+
+## Accessibility
+
+- A native `<dialog>`, with the message linked by `aria-describedby`.
+- The action says what it does: "Delete", not "Yes".
+
+## Responsive
+
+It follows the [modal](/components/modal/).
+
+## Examples
+
+<Examples component="confirm" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Say what will happen, and whether it can be undone.</Fragment>
+  <Fragment slot="dont">Do not ask for what can simply be undone.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/confirm.html.twig`: `title`, `ok_label`, `cancel_label`, `reason_label`. JS: `confirmDialog(message, {title, okLabel, tone, withReason})` resolves to `true`, `false` or `{ok, reason}`. Attributes: `data-si-confirm`, `-title`, `-ok`, `-reason-name`. Needs the behaviours script: `import '.../js/behaviors.js'`.

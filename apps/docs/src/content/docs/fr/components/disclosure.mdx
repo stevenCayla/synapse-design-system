@@ -1,0 +1,50 @@
+---
+title: "Volet dépliant"
+description: "Affiche ou masque un contenu secondaire."
+status: experimental
+---
+
+import DoDont from '../../../../components/DoDont.astro';
+import Examples from '../../../../components/Examples.astro';
+
+Affiche ou masque un contenu secondaire.
+
+## Usage
+
+Utilisez-le pour des détails dont la plupart des personnes n'ont pas besoin. Plusieurs à la suite forment un accordéon.
+
+## Variantes
+
+- Fermé par défaut, ouvert avec l'attribut `open`. L'attribut `name` n'en garde qu'un ouvert dans un groupe.
+
+## États
+
+- Ouvert, fermé, survol et `:focus-visible`.
+
+## Dimensions
+
+Il remplit son conteneur.
+
+## Accessibilité
+
+- C'est l'élément natif `<details>` : le clavier et les lecteurs d'écran n'ont besoin de rien d'autre.
+- N'y masquez pas une information obligatoire ni une erreur de formulaire.
+
+## Responsive
+
+Le résumé passe à la ligne sur écran étroit.
+
+## Exemples
+
+<Examples component="disclosure" />
+
+## À faire et à éviter
+
+<DoDont>
+  <Fragment slot="do">Écrivez un résumé qui dit ce qu'il contient.</Fragment>
+  <Fragment slot="dont">N'y mettez pas le contenu principal d'une page.</Fragment>
+</DoDont>
+
+## API
+
+Pas de partiel ni de script. Classes : `si-disclosure`, `si-disclosure__body`.

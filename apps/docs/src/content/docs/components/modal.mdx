@@ -4,10 +4,49 @@ description: "A dialog that interrupts the page to ask for a decision."
 status: experimental
 ---
 
+import DoDont from '../../../components/DoDont.astro';
 import Examples from '../../../components/Examples.astro';
 
-Use a modal only for a decision that must be taken before continuing. Its opening and closing behaviour comes with the complex components.
+A dialog that interrupts the page to ask for a decision.
+
+## Usage
+
+Use a modal only for a decision or a short task that must end before continuing. For a long content beside the page, use a [drawer](/components/drawer/).
+
+## Variants
+
+- Sizes: `sm`, default, `lg`.
+- With a close button in the header (`close_label`).
+
+## States
+
+- Opened by a button with `data-si-open`, closed by `data-si-close` or Escape.
+
+## Dimensions
+
+400px (`sm`), 560px, 800px (`lg`), and never wider than the screen. A long body scrolls.
+
+## Accessibility
+
+- It is a native `<dialog>`: the browser traps the focus and gives it back on closing.
+- The title is linked by `aria-labelledby`.
+- The rest of the page is inert while it is open.
+
+## Responsive
+
+It leaves a 16px margin on the smallest screens.
 
 ## Examples
 
 <Examples component="modal" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Give clear labels: "Withdraw", not "OK".</Fragment>
+  <Fragment slot="dont">Do not open a modal from a modal, or use one for information only.</Fragment>
+</DoDont>
+
+## API
+
+Partial `@si/modal.html.twig`: `id`, `title`, `size`, `close_label`, `open`, blocks `body`, `footer`. Needs the behaviours script: `import '.../js/behaviors.js'`.

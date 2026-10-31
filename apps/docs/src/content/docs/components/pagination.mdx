@@ -1,0 +1,50 @@
+---
+title: "Pagination"
+description: "Moves through the pages of a long list."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+Moves through the pages of a long list.
+
+## Usage
+
+Use it under a table or a list split into pages.
+
+## Variants
+
+- Numbered links, with previous and next.
+
+## States
+
+- `aria-current="page"` for the current page, `aria-disabled="true"` at the ends.
+
+## Dimensions
+
+Targets of at least 32px.
+
+## Accessibility
+
+- It sits in a `<nav>` with an `aria-label`.
+- The current page is carried by `aria-current`, not only by its colour.
+
+## Responsive
+
+The links wrap on a narrow screen.
+
+## Examples
+
+<Examples component="pagination" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Show where the person is, and how many results there are.</Fragment>
+  <Fragment slot="dont">Do not use it for a few items.</Fragment>
+</DoDont>
+
+## API
+
+No partial. Classes: `si-pagination`, `si-pagination__link`.

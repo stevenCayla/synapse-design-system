@@ -1,0 +1,52 @@
+---
+title: "Chip"
+description: "A compact label that can be selected or removed."
+status: experimental
+---
+
+import DoDont from '../../../components/DoDont.astro';
+import Examples from '../../../components/Examples.astro';
+
+A compact label that can be selected or removed.
+
+## Usage
+
+Use chips for filters and for values chosen in a field. For a status, use a [badge](/components/badge/).
+
+## Variants
+
+- **Static:** `<span class="si-chip">`.
+- **Toggle:** `<button class="si-chip" aria-pressed>`.
+- **Removable:** with `si-chip__remove`.
+
+## States
+
+- `aria-pressed="true"` for selected, `disabled`, hover and `:focus-visible`.
+
+## Dimensions
+
+At least 24px high, like its remove button.
+
+## Accessibility
+
+- A toggle uses `aria-pressed`, so its state is read.
+- The remove button names what it removes: "Remove Lyon".
+
+## Responsive
+
+Group chips with `si-cluster`, which wraps them.
+
+## Examples
+
+<Examples component="chip" />
+
+## Do and don't
+
+<DoDont>
+  <Fragment slot="do">Keep the text to one or two words.</Fragment>
+  <Fragment slot="dont">Do not use a chip for a main action.</Fragment>
+</DoDont>
+
+## API
+
+No partial. Classes: `si-chip`, `si-chip__remove`.

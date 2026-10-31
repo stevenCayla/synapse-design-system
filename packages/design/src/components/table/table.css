@@ -1,0 +1,89 @@
+/* Scrolls on its own on a narrow screen, so the page does not. */
+.si-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--si-color-border);
+  border-radius: var(--si-radius-xl);
+  background: var(--si-color-surface);
+
+  &:focus-visible {
+    outline: var(--si-focus-width) solid var(--si-color-focus-ring);
+    outline-offset: var(--si-focus-offset);
+  }
+}
+
+.si-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--si-color-text);
+  font-size: var(--si-font-size-sm);
+
+  & caption {
+    padding: var(--si-space-12) var(--si-space-16);
+    color: var(--si-color-text);
+    font-weight: var(--si-font-weight-semibold);
+    text-align: start;
+  }
+
+  & th {
+    padding: var(--si-space-10) var(--si-space-16);
+    border-block-end: 1px solid var(--si-color-border);
+    background: var(--si-color-surface-raised);
+    color: var(--si-color-text-muted);
+    font-size: var(--si-font-size-xs);
+    font-weight: var(--si-font-weight-semibold);
+    text-align: start;
+    white-space: nowrap;
+  }
+
+  & td {
+    padding: var(--si-space-10) var(--si-space-16);
+    border-block-end: 1px solid var(--si-color-border);
+    vertical-align: middle;
+  }
+
+  & tbody tr:last-child td {
+    border-block-end: 0;
+  }
+
+  & tbody tr:hover {
+    background: var(--si-color-state-hover);
+  }
+
+  & .si-table__number {
+    font-variant-numeric: tabular-nums;
+    text-align: end;
+  }
+}
+
+.si-table--compact {
+  /* stylelint-disable no-descending-specificity -- same specificity, later on purpose */
+  & th,
+  & td {
+    padding: var(--si-space-6) var(--si-space-10);
+  }
+  /* stylelint-enable no-descending-specificity */
+}
+
+.si-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--si-space-8);
+  align-items: center;
+  margin-block-end: var(--si-space-12);
+}
+
+.si-toolbar__search {
+  flex: 1 1 200px;
+  max-width: 320px;
+}
+
+.si-toolbar__filter {
+  flex: 0 1 180px;
+}
+
+.si-toolbar__count {
+  margin-inline-start: auto;
+  color: var(--si-color-text-muted);
+  font-size: var(--si-font-size-xs);
+  white-space: nowrap;
+}
