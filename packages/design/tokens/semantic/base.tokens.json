@@ -1,0 +1,42 @@
+{
+  "color": {
+    "backdrop": {
+      "$type": "color",
+      "$value": "{color.overlay.backdrop}"
+    },
+    "shell": {
+      "bg": {
+        "$type": "color",
+        "$value": "{color.navy.shell}"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.overlay.white-68}"
+      },
+      "text-muted": {
+        "$type": "color",
+        "$value": "{color.navy.shell-muted}"
+      },
+      "title": {
+        "$type": "color",
+        "$value": "{color.navy.shell-muted}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.overlay.white-06}"
+      },
+      "hover": {
+        "$type": "color",
+        "$value": "{color.overlay.white-06}"
+      },
+      "active-bg": {
+        "$type": "color",
+        "$value": "{color.indigo.alpha.600-20}"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{color.indigo.400}"
+      }
+    }
+  }
+}

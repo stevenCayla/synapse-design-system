@@ -1,0 +1,196 @@
+{
+  "color": {
+    "bg": {
+      "page": {
+        "$type": "color",
+        "$value": "{color.navy.950}"
+      }
+    },
+    "surface": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.navy.900}"
+      },
+      "raised": {
+        "$type": "color",
+        "$value": "{color.navy.850}"
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": "{color.navy.800}"
+      }
+    },
+    "input": {
+      "bg": {
+        "$type": "color",
+        "$value": "{color.navy.800}"
+      }
+    },
+    "border": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.overlay.white-10}"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{color.overlay.white-04}"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "{color.navy.500}"
+      }
+    },
+    "text": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.navy.100}"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{color.navy.300}"
+      },
+      "faint": {
+        "$type": "color",
+        "$value": "{color.navy.400}"
+      }
+    },
+    "accent": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.indigo.400}"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "{color.indigo.300}"
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{color.indigo.950}"
+      },
+      "line": {
+        "$type": "color",
+        "$value": "{color.indigo.alpha.400-55}"
+      },
+      "on": {
+        "$type": "color",
+        "$value": "{color.navy.900}"
+      }
+    },
+    "success": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.green.400}"
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{color.green.alpha.400-12}"
+      },
+      "line": {
+        "$type": "color",
+        "$value": "{color.green.800}"
+      },
+      "on": {
+        "$type": "color",
+        "$value": "{color.navy.900}"
+      }
+    },
+    "warning": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.amber.400}"
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{color.amber.alpha.400-12}"
+      },
+      "line": {
+        "$type": "color",
+        "$value": "{color.amber.800}"
+      },
+      "on": {
+        "$type": "color",
+        "$value": "{color.navy.900}"
+      }
+    },
+    "danger": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.red.300}"
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{color.red.alpha.400-12}"
+      },
+      "line": {
+        "$type": "color",
+        "$value": "{color.red.800}"
+      },
+      "on": {
+        "$type": "color",
+        "$value": "{color.navy.900}"
+      }
+    },
+    "info": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.blue.300}"
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{color.blue.alpha.300-12}"
+      },
+      "line": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
+      },
+      "on": {
+        "$type": "color",
+        "$value": "{color.navy.900}"
+      }
+    },
+    "state": {
+      "hover": {
+        "$type": "color",
+        "$value": "{color.overlay.white-06}"
+      },
+      "active": {
+        "$type": "color",
+        "$value": "{color.overlay.white-12}"
+      }
+    },
+    "focus": {
+      "ring": {
+        "$type": "color",
+        "$value": "{color.indigo.300}"
+      }
+    },
+    "disabled": {
+      "bg": {
+        "$type": "color",
+        "$value": "{color.navy.700}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.navy.600}"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.navy.200}"
+      }
+    }
+  },
+  "shadow": {
+    "sm": {
+      "$type": "shadow",
+      "$value": "0 1px 3px rgba(0, 0, 0, 0.3)"
+    },
+    "md": {
+      "$type": "shadow",
+      "$value": "0 8px 24px rgba(0, 0, 0, 0.4)"
+    },
+    "lg": {
+      "$type": "shadow",
+      "$value": "0 20px 60px rgba(0, 0, 0, 0.5)"
+    }
+  }
+}

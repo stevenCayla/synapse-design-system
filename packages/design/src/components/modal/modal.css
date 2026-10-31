@@ -1,8 +1,8 @@
 .si-modal {
-  width: min(560px, calc(100vw - 32px));
+  width: min(560px, calc(100vw - var(--si-space-32)));
   padding: 0;
   border: 1px solid var(--si-color-border);
-  border-radius: var(--si-radius-lg);
+  border-radius: var(--si-radius-xl);
   background: var(--si-color-surface);
   color: var(--si-color-text);
 
@@ -14,7 +14,7 @@
 .si-modal__header,
 .si-modal__body,
 .si-modal__footer {
-  padding: var(--si-space-4) var(--si-space-5);
+  padding: var(--si-space-16) var(--si-space-24);
 }
 
 .si-modal__header {
@@ -23,13 +23,13 @@
 
 .si-modal__title {
   margin: 0;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: var(--si-font-size-lg);
+  font-weight: var(--si-font-weight-semibold);
 }
 
 .si-modal__footer {
   display: flex;
   justify-content: flex-end;
-  gap: var(--si-space-2);
+  gap: var(--si-space-8);
   border-top: 1px solid var(--si-color-border);
 }

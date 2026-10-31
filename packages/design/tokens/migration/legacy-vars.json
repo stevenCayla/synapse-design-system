@@ -1,0 +1,2833 @@
+{
+  "refs": {
+    "origin/develop": "4f1cfa0"
+  },
+  "variables": [
+    {
+      "name": "--accent",
+      "selector": ":root",
+      "value": "#6d4aff",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#6d4aff"
+      }
+    },
+    {
+      "name": "--accent-light",
+      "selector": ":root",
+      "value": "#a78bfa",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#a78bfa"
+      }
+    },
+    {
+      "name": "--app-bg",
+      "selector": ":root",
+      "value": "#f0f2f8",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#f0f2f8"
+      }
+    },
+    {
+      "name": "--app-bg",
+      "selector": ":root",
+      "value": "#f0f2f8",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#f0f2f8"
+      }
+    },
+    {
+      "name": "--app-bg",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#080d1a",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#080d1a"
+      }
+    },
+    {
+      "name": "--app-border",
+      "selector": ":root",
+      "value": "#e8eaef",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#e8eaef"
+      }
+    },
+    {
+      "name": "--app-border",
+      "selector": ":root",
+      "value": "#e8eaef",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#e8eaef"
+      }
+    },
+    {
+      "name": "--app-border",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(255,255,255,0.07)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "rgba(255,255,255,0.07)"
+      }
+    },
+    {
+      "name": "--app-border-subtle",
+      "selector": ":root",
+      "value": "rgba(0,0,0,0.05)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "rgba(0,0,0,0.05)"
+      }
+    },
+    {
+      "name": "--app-border-subtle",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(255,255,255,0.04)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "rgba(255,255,255,0.04)"
+      }
+    },
+    {
+      "name": "--app-footer-border",
+      "selector": ":root",
+      "value": "#e8eaef",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#e8eaef"
+      }
+    },
+    {
+      "name": "--app-footer-border",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(255,255,255,0.05)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "rgba(255,255,255,0.05)"
+      }
+    },
+    {
+      "name": "--app-footer-text",
+      "selector": ":root",
+      "value": "#9ca3af",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#9ca3af"
+      }
+    },
+    {
+      "name": "--app-footer-text",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(255,255,255,0.18)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "rgba(255,255,255,0.18)"
+      }
+    },
+    {
+      "name": "--app-header-bg",
+      "selector": ":root",
+      "value": "#ffffff",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--app-header-bg",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(8,13,26,0.97)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "rgba(8,13,26,0.97)"
+      }
+    },
+    {
+      "name": "--app-header-border",
+      "selector": ":root",
+      "value": "#e8eaef",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#e8eaef"
+      }
+    },
+    {
+      "name": "--app-header-border",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(255,255,255,0.07)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "rgba(255,255,255,0.07)"
+      }
+    },
+    {
+      "name": "--app-header-shadow",
+      "selector": ":root",
+      "value": "rgba(0,0,0,0.04)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "rgba(0,0,0,0.04)"
+      }
+    },
+    {
+      "name": "--app-header-shadow",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "transparent",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "transparent"
+      }
+    },
+    {
+      "name": "--app-surface",
+      "selector": ":root",
+      "value": "#ffffff",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--app-surface",
+      "selector": ":root",
+      "value": "#ffffff",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--app-surface",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#0f1629",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#0f1629"
+      }
+    },
+    {
+      "name": "--app-surface-2",
+      "selector": ":root",
+      "value": "#f8fafc",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#f8fafc"
+      }
+    },
+    {
+      "name": "--app-surface-2",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#141d35",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#141d35"
+      }
+    },
+    {
+      "name": "--app-surface-3",
+      "selector": ":root",
+      "value": "#f1f5f9",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#f1f5f9"
+      }
+    },
+    {
+      "name": "--app-surface-3",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#1a2440",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#1a2440"
+      }
+    },
+    {
+      "name": "--app-text",
+      "selector": ":root",
+      "value": "#1a1d2e",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#1a1d2e"
+      }
+    },
+    {
+      "name": "--app-text",
+      "selector": ":root",
+      "value": "#1a1d2e",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#1a1d2e"
+      }
+    },
+    {
+      "name": "--app-text",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#e2e8f0",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#e2e8f0"
+      }
+    },
+    {
+      "name": "--app-text-faint",
+      "selector": ":root",
+      "value": "#9ca3af",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#9ca3af"
+      }
+    },
+    {
+      "name": "--app-text-faint",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#334155",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#334155"
+      }
+    },
+    {
+      "name": "--app-text-muted",
+      "selector": ":root",
+      "value": "#6b7280",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#6b7280"
+      }
+    },
+    {
+      "name": "--app-text-muted",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#64748b",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#64748b"
+      }
+    },
+    {
+      "name": "--app-toggle-bg",
+      "selector": ":root",
+      "value": "#f3f4f6",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#f3f4f6"
+      }
+    },
+    {
+      "name": "--app-toggle-bg",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(255,255,255,0.07)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "rgba(255,255,255,0.07)"
+      }
+    },
+    {
+      "name": "--app-toggle-hover",
+      "selector": ":root",
+      "value": "#e5e7eb",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "#e5e7eb"
+      }
+    },
+    {
+      "name": "--app-toggle-hover",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(255,255,255,0.12)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "rgba(255,255,255,0.12)"
+      }
+    },
+    {
+      "name": "--bs-dropdown-color",
+      "selector": "html[data-theme=\"dark\"] .dropdown-menu",
+      "value": "var(--app-text)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "var(--app-text)"
+      }
+    },
+    {
+      "name": "--bs-offcanvas-width",
+      "selector": ".hc-offcanvas",
+      "value": "100vw",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "100vw"
+      }
+    },
+    {
+      "name": "--bs-offcanvas-width",
+      "selector": ".jt-offcanvas",
+      "value": "min(480px, 100vw)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "min(480px, 100vw)"
+      }
+    },
+    {
+      "name": "--bs-offcanvas-width",
+      "selector": ".ud-offcanvas",
+      "value": "min(720px, 100vw)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "min(720px, 100vw)"
+      }
+    },
+    {
+      "name": "--bs-offcanvas-width",
+      "selector": "@media (min-width: 576px) { .hc-offcanvas",
+      "value": "min(600px, 96vw)",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "min(600px, 96vw)"
+      }
+    },
+    {
+      "name": "--bs-offcanvas-width",
+      "selector": "@media (min-width: 992px) { .hc-offcanvas",
+      "value": "840px",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "840px"
+      }
+    },
+    {
+      "name": "--bs-table-bg",
+      "selector": ".regadm-table",
+      "value": "transparent",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "transparent"
+      }
+    },
+    {
+      "name": "--bs-table-bg",
+      "selector": "html[data-theme=\"dark\"] .table",
+      "value": "transparent",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "transparent"
+      }
+    },
+    {
+      "name": "--bs-table-border-color",
+      "selector": "html[data-theme=\"dark\"] .table",
+      "value": "var(--app-border)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "var(--app-border)"
+      }
+    },
+    {
+      "name": "--bs-table-color",
+      "selector": "html[data-theme=\"dark\"] .table",
+      "value": "var(--app-text)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "var(--app-text)"
+      }
+    },
+    {
+      "name": "--bs-table-hover-bg",
+      "selector": "html[data-theme=\"dark\"] .table",
+      "value": "var(--app-surface-3)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "var(--app-surface-3)"
+      }
+    },
+    {
+      "name": "--bs-table-striped-bg",
+      "selector": "html[data-theme=\"dark\"] .table",
+      "value": "var(--app-surface-2)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "var(--app-surface-2)"
+      }
+    },
+    {
+      "name": "--cfg-accent",
+      "selector": ".cfg",
+      "value": "#5a34f2",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#5a34f2"
+      }
+    },
+    {
+      "name": "--cfg-accent",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#a89cff",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#a89cff"
+      }
+    },
+    {
+      "name": "--cfg-accent-line",
+      "selector": ".cfg",
+      "value": "#b9a9ff",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#b9a9ff"
+      }
+    },
+    {
+      "name": "--cfg-accent-line",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#6d5fd6",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#6d5fd6"
+      }
+    },
+    {
+      "name": "--cfg-accent-soft",
+      "selector": ".cfg",
+      "value": "#efebff",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#efebff"
+      }
+    },
+    {
+      "name": "--cfg-accent-soft",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#272450",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#272450"
+      }
+    },
+    {
+      "name": "--cfg-bad",
+      "selector": ".cfg",
+      "value": "#b91c1c",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#b91c1c"
+      }
+    },
+    {
+      "name": "--cfg-bad",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#fca5a5",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#fca5a5"
+      }
+    },
+    {
+      "name": "--cfg-bad-soft",
+      "selector": ".cfg",
+      "value": "#fdecec",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#fdecec"
+      }
+    },
+    {
+      "name": "--cfg-bad-soft",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#3b1a1f",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#3b1a1f"
+      }
+    },
+    {
+      "name": "--cfg-bg",
+      "selector": ".cfg",
+      "value": "#f7f8fc",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#f7f8fc"
+      }
+    },
+    {
+      "name": "--cfg-bg",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#0b0f1a",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#0b0f1a"
+      }
+    },
+    {
+      "name": "--cfg-card",
+      "selector": ".cfg",
+      "value": "#ffffff",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--cfg-card",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#1a2035",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#1a2035"
+      }
+    },
+    {
+      "name": "--cfg-line",
+      "selector": ".cfg",
+      "value": "#d5d9e6",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#d5d9e6"
+      }
+    },
+    {
+      "name": "--cfg-line",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#2d3550",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#2d3550"
+      }
+    },
+    {
+      "name": "--cfg-muted",
+      "selector": ".cfg",
+      "value": "#4f566b",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#4f566b"
+      }
+    },
+    {
+      "name": "--cfg-muted",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#b4bad0",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#b4bad0"
+      }
+    },
+    {
+      "name": "--cfg-ok",
+      "selector": ".cfg",
+      "value": "#11692f",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#11692f"
+      }
+    },
+    {
+      "name": "--cfg-ok",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#4ade80",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#4ade80"
+      }
+    },
+    {
+      "name": "--cfg-ok-line",
+      "selector": ".cfg",
+      "value": "#a7dcb9",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#a7dcb9"
+      }
+    },
+    {
+      "name": "--cfg-ok-line",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#22653b",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#22653b"
+      }
+    },
+    {
+      "name": "--cfg-ok-soft",
+      "selector": ".cfg",
+      "value": "#e8f6ed",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#e8f6ed"
+      }
+    },
+    {
+      "name": "--cfg-ok-soft",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#12321f",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#12321f"
+      }
+    },
+    {
+      "name": "--cfg-on-accent",
+      "selector": ".cfg",
+      "value": "#ffffff",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--cfg-on-accent",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#0f1629",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#0f1629"
+      }
+    },
+    {
+      "name": "--cfg-sub",
+      "selector": ".cfg",
+      "value": "#eef0f8",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#eef0f8"
+      }
+    },
+    {
+      "name": "--cfg-sub",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#12172a",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#12172a"
+      }
+    },
+    {
+      "name": "--cfg-text",
+      "selector": ".cfg",
+      "value": "#1a1d2e",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#1a1d2e"
+      }
+    },
+    {
+      "name": "--cfg-text",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#ffffff",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--cfg-track",
+      "selector": ".cfg",
+      "value": "#d2d6e4",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#d2d6e4"
+      }
+    },
+    {
+      "name": "--cfg-track",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#3b4566",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#3b4566"
+      }
+    },
+    {
+      "name": "--cfg-warn",
+      "selector": ".cfg",
+      "value": "#a84a06",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#a84a06"
+      }
+    },
+    {
+      "name": "--cfg-warn",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#fbbf24",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#fbbf24"
+      }
+    },
+    {
+      "name": "--cfg-warn-line",
+      "selector": ".cfg",
+      "value": "#f0c999",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#f0c999"
+      }
+    },
+    {
+      "name": "--cfg-warn-line",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#7a5a14",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#7a5a14"
+      }
+    },
+    {
+      "name": "--cfg-warn-soft",
+      "selector": ".cfg",
+      "value": "#fdf1e3",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#fdf1e3"
+      }
+    },
+    {
+      "name": "--cfg-warn-soft",
+      "selector": "html[data-theme=\"dark\"] .cfg",
+      "value": "#37280e",
+      "file": "assets/styles/study-configuration.css",
+      "refs": {
+        "origin/develop": "#37280e"
+      }
+    },
+    {
+      "name": "--color-accent-blue",
+      "selector": ":root",
+      "value": "#58a6ff",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#58a6ff"
+      }
+    },
+    {
+      "name": "--color-accent-green",
+      "selector": ":root",
+      "value": "#35c98b",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#35c98b"
+      }
+    },
+    {
+      "name": "--color-accent-red",
+      "selector": ":root",
+      "value": "#ff6b7a",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#ff6b7a"
+      }
+    },
+    {
+      "name": "--color-bg",
+      "selector": ":root",
+      "value": "#f7f5ff",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#f7f5ff"
+      }
+    },
+    {
+      "name": "--color-bg-dark",
+      "selector": ":root",
+      "value": "#140f2b",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#140f2b"
+      }
+    },
+    {
+      "name": "--color-border",
+      "selector": ":root",
+      "value": "rgba(89, 72, 160, 0.14)",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "rgba(89, 72, 160, 0.14)"
+      }
+    },
+    {
+      "name": "--color-brand-300",
+      "selector": ":root",
+      "value": "#b7a6ff",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#b7a6ff"
+      }
+    },
+    {
+      "name": "--color-brand-400",
+      "selector": ":root",
+      "value": "#987eff",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#987eff"
+      }
+    },
+    {
+      "name": "--color-brand-500",
+      "selector": ":root",
+      "value": "#7757ff",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#7757ff"
+      }
+    },
+    {
+      "name": "--color-brand-600",
+      "selector": ":root",
+      "value": "#6947ff",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#6947ff"
+      }
+    },
+    {
+      "name": "--color-brand-700",
+      "selector": ":root",
+      "value": "#5a34f2",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#5a34f2"
+      }
+    },
+    {
+      "name": "--color-surface",
+      "selector": ":root",
+      "value": "rgba(255, 255, 255, 0.82)",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "rgba(255, 255, 255, 0.82)"
+      }
+    },
+    {
+      "name": "--color-surface-strong",
+      "selector": ":root",
+      "value": "#ffffff",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--color-text",
+      "selector": ":root",
+      "value": "#20183a",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#20183a"
+      }
+    },
+    {
+      "name": "--color-text-on-dark",
+      "selector": ":root",
+      "value": "#f7f4ff",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#f7f4ff"
+      }
+    },
+    {
+      "name": "--color-text-soft",
+      "selector": ":root",
+      "value": "#655d82",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "#655d82"
+      }
+    },
+    {
+      "name": "--container",
+      "selector": ":root",
+      "value": "1200px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "1200px"
+      }
+    },
+    {
+      "name": "--focus-glow",
+      "selector": ":root",
+      "value": "rgba(79, 70, 229, 0.13)",
+      "file": "assets/styles/login.css",
+      "refs": {
+        "origin/develop": "rgba(79, 70, 229, 0.13)"
+      }
+    },
+    {
+      "name": "--focus-glow",
+      "selector": "@media (prefers-color-scheme: dark) { html[data-theme=\"light\"]",
+      "value": "rgba(79,70,229,0.13)",
+      "file": "assets/styles/login.css",
+      "refs": {
+        "origin/develop": "rgba(79,70,229,0.13)"
+      }
+    },
+    {
+      "name": "--focus-glow",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(129,140,248,0.18)",
+      "file": "assets/styles/login.css",
+      "refs": {
+        "origin/develop": "rgba(129,140,248,0.18)"
+      }
+    },
+    {
+      "name": "--focus-glow-xl",
+      "selector": ":root",
+      "value": "rgba(79, 70, 229, 0.05)",
+      "file": "assets/styles/login.css",
+      "refs": {
+        "origin/develop": "rgba(79, 70, 229, 0.05)"
+      }
+    },
+    {
+      "name": "--focus-glow-xl",
+      "selector": "@media (prefers-color-scheme: dark) { html[data-theme=\"light\"]",
+      "value": "rgba(79,70,229,0.05)",
+      "file": "assets/styles/login.css",
+      "refs": {
+        "origin/develop": "rgba(79,70,229,0.05)"
+      }
+    },
+    {
+      "name": "--focus-glow-xl",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(129,140,248,0.08)",
+      "file": "assets/styles/login.css",
+      "refs": {
+        "origin/develop": "rgba(129,140,248,0.08)"
+      }
+    },
+    {
+      "name": "--font-body",
+      "selector": ":root",
+      "value": "\"Inter\", system-ui, sans-serif",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "\"Inter\", system-ui, sans-serif"
+      }
+    },
+    {
+      "name": "--font-display",
+      "selector": ":root",
+      "value": "\"Fraunces\", Georgia, serif",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "\"Fraunces\", Georgia, serif"
+      }
+    },
+    {
+      "name": "--gradient-blue",
+      "selector": ":root",
+      "value": "linear-gradient(135deg, #5a34f2 0%, #7757ff 42%, #58a6ff 100%)",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "linear-gradient(135deg, #5a34f2 0%, #7757ff 42%, #58a6ff 100%)"
+      }
+    },
+    {
+      "name": "--gradient-brand",
+      "selector": ":root",
+      "value": "linear-gradient(135deg, #5a34f2 0%, #7757ff 42%, #9e88ff 100%)",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "linear-gradient(135deg, #5a34f2 0%, #7757ff 42%, #9e88ff 100%)"
+      }
+    },
+    {
+      "name": "--gradient-green",
+      "selector": ":root",
+      "value": "linear-gradient(135deg, #5a34f2 0%, #7757ff 42%, #35c98b 100%)",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "linear-gradient(135deg, #5a34f2 0%, #7757ff 42%, #35c98b 100%)"
+      }
+    },
+    {
+      "name": "--gradient-red",
+      "selector": ":root",
+      "value": "linear-gradient(135deg, #5a34f2 0%, #7757ff 42%, #ff6b7a 100%)",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "linear-gradient(135deg, #5a34f2 0%, #7757ff 42%, #ff6b7a 100%)"
+      }
+    },
+    {
+      "name": "--header-height",
+      "selector": ":root",
+      "value": "58px",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "58px"
+      }
+    },
+    {
+      "name": "--im-accent",
+      "selector": ".im-flow",
+      "value": "var(--wz-accent, #6d4aff)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-accent, #6d4aff)"
+      }
+    },
+    {
+      "name": "--im-accent",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#8a7cff",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#8a7cff"
+      }
+    },
+    {
+      "name": "--im-accent-soft",
+      "selector": ".im-flow",
+      "value": "var(--wz-accent-soft, rgba(109, 74, 255, .09))",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-accent-soft, rgba(109, 74, 255, .09))"
+      }
+    },
+    {
+      "name": "--im-accent-soft",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "rgba(138, 124, 255, .16)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "rgba(138, 124, 255, .16)"
+      }
+    },
+    {
+      "name": "--im-accent-strong",
+      "selector": ".im-flow",
+      "value": "var(--wz-accent-strong, #5a34f2)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-accent-strong, #5a34f2)"
+      }
+    },
+    {
+      "name": "--im-accent-strong",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#a89cff",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#a89cff"
+      }
+    },
+    {
+      "name": "--im-bg",
+      "selector": ".im-flow",
+      "value": "var(--wz-bg, #ffffff)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-bg, #ffffff)"
+      }
+    },
+    {
+      "name": "--im-bg",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#0f1629",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#0f1629"
+      }
+    },
+    {
+      "name": "--im-border",
+      "selector": ".im-flow",
+      "value": "var(--wz-border, #e3e6ef)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-border, #e3e6ef)"
+      }
+    },
+    {
+      "name": "--im-border",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "rgba(255, 255, 255, .12)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "rgba(255, 255, 255, .12)"
+      }
+    },
+    {
+      "name": "--im-danger",
+      "selector": ".im-flow",
+      "value": "var(--wz-danger, #b91c1c)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-danger, #b91c1c)"
+      }
+    },
+    {
+      "name": "--im-danger",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#fca5a5",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#fca5a5"
+      }
+    },
+    {
+      "name": "--im-danger-soft",
+      "selector": ".im-flow",
+      "value": "var(--wz-danger-soft, rgba(185, 28, 28, .08))",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-danger-soft, rgba(185, 28, 28, .08))"
+      }
+    },
+    {
+      "name": "--im-danger-soft",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "rgba(248, 113, 113, .14)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "rgba(248, 113, 113, .14)"
+      }
+    },
+    {
+      "name": "--im-faint",
+      "selector": ".im-flow",
+      "value": "var(--wz-faint, #6b7288)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-faint, #6b7288)"
+      }
+    },
+    {
+      "name": "--im-faint",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#9aa5bd",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#9aa5bd"
+      }
+    },
+    {
+      "name": "--im-input",
+      "selector": ".im-flow",
+      "value": "var(--wz-input-bg, #ffffff)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-input-bg, #ffffff)"
+      }
+    },
+    {
+      "name": "--im-input",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#1a2440",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#1a2440"
+      }
+    },
+    {
+      "name": "--im-muted",
+      "selector": ".im-flow",
+      "value": "var(--wz-muted, #4f566b)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-muted, #4f566b)"
+      }
+    },
+    {
+      "name": "--im-muted",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#b0bacd",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#b0bacd"
+      }
+    },
+    {
+      "name": "--im-on-accent",
+      "selector": ".im-flow",
+      "value": "var(--wz-on-accent, #ffffff)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-on-accent, #ffffff)"
+      }
+    },
+    {
+      "name": "--im-on-accent",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#0f1629",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#0f1629"
+      }
+    },
+    {
+      "name": "--im-success",
+      "selector": ".im-flow",
+      "value": "var(--wz-success, #15803d)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-success, #15803d)"
+      }
+    },
+    {
+      "name": "--im-success",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#4ade80",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#4ade80"
+      }
+    },
+    {
+      "name": "--im-success-soft",
+      "selector": ".im-flow",
+      "value": "rgba(21, 128, 61, .10)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "rgba(21, 128, 61, .10)"
+      }
+    },
+    {
+      "name": "--im-success-soft",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "rgba(74, 222, 128, .12)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "rgba(74, 222, 128, .12)"
+      }
+    },
+    {
+      "name": "--im-surface",
+      "selector": ".im-flow",
+      "value": "var(--wz-surface, #f7f8fc)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-surface, #f7f8fc)"
+      }
+    },
+    {
+      "name": "--im-surface",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#141d35",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#141d35"
+      }
+    },
+    {
+      "name": "--im-surface-2",
+      "selector": ".im-flow",
+      "value": "var(--wz-surface-2, #eef0f8)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-surface-2, #eef0f8)"
+      }
+    },
+    {
+      "name": "--im-surface-2",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#1a2440",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#1a2440"
+      }
+    },
+    {
+      "name": "--im-text",
+      "selector": ".im-flow",
+      "value": "var(--wz-text, #1a1d2e)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-text, #1a1d2e)"
+      }
+    },
+    {
+      "name": "--im-text",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#e6ebf5",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#e6ebf5"
+      }
+    },
+    {
+      "name": "--im-warning",
+      "selector": ".im-flow",
+      "value": "var(--wz-warning, #b45309)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-warning, #b45309)"
+      }
+    },
+    {
+      "name": "--im-warning",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "#fbbf24",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "#fbbf24"
+      }
+    },
+    {
+      "name": "--im-warning-soft",
+      "selector": ".im-flow",
+      "value": "var(--wz-warning-soft, rgba(180, 83, 9, .10))",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "var(--wz-warning-soft, rgba(180, 83, 9, .10))"
+      }
+    },
+    {
+      "name": "--im-warning-soft",
+      "selector": "html[data-theme=\"dark\"] .im-page .im-flow",
+      "value": "rgba(251, 191, 36, .12)",
+      "file": "assets/styles/import.css",
+      "refs": {
+        "origin/develop": "rgba(251, 191, 36, .12)"
+      }
+    },
+    {
+      "name": "--os-bg",
+      "selector": ".org-switch",
+      "value": "var(--app-surface)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "var(--app-surface)"
+      }
+    },
+    {
+      "name": "--os-border",
+      "selector": ".org-switch",
+      "value": "rgba(26, 29, 46, .18)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(26, 29, 46, .18)"
+      }
+    },
+    {
+      "name": "--os-border",
+      "selector": "html[data-theme=\"dark\"] .org-switch",
+      "value": "rgba(255, 255, 255, .16)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(255, 255, 255, .16)"
+      }
+    },
+    {
+      "name": "--os-current-bg",
+      "selector": ".org-switch",
+      "value": "rgba(109, 74, 255, .1)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(109, 74, 255, .1)"
+      }
+    },
+    {
+      "name": "--os-current-bg",
+      "selector": "html[data-theme=\"dark\"] .org-switch",
+      "value": "rgba(109, 74, 255, .12)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(109, 74, 255, .12)"
+      }
+    },
+    {
+      "name": "--os-current-border",
+      "selector": ".org-switch",
+      "value": "rgba(109, 74, 255, .45)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(109, 74, 255, .45)"
+      }
+    },
+    {
+      "name": "--os-current-border",
+      "selector": "html[data-theme=\"dark\"] .org-switch",
+      "value": "rgba(138, 124, 255, .4)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(138, 124, 255, .4)"
+      }
+    },
+    {
+      "name": "--os-dim",
+      "selector": ".org-switch",
+      "value": "#556070",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "#556070"
+      }
+    },
+    {
+      "name": "--os-dim",
+      "selector": "html[data-theme=\"dark\"] .org-switch",
+      "value": "#94a3b8",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "#94a3b8"
+      }
+    },
+    {
+      "name": "--os-focus",
+      "selector": ".org-switch",
+      "value": "#5a34f2",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "#5a34f2"
+      }
+    },
+    {
+      "name": "--os-focus",
+      "selector": "html[data-theme=\"dark\"] .org-switch",
+      "value": "#a78bfa",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "#a78bfa"
+      }
+    },
+    {
+      "name": "--os-hover",
+      "selector": ".org-switch",
+      "value": "rgba(109, 74, 255, .07)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(109, 74, 255, .07)"
+      }
+    },
+    {
+      "name": "--os-hover",
+      "selector": "html[data-theme=\"dark\"] .org-switch",
+      "value": "rgba(255, 255, 255, .06)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(255, 255, 255, .06)"
+      }
+    },
+    {
+      "name": "--os-pill-bg",
+      "selector": ".org-switch",
+      "value": "rgba(109, 74, 255, .14)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(109, 74, 255, .14)"
+      }
+    },
+    {
+      "name": "--os-pill-bg",
+      "selector": "html[data-theme=\"dark\"] .org-switch",
+      "value": "rgba(138, 124, 255, .2)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(138, 124, 255, .2)"
+      }
+    },
+    {
+      "name": "--os-soft",
+      "selector": ".org-switch",
+      "value": "rgba(26, 29, 46, .035)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(26, 29, 46, .035)"
+      }
+    },
+    {
+      "name": "--os-soft",
+      "selector": "html[data-theme=\"dark\"] .org-switch",
+      "value": "rgba(255, 255, 255, .04)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "rgba(255, 255, 255, .04)"
+      }
+    },
+    {
+      "name": "--os-text",
+      "selector": ".org-switch",
+      "value": "var(--app-text)",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "var(--app-text)"
+      }
+    },
+    {
+      "name": "--os-violet",
+      "selector": ".org-switch",
+      "value": "#4b2fd6",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "#4b2fd6"
+      }
+    },
+    {
+      "name": "--os-violet",
+      "selector": "html[data-theme=\"dark\"] .org-switch",
+      "value": "#c4b5fd",
+      "file": "assets/styles/org-switch.css",
+      "refs": {
+        "origin/develop": "#c4b5fd"
+      }
+    },
+    {
+      "name": "--radius",
+      "selector": ":root",
+      "value": "8px",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "8px"
+      }
+    },
+    {
+      "name": "--radius-lg",
+      "selector": ":root",
+      "value": "24px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "24px"
+      }
+    },
+    {
+      "name": "--radius-md",
+      "selector": ":root",
+      "value": "18px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "18px"
+      }
+    },
+    {
+      "name": "--radius-pill",
+      "selector": ":root",
+      "value": "999px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "999px"
+      }
+    },
+    {
+      "name": "--radius-sm",
+      "selector": ":root",
+      "value": "12px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "12px"
+      }
+    },
+    {
+      "name": "--radius-xl",
+      "selector": ":root",
+      "value": "32px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "32px"
+      }
+    },
+    {
+      "name": "--s-accent",
+      "selector": ":root",
+      "value": "#6d4aff",
+      "file": "templates/study/show_v2.html.twig",
+      "refs": {
+        "origin/develop": "#6d4aff"
+      }
+    },
+    {
+      "name": "--s-accent-soft",
+      "selector": ":root",
+      "value": "rgba(109,74,255,.12)",
+      "file": "templates/study/show_v2.html.twig",
+      "refs": {
+        "origin/develop": "rgba(109,74,255,.12)"
+      }
+    },
+    {
+      "name": "--s-accent-soft",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(109,74,255,.18)",
+      "file": "templates/study/show_v2.html.twig",
+      "refs": {
+        "origin/develop": "rgba(109,74,255,.18)"
+      }
+    },
+    {
+      "name": "--s-amber",
+      "selector": ":root",
+      "value": "#f59e0b",
+      "file": "templates/study/show_v2.html.twig",
+      "refs": {
+        "origin/develop": "#f59e0b"
+      }
+    },
+    {
+      "name": "--s-cyan",
+      "selector": ":root",
+      "value": "#06b6d4",
+      "file": "templates/study/show_v2.html.twig",
+      "refs": {
+        "origin/develop": "#06b6d4"
+      }
+    },
+    {
+      "name": "--s-green",
+      "selector": ":root",
+      "value": "#22c55e",
+      "file": "templates/study/show_v2.html.twig",
+      "refs": {
+        "origin/develop": "#22c55e"
+      }
+    },
+    {
+      "name": "--s-red",
+      "selector": ":root",
+      "value": "#ef4444",
+      "file": "templates/study/show_v2.html.twig",
+      "refs": {
+        "origin/develop": "#ef4444"
+      }
+    },
+    {
+      "name": "--sc-accent",
+      "selector": ".sc[data-frozen=\"1\"]",
+      "value": "#06b6d4",
+      "file": "templates/home/index.html.twig",
+      "refs": {
+        "origin/develop": "#06b6d4"
+      }
+    },
+    {
+      "name": "--sc-accent",
+      "selector": ".sc[data-status=\"active\"]",
+      "value": "#6d4aff",
+      "file": "templates/home/index.html.twig",
+      "refs": {
+        "origin/develop": "#6d4aff"
+      }
+    },
+    {
+      "name": "--sc-accent",
+      "selector": ".sc[data-status=\"archived\"]",
+      "value": "#6b7280",
+      "file": "templates/home/index.html.twig",
+      "refs": {
+        "origin/develop": "#6b7280"
+      }
+    },
+    {
+      "name": "--sc-accent",
+      "selector": ".sc[data-status=\"completed\"]",
+      "value": "#22c55e",
+      "file": "templates/home/index.html.twig",
+      "refs": {
+        "origin/develop": "#22c55e"
+      }
+    },
+    {
+      "name": "--sc-accent",
+      "selector": ".sc[data-status=\"draft\"]",
+      "value": "#3b82f6",
+      "file": "templates/home/index.html.twig",
+      "refs": {
+        "origin/develop": "#3b82f6"
+      }
+    },
+    {
+      "name": "--shadow-float",
+      "selector": ":root",
+      "value": "0 20px 60px rgba(64, 38, 168, 0.18)",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "0 20px 60px rgba(64, 38, 168, 0.18)"
+      }
+    },
+    {
+      "name": "--shadow-glow",
+      "selector": ":root",
+      "value": "0 0 0 1px rgba(255, 255, 255, 0.18), 0 24px 80px rgba(92, 61, 255, 0.28)",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "0 0 0 1px rgba(255, 255, 255, 0.18), 0 24px 80px rgba(92, 61, 255, 0.28)"
+      }
+    },
+    {
+      "name": "--shadow-soft",
+      "selector": ":root",
+      "value": "0 10px 30px rgba(58, 35, 150, 0.10)",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "0 10px 30px rgba(58, 35, 150, 0.10)"
+      }
+    },
+    {
+      "name": "--sheet-accent",
+      "selector": ":root",
+      "value": "#6d4aff",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#6d4aff"
+      }
+    },
+    {
+      "name": "--sheet-accent",
+      "selector": "[data-theme='dark']",
+      "value": "#a78bfa",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#a78bfa"
+      }
+    },
+    {
+      "name": "--sheet-accent",
+      "selector": "@media print { :root, [data-theme='dark']",
+      "value": "#6d4aff",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#6d4aff"
+      }
+    },
+    {
+      "name": "--sheet-accent-dark",
+      "selector": ":root",
+      "value": "#3b2aa8",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#3b2aa8"
+      }
+    },
+    {
+      "name": "--sheet-accent-dark",
+      "selector": "[data-theme='dark']",
+      "value": "#c4b5fd",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#c4b5fd"
+      }
+    },
+    {
+      "name": "--sheet-accent-dark",
+      "selector": "@media print { :root, [data-theme='dark']",
+      "value": "#3b2aa8",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#3b2aa8"
+      }
+    },
+    {
+      "name": "--sheet-error",
+      "selector": ":root",
+      "value": "#b42318",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#b42318"
+      }
+    },
+    {
+      "name": "--sheet-error",
+      "selector": "[data-theme='dark']",
+      "value": "#f87171",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#f87171"
+      }
+    },
+    {
+      "name": "--sheet-error",
+      "selector": "@media print { :root, [data-theme='dark']",
+      "value": "#b42318",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#b42318"
+      }
+    },
+    {
+      "name": "--sheet-ink",
+      "selector": ":root",
+      "value": "#111827",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#111827"
+      }
+    },
+    {
+      "name": "--sheet-ink",
+      "selector": "[data-theme='dark']",
+      "value": "#e5e7eb",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#e5e7eb"
+      }
+    },
+    {
+      "name": "--sheet-ink",
+      "selector": "@media print { :root, [data-theme='dark']",
+      "value": "#111827",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#111827"
+      }
+    },
+    {
+      "name": "--sheet-line",
+      "selector": ":root",
+      "value": "#d1d5db",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#d1d5db"
+      }
+    },
+    {
+      "name": "--sheet-line",
+      "selector": "[data-theme='dark']",
+      "value": "#374151",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#374151"
+      }
+    },
+    {
+      "name": "--sheet-line",
+      "selector": "@media print { :root, [data-theme='dark']",
+      "value": "#d1d5db",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#d1d5db"
+      }
+    },
+    {
+      "name": "--sheet-page",
+      "selector": ":root",
+      "value": "#f3f4f6",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#f3f4f6"
+      }
+    },
+    {
+      "name": "--sheet-page",
+      "selector": "[data-theme='dark']",
+      "value": "#0f0b1f",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#0f0b1f"
+      }
+    },
+    {
+      "name": "--sheet-page",
+      "selector": "@media print { :root, [data-theme='dark']",
+      "value": "#fff",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#fff"
+      }
+    },
+    {
+      "name": "--sheet-paper",
+      "selector": ":root",
+      "value": "#ffffff",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--sheet-paper",
+      "selector": "[data-theme='dark']",
+      "value": "#1a1530",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#1a1530"
+      }
+    },
+    {
+      "name": "--sheet-paper",
+      "selector": "@media print { :root, [data-theme='dark']",
+      "value": "#fff",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#fff"
+      }
+    },
+    {
+      "name": "--sheet-prod",
+      "selector": ":root",
+      "value": "#9a6700",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#9a6700"
+      }
+    },
+    {
+      "name": "--sheet-prod",
+      "selector": "[data-theme='dark']",
+      "value": "#fbbf24",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#fbbf24"
+      }
+    },
+    {
+      "name": "--sheet-prod",
+      "selector": "@media print { :root, [data-theme='dark']",
+      "value": "#9a6700",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#9a6700"
+      }
+    },
+    {
+      "name": "--sheet-soft",
+      "selector": ":root",
+      "value": "#4b5563",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#4b5563"
+      }
+    },
+    {
+      "name": "--sheet-soft",
+      "selector": "[data-theme='dark']",
+      "value": "#9ca3af",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#9ca3af"
+      }
+    },
+    {
+      "name": "--sheet-soft",
+      "selector": "@media print { :root, [data-theme='dark']",
+      "value": "#4b5563",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#4b5563"
+      }
+    },
+    {
+      "name": "--sheet-warn",
+      "selector": ":root",
+      "value": "#475467",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#475467"
+      }
+    },
+    {
+      "name": "--sheet-warn",
+      "selector": "[data-theme='dark']",
+      "value": "#9ca3af",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#9ca3af"
+      }
+    },
+    {
+      "name": "--sheet-warn",
+      "selector": "@media print { :root, [data-theme='dark']",
+      "value": "#475467",
+      "file": "assets/styles/study-sheet.css",
+      "refs": {
+        "origin/develop": "#475467"
+      }
+    },
+    {
+      "name": "--sidebar-active-bg",
+      "selector": ":root",
+      "value": "rgba(109, 74, 255, 0.2)",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "rgba(109, 74, 255, 0.2)"
+      }
+    },
+    {
+      "name": "--sidebar-active-border",
+      "selector": ":root",
+      "value": "#6d4aff",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "#6d4aff"
+      }
+    },
+    {
+      "name": "--sidebar-bg",
+      "selector": ":root",
+      "value": "#13152b",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "#13152b"
+      }
+    },
+    {
+      "name": "--sidebar-border",
+      "selector": ":root",
+      "value": "rgba(255, 255, 255, 0.06)",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "rgba(255, 255, 255, 0.06)"
+      }
+    },
+    {
+      "name": "--sidebar-collapsed-width",
+      "selector": ":root",
+      "value": "64px",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "64px"
+      }
+    },
+    {
+      "name": "--sidebar-hover",
+      "selector": ":root",
+      "value": "rgba(255, 255, 255, 0.06)",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "rgba(255, 255, 255, 0.06)"
+      }
+    },
+    {
+      "name": "--sidebar-section-title",
+      "selector": ":root",
+      "value": "#a9adc6",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "#a9adc6"
+      }
+    },
+    {
+      "name": "--sidebar-text",
+      "selector": ":root",
+      "value": "rgba(255, 255, 255, 0.68)",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "rgba(255, 255, 255, 0.68)"
+      }
+    },
+    {
+      "name": "--sidebar-text-muted",
+      "selector": ":root",
+      "value": "rgba(255, 255, 255, 0.35)",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "rgba(255, 255, 255, 0.35)"
+      }
+    },
+    {
+      "name": "--sidebar-width",
+      "selector": ":root",
+      "value": "260px",
+      "file": "assets/styles/sidebar.css",
+      "refs": {
+        "origin/develop": "260px"
+      }
+    },
+    {
+      "name": "--space-1",
+      "selector": ":root",
+      "value": "4px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "4px"
+      }
+    },
+    {
+      "name": "--space-2",
+      "selector": ":root",
+      "value": "8px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "8px"
+      }
+    },
+    {
+      "name": "--space-3",
+      "selector": ":root",
+      "value": "12px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "12px"
+      }
+    },
+    {
+      "name": "--space-4",
+      "selector": ":root",
+      "value": "16px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "16px"
+      }
+    },
+    {
+      "name": "--space-5",
+      "selector": ":root",
+      "value": "24px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "24px"
+      }
+    },
+    {
+      "name": "--space-6",
+      "selector": ":root",
+      "value": "32px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "32px"
+      }
+    },
+    {
+      "name": "--space-7",
+      "selector": ":root",
+      "value": "48px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "48px"
+      }
+    },
+    {
+      "name": "--space-8",
+      "selector": ":root",
+      "value": "64px",
+      "file": "assets/styles/theme.css",
+      "refs": {
+        "origin/develop": "64px"
+      }
+    },
+    {
+      "name": "--transition",
+      "selector": ":root",
+      "value": "0.22s cubic-bezier(.4,0,.2,1)",
+      "file": "assets/styles/app.css",
+      "refs": {
+        "origin/develop": "0.22s cubic-bezier(.4,0,.2,1)"
+      }
+    },
+    {
+      "name": "--wz-accent",
+      "selector": ".wz-shell",
+      "value": "#6d4aff",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#6d4aff"
+      }
+    },
+    {
+      "name": "--wz-accent",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#8a7cff",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#8a7cff"
+      }
+    },
+    {
+      "name": "--wz-accent-line",
+      "selector": ".wz-shell",
+      "value": "rgba(109, 74, 255, .45)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "rgba(109, 74, 255, .45)"
+      }
+    },
+    {
+      "name": "--wz-accent-line",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "rgba(138, 124, 255, .55)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "rgba(138, 124, 255, .55)"
+      }
+    },
+    {
+      "name": "--wz-accent-soft",
+      "selector": ".wz-shell",
+      "value": "rgba(109, 74, 255, .09)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "rgba(109, 74, 255, .09)"
+      }
+    },
+    {
+      "name": "--wz-accent-soft",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "rgba(138, 124, 255, .14)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "rgba(138, 124, 255, .14)"
+      }
+    },
+    {
+      "name": "--wz-accent-strong",
+      "selector": ".wz-shell",
+      "value": "#5a34f2",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#5a34f2"
+      }
+    },
+    {
+      "name": "--wz-accent-strong",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#a89cff",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#a89cff"
+      }
+    },
+    {
+      "name": "--wz-aside-bg",
+      "selector": ".wz-shell",
+      "value": "linear-gradient(180deg, rgba(109, 74, 255, .08), rgba(109, 74, 255, .02) 60%, transparent)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "linear-gradient(180deg, rgba(109, 74, 255, .08), rgba(109, 74, 255, .02) 60%, transparent)"
+      }
+    },
+    {
+      "name": "--wz-aside-bg",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "linear-gradient(180deg, rgba(138, 124, 255, .12), rgba(138, 124, 255, .03) 60%, transparent)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "linear-gradient(180deg, rgba(138, 124, 255, .12), rgba(138, 124, 255, .03) 60%, transparent)"
+      }
+    },
+    {
+      "name": "--wz-bg",
+      "selector": ":root",
+      "value": "#ffffff",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "var(--bs-body-bg, #fff)"
+      }
+    },
+    {
+      "name": "--wz-bg",
+      "selector": ".wz-shell",
+      "value": "#ffffff",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--wz-bg",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#0f1629",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "#0f1629"
+      }
+    },
+    {
+      "name": "--wz-bg",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#0f1629",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#0f1629"
+      }
+    },
+    {
+      "name": "--wz-border",
+      "selector": ":root",
+      "value": "#e9ecef",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "var(--bs-border-color, #dee2e6)"
+      }
+    },
+    {
+      "name": "--wz-border",
+      "selector": ".wz-shell",
+      "value": "#e3e6ef",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#e3e6ef"
+      }
+    },
+    {
+      "name": "--wz-border",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(255,255,255,.08)",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "rgba(255,255,255,.08)"
+      }
+    },
+    {
+      "name": "--wz-border",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "rgba(255, 255, 255, .10)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "rgba(255, 255, 255, .10)"
+      }
+    },
+    {
+      "name": "--wz-card-active",
+      "selector": ":root",
+      "value": "rgba(109,74,255,.12)",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "rgba(109,74,255,.12)"
+      }
+    },
+    {
+      "name": "--wz-card-active",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(109,74,255,.14)",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "rgba(109,74,255,.14)"
+      }
+    },
+    {
+      "name": "--wz-card-hover",
+      "selector": ":root",
+      "value": "#f8f6ff",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "#f8f6ff"
+      }
+    },
+    {
+      "name": "--wz-card-hover",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(109,74,255,.08)",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "rgba(109,74,255,.08)"
+      }
+    },
+    {
+      "name": "--wz-danger",
+      "selector": ".wz-shell",
+      "value": "#b91c1c",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#b91c1c"
+      }
+    },
+    {
+      "name": "--wz-danger",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#fca5a5",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#fca5a5"
+      }
+    },
+    {
+      "name": "--wz-danger-soft",
+      "selector": ".wz-shell",
+      "value": "rgba(185, 28, 28, .08)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "rgba(185, 28, 28, .08)"
+      }
+    },
+    {
+      "name": "--wz-danger-soft",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "rgba(248, 113, 113, .12)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "rgba(248, 113, 113, .12)"
+      }
+    },
+    {
+      "name": "--wz-dim",
+      "selector": ".wz-shell",
+      "value": "#5f667c",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#5f667c"
+      }
+    },
+    {
+      "name": "--wz-dim",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#8793ab",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#8793ab"
+      }
+    },
+    {
+      "name": "--wz-disabled-bg",
+      "selector": ".wz-shell",
+      "value": "#e5e7eb",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#e5e7eb"
+      }
+    },
+    {
+      "name": "--wz-disabled-bg",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#2a2d3a",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#2a2d3a"
+      }
+    },
+    {
+      "name": "--wz-disabled-border",
+      "selector": ".wz-shell",
+      "value": "#9ca3af",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#9ca3af"
+      }
+    },
+    {
+      "name": "--wz-disabled-border",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#4b5163",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#4b5163"
+      }
+    },
+    {
+      "name": "--wz-disabled-text",
+      "selector": ".wz-shell",
+      "value": "#374151",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#374151"
+      }
+    },
+    {
+      "name": "--wz-disabled-text",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#cbd0de",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#cbd0de"
+      }
+    },
+    {
+      "name": "--wz-faint",
+      "selector": ".wz-shell",
+      "value": "#7a8197",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#7a8197"
+      }
+    },
+    {
+      "name": "--wz-faint",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#8793ab",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#8793ab"
+      }
+    },
+    {
+      "name": "--wz-input-bg",
+      "selector": ":root",
+      "value": "#ffffff",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "var(--bs-body-bg, #fff)"
+      }
+    },
+    {
+      "name": "--wz-input-bg",
+      "selector": ".wz-shell",
+      "value": "#ffffff",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--wz-input-bg",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#1a2440",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "#1a2440"
+      }
+    },
+    {
+      "name": "--wz-input-bg",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#1a2440",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#1a2440"
+      }
+    },
+    {
+      "name": "--wz-input-border",
+      "selector": ":root",
+      "value": "#dee2e6",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "var(--bs-border-color, #dee2e6)"
+      }
+    },
+    {
+      "name": "--wz-input-border",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "rgba(255,255,255,.12)",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "rgba(255,255,255,.12)"
+      }
+    },
+    {
+      "name": "--wz-muted",
+      "selector": ".wz-shell",
+      "value": "#4f566b",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#4f566b"
+      }
+    },
+    {
+      "name": "--wz-muted",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#b0bacd",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#b0bacd"
+      }
+    },
+    {
+      "name": "--wz-on-accent",
+      "selector": ".wz-shell",
+      "value": "#ffffff",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--wz-on-accent",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#0f1629",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#0f1629"
+      }
+    },
+    {
+      "name": "--wz-on-success",
+      "selector": ".wz-shell",
+      "value": "#ffffff",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#ffffff"
+      }
+    },
+    {
+      "name": "--wz-on-success",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#0f1629",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#0f1629"
+      }
+    },
+    {
+      "name": "--wz-shadow",
+      "selector": ".wz-shell",
+      "value": "0 8px 24px rgba(58, 35, 150, .10)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "0 8px 24px rgba(58, 35, 150, .10)"
+      }
+    },
+    {
+      "name": "--wz-shadow",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "0 8px 24px rgba(0, 0, 0, .4)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "0 8px 24px rgba(0, 0, 0, .4)"
+      }
+    },
+    {
+      "name": "--wz-success",
+      "selector": ".wz-shell",
+      "value": "#15803d",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#15803d"
+      }
+    },
+    {
+      "name": "--wz-success",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#4ade80",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#4ade80"
+      }
+    },
+    {
+      "name": "--wz-surface",
+      "selector": ":root",
+      "value": "#f8f9fa",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "#f8f9fa"
+      }
+    },
+    {
+      "name": "--wz-surface",
+      "selector": ".wz-shell",
+      "value": "#f7f8fc",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#f7f8fc"
+      }
+    },
+    {
+      "name": "--wz-surface",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#141d35",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "#141d35"
+      }
+    },
+    {
+      "name": "--wz-surface",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#141d35",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#141d35"
+      }
+    },
+    {
+      "name": "--wz-surface-2",
+      "selector": ".wz-shell",
+      "value": "#eef0f8",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#eef0f8"
+      }
+    },
+    {
+      "name": "--wz-surface-2",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#1a2440",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#1a2440"
+      }
+    },
+    {
+      "name": "--wz-text",
+      "selector": ":root",
+      "value": "#13152b",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "var(--bs-body-color, #13152b)"
+      }
+    },
+    {
+      "name": "--wz-text",
+      "selector": ".wz-shell",
+      "value": "#1a1d2e",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#1a1d2e"
+      }
+    },
+    {
+      "name": "--wz-text",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#e2e8f0",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "#e2e8f0"
+      }
+    },
+    {
+      "name": "--wz-text",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#e6ebf5",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#e6ebf5"
+      }
+    },
+    {
+      "name": "--wz-text-faint",
+      "selector": ":root",
+      "value": "#9ca3af",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "#9ca3af"
+      }
+    },
+    {
+      "name": "--wz-text-faint",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#475569",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "#475569"
+      }
+    },
+    {
+      "name": "--wz-text-muted",
+      "selector": ":root",
+      "value": "#6c757d",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "var(--bs-secondary-color, #6c757d)"
+      }
+    },
+    {
+      "name": "--wz-text-muted",
+      "selector": "html[data-theme=\"dark\"]",
+      "value": "#64748b",
+      "file": "templates/site/new.html.twig",
+      "refs": {
+        "origin/develop": "#64748b"
+      }
+    },
+    {
+      "name": "--wz-warning",
+      "selector": ".wz-shell",
+      "value": "#b45309",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#b45309"
+      }
+    },
+    {
+      "name": "--wz-warning",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "#fbbf24",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "#fbbf24"
+      }
+    },
+    {
+      "name": "--wz-warning-soft",
+      "selector": ".wz-shell",
+      "value": "rgba(180, 83, 9, .10)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "rgba(180, 83, 9, .10)"
+      }
+    },
+    {
+      "name": "--wz-warning-soft",
+      "selector": "html[data-theme=\"dark\"] .wz-shell",
+      "value": "rgba(251, 191, 36, .12)",
+      "file": "assets/styles/study-wizard.css",
+      "refs": {
+        "origin/develop": "rgba(251, 191, 36, .12)"
+      }
+    }
+  ]
+}

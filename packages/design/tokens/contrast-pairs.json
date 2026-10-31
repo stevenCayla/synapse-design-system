@@ -1,0 +1,215 @@
+{
+  "$description": "Colour pairs that must meet WCAG 2.2 AA, in both themes. Translucent colours are composited over color.surface.default, or color.shell.bg for the shell.",
+  "pairs": [
+    {
+      "fg": "color.text.default",
+      "on": [
+        "color.bg.page",
+        "color.surface.default",
+        "color.surface.raised",
+        "color.surface.sunken",
+        "color.input.bg"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.text.muted",
+      "on": [
+        "color.bg.page",
+        "color.surface.default",
+        "color.surface.raised",
+        "color.surface.sunken",
+        "color.input.bg"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.text.faint",
+      "on": [
+        "color.bg.page",
+        "color.surface.default",
+        "color.surface.raised",
+        "color.surface.sunken",
+        "color.input.bg"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.accent.default",
+      "on": [
+        "color.surface.default",
+        "color.surface.raised"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.accent.strong",
+      "on": [
+        "color.surface.default",
+        "color.surface.raised",
+        "color.accent.soft"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.accent.on",
+      "on": [
+        "color.accent.default"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.text.default",
+      "on": [
+        "color.accent.soft"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.success.default",
+      "on": [
+        "color.surface.default",
+        "color.surface.raised",
+        "color.success.soft"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.success.on",
+      "on": [
+        "color.success.default"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.text.default",
+      "on": [
+        "color.success.soft"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.warning.default",
+      "on": [
+        "color.surface.default",
+        "color.surface.raised",
+        "color.warning.soft"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.warning.on",
+      "on": [
+        "color.warning.default"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.text.default",
+      "on": [
+        "color.warning.soft"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.danger.default",
+      "on": [
+        "color.surface.default",
+        "color.surface.raised",
+        "color.danger.soft"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.danger.on",
+      "on": [
+        "color.danger.default"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.text.default",
+      "on": [
+        "color.danger.soft"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.info.default",
+      "on": [
+        "color.surface.default",
+        "color.surface.raised",
+        "color.info.soft"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.info.on",
+      "on": [
+        "color.info.default"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.text.default",
+      "on": [
+        "color.info.soft"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.border.strong",
+      "on": [
+        "color.surface.default",
+        "color.surface.raised",
+        "color.input.bg"
+      ],
+      "min": 3
+    },
+    {
+      "fg": "color.focus.ring",
+      "on": [
+        "color.bg.page",
+        "color.surface.default",
+        "color.surface.raised",
+        "color.surface.sunken"
+      ],
+      "min": 3
+    },
+    {
+      "fg": "color.disabled.text",
+      "on": [
+        "color.disabled.bg"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.shell.text",
+      "on": [
+        "color.shell.bg"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.shell.text-muted",
+      "on": [
+        "color.shell.bg"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.shell.title",
+      "on": [
+        "color.shell.bg"
+      ],
+      "min": 4.5
+    },
+    {
+      "fg": "color.shell.accent",
+      "on": [
+        "color.shell.bg"
+      ],
+      "min": 3
+    }
+  ]
+}

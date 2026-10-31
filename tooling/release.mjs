@@ -25,7 +25,7 @@ try {
   const file = 'packages/design/package.json';
   writeFileSync(file, readFileSync(file, 'utf8').replace(/"version": "[^"]+"/, `"version": "${version}"`));
   run('git', 'add', file);
-  run('git', 'add', '--force', 'dist', 'twig');
+  run('git', 'add', '--force', 'dist', 'twig', 'meta');
   run('git', 'commit', '--message', `release: v${version}`);
   run('git', 'tag', '--annotate', `v${version}`, '--message', `v${version}`);
   if (push) run('git', 'push', 'origin', `v${version}`);

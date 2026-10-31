@@ -5,4 +5,6 @@ dist/
 .idea/
 .dev.vars
 /twig/
+/meta/
+/packages/design/generated/
 /tooling/twig-parity/vendor/

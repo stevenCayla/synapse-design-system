@@ -1,13 +1,13 @@
 .si-badge {
   display: inline-flex;
   align-items: center;
-  gap: var(--si-space-1);
-  padding: 2px var(--si-space-2);
+  gap: var(--si-space-4);
+  padding: var(--si-space-2) var(--si-space-8);
   border-radius: var(--si-radius-sm);
   background: var(--si-color-accent-soft);
   color: var(--si-color-accent-strong);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: var(--si-font-size-xs);
+  font-weight: var(--si-font-weight-semibold);
   line-height: 1.5;
 }
 

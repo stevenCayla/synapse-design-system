@@ -21,6 +21,8 @@ pnpm dev
 |---|---|
 | `pnpm dev` | Documentation site with hot reload |
 | `pnpm build` | Package (`dist/`, `twig/`) and documentation site |
+| `pnpm tokens` | Generate the tokens from their JSON sources |
+| `pnpm validate` | Check the tokens: theme parity, contrast, migration table and usage |
 | `pnpm lint` | Stylelint and ESLint |
 | `pnpm typecheck` | Type-check the documentation site |
 | `pnpm test` | Component and fixture tests |
@@ -29,9 +31,9 @@ pnpm dev
 ## Repository
 
 ```text
-packages/design/   the package: components (CSS, Twig, fixtures) and foundations
+packages/design/   the package: tokens, foundations and components (CSS, Twig, fixtures)
 apps/docs/         documentation site, Astro and Starlight
-tooling/           Twig parity check and release script
+tooling/           token validation, Twig parity check and release script
 ```
 
 ## Using it in an application
@@ -41,7 +43,7 @@ PHP applications install the package with Composer, from a tagged release:
 ```json
 {
     "repositories": [{ "type": "vcs", "url": "https://github.com/stevenCayla/synapse-design-system" }],
-    "require": { "synapse/design": "0.0.1-alpha.2" }
+    "require": { "synapse/design": "0.0.1-alpha.3" }
 }
 ```
 
@@ -50,7 +52,9 @@ PHP applications install the package with Composer, from a tagged release:
 framework:
     asset_mapper:
         paths:
-            - vendor/synapse/design/dist
+            assets/: ''
+            # The namespace keeps its fonts and images apart from those of the application.
+            vendor/synapse/design/dist: synapse-design
 ```
 
 ```yaml
@@ -61,6 +65,8 @@ twig:
 ```
 
 ```twig
+<link rel="stylesheet" href="{{ asset('synapse-design/synapse-design.css') }}">
+
 {% include '@si/badge.html.twig' with {label: 'Published', tone: 'success'} only %}
 ```
 
