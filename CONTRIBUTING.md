@@ -28,6 +28,10 @@ In `packages/design/src/components/<name>/`:
 
 Then add its page in `apps/docs/src/content/docs/components/`, and the French version when it is ready: a missing page falls back to English.
 
+## Changing a token
+
+Edit the JSON in `packages/design/tokens/`, then run `pnpm validate`. A semantic colour must exist in `light` and `dark`, reference a primitive, and keep the contrast pairs of `contrast-pairs.json`. Add any new pair to that file.
+
 ## Versions
 
 Semantic versioning, one version for the whole package. The public contract is the classes, the semantic tokens, the partial parameters and the JS APIs.
@@ -41,4 +45,4 @@ Semantic versioning, one version for the whole package. The public contract is t
 1. On `main`, add the version to `CHANGELOG.md`.
 2. Run the **Release** workflow with the version number.
 
-It runs the checks, builds the package, commits `dist/` and `twig/` in a commit outside `main`, tags it `vX.Y.Z` and publishes a GitHub release. Applications update with `composer require synapse/design:X.Y.Z`.
+It runs the checks, builds the package, commits `dist/`, `twig/` and `meta/` in a commit outside `main`, tags it `vX.Y.Z` and publishes a GitHub release. Applications update with `composer require synapse/design:X.Y.Z`.

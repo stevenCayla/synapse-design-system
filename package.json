@@ -7,12 +7,14 @@
     "node": ">=24"
   },
   "scripts": {
-    "dev": "pnpm --filter docs dev",
+    "dev": "pnpm tokens && pnpm --filter docs dev",
     "build": "pnpm --filter @synapse-medical/design build && pnpm --filter docs build",
+    "tokens": "pnpm --filter @synapse-medical/design tokens",
     "lint": "stylelint \"packages/design/src/**/*.css\" && eslint .",
     "typecheck": "pnpm --filter docs typecheck",
     "test": "node --test \"packages/design/test/*.test.mjs\"",
     "test:parity": "node tooling/twig-parity/run.mjs",
+    "validate": "pnpm tokens && node tooling/validate-tokens.mjs",
     "release": "node tooling/release.mjs"
   },
   "devDependencies": {

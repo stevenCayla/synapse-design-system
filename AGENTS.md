@@ -9,7 +9,9 @@ This repository is the source of truth for the Synapse interface. It is early wo
 | What | Where |
 |---|---|
 | Components | `packages/design/src/components/<name>/`: `<name>.css`, `<name>.html.twig`, `<name>.fixtures.yaml` |
-| Tokens | `packages/design/src/foundations/tokens.css` (temporary, generated from token sources in Phase 2) |
+| Token sources | `packages/design/tokens/`: `primitive/`, `semantic/` (`base`, `light`, `dark`), `contrast-pairs.json` |
+| Generated tokens | `pnpm tokens` writes `packages/design/generated/` (`tokens.css`, `tokens.json`, `tokens.js`). Never edit it |
+| Application variables | `packages/design/tokens/migration/TABLE.md`: what each `synapse-app` variable becomes |
 | Documentation | `apps/docs/src/content/docs/`: English at the root, French under `fr/` |
 | Example pages | `/examples/<component>/<fixture>/`, generated from the fixtures |
 
@@ -22,7 +24,7 @@ This repository is the source of truth for the Synapse interface. It is early wo
 
 ## Rules
 
-- No hard-coded colour, spacing or shadow in a component: use a `--si-*` token.
+- No hard-coded colour, spacing, radius, font size or shadow in a component: use a `--si-*` token. Components read semantic and scale tokens; primitive colours are not exposed. Spacing tokens are named by their value: `--si-space-16` is 16px.
 - Do not invent a colour, a spacing, a button, a variant or a pattern when a suitable one exists.
 - No dependency on Bootstrap or on another UI framework in a component ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)).
 - Partials use standard Twig only: no application function, no translation filter, no number arithmetic. Text arrives already translated, as parameters.
@@ -35,7 +37,7 @@ This repository is the source of truth for the Synapse interface. It is early wo
 A component has its CSS, its fixtures for each variant and state, and its documentation page. These pass:
 
 ```bash
-pnpm lint && pnpm typecheck && pnpm test && pnpm test:parity && pnpm build
+pnpm validate && pnpm lint && pnpm typecheck && pnpm test && pnpm test:parity && pnpm build
 ```
 
 ## Commits and pull requests

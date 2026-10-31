@@ -1,0 +1,524 @@
+{
+  "--accent": {
+    "token": "color.accent.default"
+  },
+  "--accent-light": {
+    "token": "color.shell.accent"
+  },
+  "--app-bg": {
+    "token": "color.bg.page"
+  },
+  "--app-border": {
+    "token": "color.border.default"
+  },
+  "--app-border-subtle": {
+    "token": "color.border.subtle"
+  },
+  "--app-footer-border": {
+    "token": "color.border.default"
+  },
+  "--app-footer-text": {
+    "token": "color.text.faint"
+  },
+  "--app-header-bg": {
+    "token": "color.surface.default"
+  },
+  "--app-header-border": {
+    "token": "color.border.default"
+  },
+  "--app-header-shadow": {
+    "keep": "Application header detail, moves with the shell in the complex components."
+  },
+  "--app-surface": {
+    "token": "color.surface.default"
+  },
+  "--app-surface-2": {
+    "token": "color.surface.raised"
+  },
+  "--app-surface-3": {
+    "token": "color.surface.sunken"
+  },
+  "--app-text": {
+    "token": "color.text.default"
+  },
+  "--app-text-faint": {
+    "token": "color.text.faint"
+  },
+  "--app-text-muted": {
+    "token": "color.text.muted"
+  },
+  "--app-toggle-bg": {
+    "token": "color.state.hover"
+  },
+  "--app-toggle-hover": {
+    "token": "color.state.active"
+  },
+  "--bs-dropdown-color": {
+    "keep": "Bootstrap setting, disappears with Bootstrap (#1)."
+  },
+  "--bs-offcanvas-width": {
+    "keep": "Bootstrap setting, disappears with Bootstrap (#1)."
+  },
+  "--bs-table-bg": {
+    "keep": "Bootstrap setting, disappears with Bootstrap (#1)."
+  },
+  "--bs-table-border-color": {
+    "keep": "Bootstrap setting, disappears with Bootstrap (#1)."
+  },
+  "--bs-table-color": {
+    "keep": "Bootstrap setting, disappears with Bootstrap (#1)."
+  },
+  "--bs-table-hover-bg": {
+    "keep": "Bootstrap setting, disappears with Bootstrap (#1)."
+  },
+  "--bs-table-striped-bg": {
+    "keep": "Bootstrap setting, disappears with Bootstrap (#1)."
+  },
+  "--cfg-accent": {
+    "token": "color.accent.strong"
+  },
+  "--cfg-accent-line": {
+    "token": "color.accent.line"
+  },
+  "--cfg-accent-soft": {
+    "token": "color.accent.soft"
+  },
+  "--cfg-bad": {
+    "token": "color.danger.default"
+  },
+  "--cfg-bad-soft": {
+    "token": "color.danger.soft"
+  },
+  "--cfg-bg": {
+    "token": "color.surface.raised"
+  },
+  "--cfg-card": {
+    "token": "color.surface.default"
+  },
+  "--cfg-line": {
+    "token": "color.border.default"
+  },
+  "--cfg-muted": {
+    "token": "color.text.muted"
+  },
+  "--cfg-ok": {
+    "token": "color.success.default"
+  },
+  "--cfg-ok-line": {
+    "token": "color.success.line"
+  },
+  "--cfg-ok-soft": {
+    "token": "color.success.soft"
+  },
+  "--cfg-on-accent": {
+    "token": "color.accent.on"
+  },
+  "--cfg-sub": {
+    "token": "color.surface.sunken"
+  },
+  "--cfg-text": {
+    "token": "color.text.default"
+  },
+  "--cfg-track": {
+    "token": "color.border.default"
+  },
+  "--cfg-warn": {
+    "token": "color.warning.default"
+  },
+  "--cfg-warn-line": {
+    "token": "color.warning.line"
+  },
+  "--cfg-warn-soft": {
+    "token": "color.warning.soft"
+  },
+  "--color-accent-blue": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-accent-green": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-accent-red": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-bg": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-bg-dark": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-border": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-brand-300": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-brand-400": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-brand-500": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-brand-600": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-brand-700": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-surface": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-surface-strong": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-text": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-text-on-dark": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--color-text-soft": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--container": {
+    "token": "layout.container"
+  },
+  "--focus-glow": {
+    "keep": "Login screen identity, stays in the application."
+  },
+  "--focus-glow-xl": {
+    "keep": "Login screen identity, stays in the application."
+  },
+  "--font-body": {
+    "token": "font.body"
+  },
+  "--font-display": {
+    "token": "font.display"
+  },
+  "--gradient-blue": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--gradient-brand": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--gradient-green": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--gradient-red": {
+    "retire": "Inherited from theme.css, used only by its own legacy rules."
+  },
+  "--header-height": {
+    "keep": "Application layout."
+  },
+  "--im-accent": {
+    "token": "color.accent.default"
+  },
+  "--im-accent-soft": {
+    "token": "color.accent.soft"
+  },
+  "--im-accent-strong": {
+    "token": "color.accent.strong"
+  },
+  "--im-bg": {
+    "token": "color.surface.default"
+  },
+  "--im-border": {
+    "token": "color.border.default"
+  },
+  "--im-danger": {
+    "token": "color.danger.default"
+  },
+  "--im-danger-soft": {
+    "token": "color.danger.soft"
+  },
+  "--im-faint": {
+    "token": "color.text.faint"
+  },
+  "--im-input": {
+    "token": "color.input.bg"
+  },
+  "--im-muted": {
+    "token": "color.text.muted"
+  },
+  "--im-on-accent": {
+    "token": "color.accent.on"
+  },
+  "--im-success": {
+    "token": "color.success.default"
+  },
+  "--im-success-soft": {
+    "token": "color.success.soft"
+  },
+  "--im-surface": {
+    "token": "color.surface.raised"
+  },
+  "--im-surface-2": {
+    "token": "color.surface.sunken"
+  },
+  "--im-text": {
+    "token": "color.text.default"
+  },
+  "--im-warning": {
+    "token": "color.warning.default"
+  },
+  "--im-warning-soft": {
+    "token": "color.warning.soft"
+  },
+  "--os-bg": {
+    "token": "color.surface.default"
+  },
+  "--os-border": {
+    "token": "color.border.default"
+  },
+  "--os-current-bg": {
+    "token": "color.accent.soft"
+  },
+  "--os-current-border": {
+    "token": "color.accent.line"
+  },
+  "--os-dim": {
+    "token": "color.text.muted"
+  },
+  "--os-focus": {
+    "token": "color.focus.ring"
+  },
+  "--os-hover": {
+    "token": "color.state.hover"
+  },
+  "--os-pill-bg": {
+    "token": "color.accent.soft"
+  },
+  "--os-soft": {
+    "token": "color.state.hover"
+  },
+  "--os-text": {
+    "token": "color.text.default"
+  },
+  "--os-violet": {
+    "token": "color.accent.strong"
+  },
+  "--radius": {
+    "token": "radius.md"
+  },
+  "--radius-lg": {
+    "retire": "Used only by the legacy rules of theme.css. Replaced by the radius scale."
+  },
+  "--radius-md": {
+    "retire": "Used only by the legacy rules of theme.css. Replaced by the radius scale."
+  },
+  "--radius-pill": {
+    "retire": "Used only by the legacy rules of theme.css. Replaced by the radius scale."
+  },
+  "--radius-sm": {
+    "retire": "Used only by the legacy rules of theme.css. Replaced by the radius scale."
+  },
+  "--radius-xl": {
+    "retire": "Used only by the legacy rules of theme.css. Replaced by the radius scale."
+  },
+  "--s-accent": {
+    "token": "color.accent.default"
+  },
+  "--s-accent-soft": {
+    "token": "color.accent.soft"
+  },
+  "--s-amber": {
+    "token": "color.warning.default"
+  },
+  "--s-cyan": {
+    "token": "color.info.default"
+  },
+  "--s-green": {
+    "token": "color.success.default"
+  },
+  "--s-red": {
+    "token": "color.danger.default"
+  },
+  "--sc-accent": {
+    "keep": "Study status colour of the home cards: the mapping from status to tone stays in the application."
+  },
+  "--shadow-float": {
+    "retire": "Used only by the legacy rules of theme.css. Replaced by the shadow tokens."
+  },
+  "--shadow-glow": {
+    "retire": "Used only by the legacy rules of theme.css. Replaced by the shadow tokens."
+  },
+  "--shadow-soft": {
+    "retire": "Used only by the legacy rules of theme.css. Replaced by the shadow tokens."
+  },
+  "--sheet-accent": {
+    "token": "color.accent.default"
+  },
+  "--sheet-accent-dark": {
+    "token": "color.accent.strong"
+  },
+  "--sheet-error": {
+    "token": "color.danger.default"
+  },
+  "--sheet-ink": {
+    "token": "color.text.default"
+  },
+  "--sheet-line": {
+    "token": "color.border.default"
+  },
+  "--sheet-page": {
+    "keep": "Printed sheet: the page background differs in print."
+  },
+  "--sheet-paper": {
+    "token": "color.surface.default"
+  },
+  "--sheet-prod": {
+    "token": "color.warning.default"
+  },
+  "--sheet-soft": {
+    "token": "color.text.muted"
+  },
+  "--sheet-warn": {
+    "token": "color.text.muted"
+  },
+  "--sidebar-active-bg": {
+    "token": "color.shell.active-bg"
+  },
+  "--sidebar-active-border": {
+    "token": "color.shell.accent"
+  },
+  "--sidebar-bg": {
+    "token": "color.shell.bg"
+  },
+  "--sidebar-border": {
+    "token": "color.shell.border"
+  },
+  "--sidebar-collapsed-width": {
+    "keep": "Application layout."
+  },
+  "--sidebar-hover": {
+    "token": "color.shell.hover"
+  },
+  "--sidebar-section-title": {
+    "token": "color.shell.title"
+  },
+  "--sidebar-text": {
+    "token": "color.shell.text"
+  },
+  "--sidebar-text-muted": {
+    "token": "color.shell.text-muted"
+  },
+  "--sidebar-width": {
+    "keep": "Application layout."
+  },
+  "--space-1": {
+    "retire": "Never used. Replaced by the space scale, named by value."
+  },
+  "--space-2": {
+    "retire": "Never used. Replaced by the space scale, named by value."
+  },
+  "--space-3": {
+    "retire": "Never used. Replaced by the space scale, named by value."
+  },
+  "--space-4": {
+    "retire": "Never used. Replaced by the space scale, named by value."
+  },
+  "--space-5": {
+    "retire": "Never used. Replaced by the space scale, named by value."
+  },
+  "--space-6": {
+    "retire": "Never used. Replaced by the space scale, named by value."
+  },
+  "--space-7": {
+    "retire": "Never used. Replaced by the space scale, named by value."
+  },
+  "--space-8": {
+    "retire": "Never used. Replaced by the space scale, named by value."
+  },
+  "--transition": {
+    "token": "motion.transition"
+  },
+  "--wz-accent": {
+    "token": "color.accent.default"
+  },
+  "--wz-accent-line": {
+    "token": "color.accent.line"
+  },
+  "--wz-accent-soft": {
+    "token": "color.accent.soft"
+  },
+  "--wz-accent-strong": {
+    "token": "color.accent.strong"
+  },
+  "--wz-aside-bg": {
+    "keep": "Gradient specific to the wizard shell."
+  },
+  "--wz-bg": {
+    "token": "color.surface.default"
+  },
+  "--wz-border": {
+    "token": "color.border.default"
+  },
+  "--wz-card-active": {
+    "token": "color.accent.soft"
+  },
+  "--wz-card-hover": {
+    "token": "color.state.hover"
+  },
+  "--wz-danger": {
+    "token": "color.danger.default"
+  },
+  "--wz-danger-soft": {
+    "token": "color.danger.soft"
+  },
+  "--wz-dim": {
+    "token": "color.text.faint"
+  },
+  "--wz-disabled-bg": {
+    "token": "color.disabled.bg"
+  },
+  "--wz-disabled-border": {
+    "token": "color.disabled.border"
+  },
+  "--wz-disabled-text": {
+    "token": "color.disabled.text"
+  },
+  "--wz-faint": {
+    "token": "color.text.faint"
+  },
+  "--wz-input-bg": {
+    "token": "color.input.bg"
+  },
+  "--wz-input-border": {
+    "token": "color.border.strong"
+  },
+  "--wz-muted": {
+    "token": "color.text.muted"
+  },
+  "--wz-on-accent": {
+    "token": "color.accent.on"
+  },
+  "--wz-on-success": {
+    "token": "color.success.on"
+  },
+  "--wz-shadow": {
+    "token": "shadow.md"
+  },
+  "--wz-success": {
+    "token": "color.success.default"
+  },
+  "--wz-surface": {
+    "token": "color.surface.raised"
+  },
+  "--wz-surface-2": {
+    "token": "color.surface.sunken"
+  },
+  "--wz-text": {
+    "token": "color.text.default"
+  },
+  "--wz-text-faint": {
+    "token": "color.text.faint"
+  },
+  "--wz-text-muted": {
+    "token": "color.text.muted"
+  },
+  "--wz-warning": {
+    "token": "color.warning.default"
+  },
+  "--wz-warning-soft": {
+    "token": "color.warning.soft"
+  }
+}

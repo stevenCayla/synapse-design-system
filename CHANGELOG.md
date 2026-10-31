@@ -4,6 +4,18 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Added
+
+- Design tokens in DTCG JSON: primitives, then semantic tokens for the light and dark themes. Generated as CSS, JSON and JavaScript.
+- Validation of the tokens: theme parity, WCAG AA contrast pairs, migration table and usage in components.
+- Migration table for the 174 variables of `synapse-app`, with `aliases.css` (current values) and `aliases-target.css` (tokens).
+- Inter, Fraunces and Nunito fonts, and the logo in the brand colour `#4f46e5`.
+- Stylelint rejects hard-coded colours, spacing, radii and font sizes.
+
+### Changed
+
+- Components read the generated tokens. Spacing tokens are named by their value (`--si-space-16`).
+
 ## [0.0.1-alpha.3] - 2026-10-31
 
 Validates the Release workflow. Not for production use. No change to the package.

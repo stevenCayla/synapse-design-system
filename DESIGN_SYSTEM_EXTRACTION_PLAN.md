@@ -437,13 +437,13 @@ Principe : **tirer les jetons de ce que les écrans récents ont déjà validé.
 | `color.accent.strong` | `#4338ca` | `#a5b4fc` | `--wz-accent-strong` |
 | `color.accent.soft` | `#eeedfd` | `#1e1c44` | `--wz-accent-soft`, `--accent-soft` de `synapse-www` |
 | `color.accent.on` | `#ffffff` | `#0f1629` | `--wz-on-accent` |
-| `color.success` | `#15803d` | `#4ade80` | `--wz-success` |
-| `color.warning` | `#b45309` | `#fbbf24` | `--wz-warning` |
+| `color.success` | `#11692f` | `#4ade80` | `--wz-success`, `--cfg-ok` |
+| `color.warning` | `#a84a06` | `#fbbf24` | `--wz-warning`, `--cfg-warn` |
 | `color.danger` | `#b91c1c` | `#fca5a5` | `--wz-danger` |
 
 **Contrastes de la marque (D3) :** `#4f46e5` sur blanc 6,29:1 et sur `#f0f2f8` 5,62:1 ; `#4338ca` sur blanc 7,90:1 ; `#818cf8` sur `#0f1629` 6,03:1 ; `#a5b4fc` sur `#0f1629` 9,03:1. En sombre, `#4f46e5` ne convient pas (2,86:1), et le texte sur un bouton `#818cf8` doit être foncé : `#0f1629` donne 6,03:1, le blanc seulement 2,98:1.
 
-Chaque couleur d'état a ses variantes `-soft` et `-line` (reprises de `--cfg-*`). Ajouter un `info`, absent de `--wz-*` mais présent dans la maquette (`#3b82f6`), après contrôle du contraste.
+Chaque couleur d'état a ses variantes `-soft` et `-line` (reprises de `--cfg-*`). Le `info` vaut `#1d4ed8` en clair et `#93c5fd` en sombre : le `#3b82f6` de la maquette ne passe pas AA sur blanc.
 
 | Échelle | Proposition | Origine |
 |---|---|---|
@@ -489,7 +489,7 @@ synapse-app             composer require synapse/design  ◄────┘
 ```
 
 - **Dépôt :** un `composer.json` à la racine. Le `dist/` n'existe que dans le commit tagué, pas sur `main`.
-- **Application :** déclaration d'un dépôt `vcs` dans `composer.json`, ajout de `vendor/synapse/design/dist` à `asset_mapper.paths` et de `vendor/synapse/design/twig: si` à `twig.paths`.
+- **Application :** déclaration d'un dépôt `vcs` dans `composer.json`, ajout de `vendor/synapse/design/dist: synapse-design` à `asset_mapper.paths` et de `vendor/synapse/design/twig: si` à `twig.paths`. Le namespace est nécessaire : sans lui, `fonts/` et `images/logo.svg` du package entrent en conflit avec ceux de l'application, qui l'emporteraient.
 - **Dockerfile inchangé :** `composer install` et `asset-map:compile` existent déjà.
 - **Nom :** `synapse/design` n'est pas publié sur Packagist, le dépôt `vcs` suffit. Il est indépendant du scope npm du §9.3.
 - **Mises à jour :** `composer require`, éventuellement par Dependabot, si sa configuration couvre ce dépôt `vcs` (à vérifier en Phase 4).
@@ -743,7 +743,7 @@ Avant toute modification, dans `synapse-app/tests/e2e/` : un scénario de captur
 
 | Étape | Risques | Dépendances | Changements dans l'application | Anti-régression |
 |---|---|---|---|---|
-| **1. Foundations** (polices, logo) | Chemins, CSP, sous-ensemble de caractères | Archive et chemins AssetMapper | `fonts.css` remplacé, chemin de `LogoExtension` | Captures identiques |
+| **1. Foundations** (polices) | Chemins, CSP, sous-ensemble de caractères | Package et chemins AssetMapper | `fonts.css` remplacé. Le logo du package est déjà en `#4f46e5` : il remplace celui de l'application à l'étape 2 ter, pas avant | Captures identiques |
 | **2. Tokens** | Cascade, spécificité du sombre | Étape 1 | Chargement de `tokens.css` et `aliases.css` ; retrait des déclarations de `theme.css` et d'`app.css` ; puis `--wz-*`, `--im-*`, `--sheet-*`, `--os-*`, `--cfg-*` en alias, un fichier par PR. **Valeurs actuelles conservées** | Captures identiques, sinon on s'arrête |
 | **2 bis. Corrections de contraste** | Changement visible | Étape 2 | Une release qui change les valeurs sémantiques, sans toucher aux templates | Écarts voulus, listés, relus |
 | **2 ter. Changement de marque (D3)** | **Coexistence de deux couleurs** si le passage se fait avant le retrait des valeurs en dur ; données stockées | Étape 2 | D'abord remplacer par des jetons `#6d4aff` (82 dans les CSS, 131 dans les templates), `rgba(109,74,255,…)` (79 dans les CSS) et les autres violets ou indigos ; puis basculer le jeton et `logo.svg`. **À examiner à part :** `TeamAccentColor`, `Team`, `EcrfSpecialty`, `TeamController`, `StudyWizardController`, qui contiennent cette valeur en PHP : les couleurs déjà enregistrées pour des équipes ou des spécialités ne changent pas sans décision. E-mails à traiter séparément | Captures relues, écart voulu et annoncé dans les notes de version |
@@ -835,6 +835,15 @@ pnpm validate    jetons et documentation            pnpm sync:app    copie vers 
 - **Dépendances :** Phase 1.
 - **Risques :** une variable oubliée ; deux variables de même nom mais de valeurs différentes.
 - **Critères d'acceptation :** toutes les variables de l'application et des PR ont leur correspondance ; parité clair/sombre vérifiée ; contrastes cibles passant le seuil.
+
+**Résultats (31/10/2026) :**
+
+- 106 jetons, générés en CSS, JSON et JS. 108 contrôles de contraste passent, clair et sombre.
+- Les 174 variables de `synapse-app` à `4f1cfa0` ont une décision : 122 vers un jeton, 16 restent dans l'application, 36 sont supprimées (`packages/design/tokens/migration/TABLE.md`).
+- Dans l'image de production, AssetMapper publie le CSS et réécrit les URL des polices avec le package sous le namespace `synapse-design`.
+- `aliases.css` conserve les valeurs actuelles, ce que le validateur contrôle ; `aliases-target.css` lit les jetons et servira aux étapes 2 bis et 2 ter.
+- Les PR #339, #341, #347, #350 et #351 ont été fusionnées dans `develop` pendant la phase : les constats du §2.9 ne sont plus provisoires, et la condition de retrait sur #351 est remplie.
+- **Le contrôle a changé deux valeurs :** `#15803d` et `#b45309` n'atteignaient pas 4,5:1 sur leur fond teinté. `#11692f` et `#a84a06`, déjà utilisées par l'écran de configuration, les remplacent.
 
 ### Phase 3 : Site Astro/Starlight, M
 
