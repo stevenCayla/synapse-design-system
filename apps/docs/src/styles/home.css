@@ -1,11 +1,11 @@
 /* Homepage: only tokens. */
 
 /* The homepage has its own heading: no empty title panel above it. */
-.content-panel:first-child:not(:has(*)) {
+.content-panel:not(:has(h1)) {
   display: none;
 }
 
-.content-panel:first-child:not(:has(*)) + .content-panel {
+.content-panel:not(:has(h1)) + .content-panel {
   border-top: 0;
 }
 
