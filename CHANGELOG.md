@@ -4,6 +4,10 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+## [0.0.1-alpha.3] - 2026-10-31
+
+Validates the Release workflow. Not for production use. No change to the package.
+
 ## [0.0.1-alpha.2] - 2026-10-31
 
 Validates the delivery chain. Not for production use.
