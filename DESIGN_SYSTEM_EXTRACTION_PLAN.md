@@ -15,7 +15,7 @@
 | # | Décision | Statut | Choix |
 |---|---|---|---|
 | D1 | Comment l'application reçoit le Design System | Décidé | Package Composer `synapse/design`, depuis ce dépôt rendu public (§9.2) |
-| D2 | Bootstrap | Décidé | Moteur **temporaire** pendant la migration. À terme, aucune dépendance à Bootstrap ni à un framework : on reprend les éléments utiles dans notre code et on construit nos composants ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1), §3.4, Phase 11) |
+| D2 | Bootstrap | Décidé | Moteur **temporaire** pendant la migration. À terme, aucune dépendance à Bootstrap ni à un framework : on reprend les éléments utiles dans notre code et on construit nos composants ([#1](https://github.com/synapse-medical/synapse-design-system/issues/1), §3.4, Phase 11) |
 | D3 | Couleur de marque | Décidé | **`#4f46e5`**, déjà celle de `synapse-www` et `synapse-docs`. Remplace `#6d4aff` dans l'application (§8.4, §18.3) |
 | D4 | Préfixe | Décidé | `si` pour les classes et les variables (`.si-badge`, `--si-color-text`) |
 | D5 | Hébergement | Décidé | Cloudflare Workers Static Assets |
@@ -39,7 +39,7 @@ Synapse a déjà un vrai système visuel, mais dispersé. Il n'y a pas une sourc
 
 **Ce que je propose, en cinq choix structurants :**
 
-1. **Design System CSS d'abord, sans framework à terme.** L'application est en Twig sans build Node : des composants React ou Web Components imposeraient une réécriture sans bénéfice proportionné. Un composant, c'est du CSS `si-*`, un contrat HTML, un partiel Twig quand la structure le justifie, et un petit module JS si besoin. Bootstrap reste en place le temps de la migration, puis disparaît ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)).
+1. **Design System CSS d'abord, sans framework à terme.** L'application est en Twig sans build Node : des composants React ou Web Components imposeraient une réécriture sans bénéfice proportionné. Un composant, c'est du CSS `si-*`, un contrat HTML, un partiel Twig quand la structure le justifie, et un petit module JS si besoin. Bootstrap reste en place le temps de la migration, puis disparaît ([#1](https://github.com/synapse-medical/synapse-design-system/issues/1)).
 2. **Un seul package, `@synapse-medical/design`,** au lieu de `tokens` et `design` séparés. Un seul numéro de version, et des points d'entrée distincts pour ceux qui ne veulent que les jetons.
 3. **L'application reçoit une version figée du package,** sans registre npm ni Node côté serveur (§9.2).
 4. **Une fixture par état de composant.** Elle produit à la fois l'aperçu de la documentation, le test d'accessibilité et le test visuel. C'est ce qui rend Storybook inutile pour l'instant.
@@ -229,7 +229,7 @@ Le ratio d'un couple ne dit pas où il est employé : l'audit axe de la Phase 9 
 
 ### 3.4 Bootstrap : moteur temporaire, puis sortie
 
-**Décision :** ne dépendre à terme ni de Bootstrap ni d'aucun framework ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)). Le retirer d'un coup reste impossible : environ 370 des 2 030 classes de Bootstrap sont utilisées, pour environ 16 000 usages (comptage approximatif sur les attributs de classe).
+**Décision :** ne dépendre à terme ni de Bootstrap ni d'aucun framework ([#1](https://github.com/synapse-medical/synapse-design-system/issues/1)). Le retirer d'un coup reste impossible : environ 370 des 2 030 classes de Bootstrap sont utilisées, pour environ 16 000 usages (comptage approximatif sur les attributs de classe).
 
 | Famille | Usages | Traitement |
 |---|---|---|
@@ -703,7 +703,7 @@ workflow de release, lancé à la main avec la version
 
 - **Fichiers :** `.github/workflows/ci.yaml` et `release.yaml`, `wrangler.jsonc`, `scripts/deploy.sh` repris de `synapse-docs`.
 - **À préparer :** domaines `design.` et `dev-design.synapse-medical.fr`, zone déjà sur Cloudflare ; secrets `CLOUDFLARE_API_TOKEN` et `CLOUDFLARE_ACCOUNT_ID`.
-- **Compte :** le dépôt est sous `stevenCayla`, privé et vide à ce jour. Il passe public au début de la Phase 1, avant le premier push, et `main` est alors protégée, comme sur `synapse-docs`.
+- **Compte :** le dépôt est sous l'organisation `synapse-medical` depuis le 1er novembre 2026 (d'abord sous `stevenCayla`). Il est passé public au début de la Phase 1, avant le premier push, et `main` est alors protégée, comme sur `synapse-docs`.
 
 ---
 
@@ -718,7 +718,7 @@ workflow de release, lancé à la main avec la version
 | **Correctif** | Correction sans changement de contrat. **Un changement de valeur visible (contraste, par exemple) est au moins mineur** et s'accompagne d'une note avec avant/après |
 
 - **`0.x` pendant la migration,** où une mineure peut encore casser (ce sera noté). **`1.0.0` à la fin de la Phase 10.**
-- **Sortie de Bootstrap :** une version majeure avec note de migration ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)).
+- **Sortie de Bootstrap :** une version majeure avec note de migration ([#1](https://github.com/synapse-medical/synapse-design-system/issues/1)).
 - **Dépréciation :** classe ou jeton marqué dans `components.json`, signalé par l'audit, retiré à la majeure suivante.
 - **`CHANGELOG.md` écrit à la main, contrôlé en CI.** Pas de Changesets : pour un package et un seul mainteneur, il ajouterait une étape sans bénéfice. À reconsidérer s'il y a plusieurs packages.
 - **Application :** chaque montée de version est une PR séparée de `synapse-app`, avec les écarts visuels.
@@ -936,7 +936,7 @@ Décision de Steven : compléter tout le catalogue de composants avant de touche
 - **Risques :** figer un contrat trop tôt : ne promettre que ce qui est documenté et utilisé.
 - **Critères d'acceptation :** l'application consomme la 1.0 en production ; `design.synapse-medical.fr` à jour ; plus d'alias sur les écrans migrés et liste écrite de ce qui reste ; politique de contribution appliquée.
 
-### Phase 11 : Sortie de Bootstrap ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)), L
+### Phase 11 : Sortie de Bootstrap ([#1](https://github.com/synapse-medical/synapse-design-system/issues/1)), L
 
 Elle ne bloque pas la 1.0, mais les Phases 5 et 6 la préparent : aucun nouveau composant ne dépend de Bootstrap.
 

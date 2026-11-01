@@ -52,7 +52,7 @@ jobs:
         run: |
           flags=""
           case "$VERSION" in *-*) flags="--prerelease" ;; esac
-          gh release create "v$VERSION" --verify-tag --title "v$VERSION" --notes "See [CHANGELOG.md](https://github.com/stevenCayla/synapse-design-system/blob/main/CHANGELOG.md)." $flags
+          gh release create "v$VERSION" --verify-tag --title "v$VERSION" --notes "See [CHANGELOG.md](https://github.com/synapse-medical/synapse-design-system/blob/main/CHANGELOG.md)." $flags
 
   # A final version updates design.synapse-medical.fr. A prerelease does not.
   deploy:

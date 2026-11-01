@@ -1,8 +1,8 @@
-# Synapse Design System: instructions for coding agents
+# Synapse Medical Design System: instructions for coding agents
 
-Before implementing UI, check the Synapse Design System.
+Before implementing UI, check the Synapse Medical Design System.
 
-This repository is the source of truth for the Synapse interface. It is early work: only the elements listed here exist so far, and `DESIGN_SYSTEM_EXTRACTION_PLAN.md` describes where it is going.
+This repository is the source of truth for the Synapse Medical interface. It is early work: only the elements listed here exist so far, and `DESIGN_SYSTEM_EXTRACTION_PLAN.md` describes where it is going.
 
 ## Where things are
 
@@ -29,7 +29,7 @@ This repository is the source of truth for the Synapse interface. It is early wo
 
 - No hard-coded colour, spacing, radius, font size or shadow in a component: use a `--si-*` token. Components read semantic and scale tokens; primitive colours are not exposed. Spacing tokens are named by their value: `--si-space-16` is 16px.
 - Do not invent a colour, a spacing, a button, a variant or a pattern when a suitable one exists.
-- No dependency on Bootstrap or on another UI framework in a component ([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)).
+- No dependency on Bootstrap or on another UI framework in a component ([#1](https://github.com/synapse-medical/synapse-design-system/issues/1)).
 - Partials use standard Twig only: no application function, no translation filter, no number arithmetic. Text arrives already translated, as parameters.
 - No inline script or style: the applications enforce a strict CSP.
 - WCAG 2.2 AA contrast in both themes. Never convey a state by colour alone.
