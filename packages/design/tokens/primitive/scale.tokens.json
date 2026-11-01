@@ -86,8 +86,8 @@
     },
     "display": {
       "$type": "fontFamily",
-      "$value": "\"Fraunces\", Georgia, serif",
-      "$description": "Pending the choice between Fraunces and Inter before 1.0."
+      "$value": "\"Newsreader\", Georgia, serif",
+      "$description": "Heading font."
     },
     "wordmark": {
       "$type": "fontFamily",

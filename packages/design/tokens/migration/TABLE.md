@@ -19,7 +19,7 @@ The value columns show the current value, then the target when it differs. `alia
 | `--app-surface` | `--si-color-surface` | `#ffffff` | `#0f1629` | app.css, theme.css |
 | `--app-surface-2` | `--si-color-surface-raised` | `#f8fafc` → `#f7f8fc` | `#141d35` | app.css |
 | `--app-surface-3` | `--si-color-surface-sunken` | `#f1f5f9` → `#eef0f8` | `#1a2440` | app.css |
-| `--app-text` | `--si-color-text` | `#1a1d2e` | `#e2e8f0` → `#e6ebf5` | app.css, theme.css |
+| `--app-text` | `--si-color-text` | `#1a1d2e` → `#1e1b3a` | `#e2e8f0` → `#e6ebf5` | app.css, theme.css |
 | `--app-text-faint` | `--si-color-text-faint` | `#9ca3af` → `#5f667c` | `#334155` → `#8793ab` | app.css |
 | `--app-text-muted` | `--si-color-text-muted` | `#6b7280` → `#4f566b` | `#64748b` → `#b0bacd` | app.css |
 | `--app-toggle-bg` | `--si-color-state-hover` | `#f3f4f6` → `rgba(26, 29, 46, 0.04)` | `rgba(255,255,255,0.07)` → `rgba(255, 255, 255, 0.06)` | app.css |
@@ -45,7 +45,7 @@ The value columns show the current value, then the target when it differs. `alia
 | `--cfg-ok-soft` | `--si-color-success-soft` | `#e8f6ed` → `rgba(21, 128, 61, 0.1)` | `#12321f` → `rgba(74, 222, 128, 0.12)` | study-configuration.css |
 | `--cfg-on-accent` | `--si-color-accent-on` | `#ffffff` | `#0f1629` | study-configuration.css |
 | `--cfg-sub` | `--si-color-surface-sunken` | `#eef0f8` | `#12172a` → `#1a2440` | study-configuration.css |
-| `--cfg-text` | `--si-color-text` | `#1a1d2e` | `#ffffff` → `#e6ebf5` | study-configuration.css |
+| `--cfg-text` | `--si-color-text` | `#1a1d2e` → `#1e1b3a` | `#ffffff` → `#e6ebf5` | study-configuration.css |
 | `--cfg-track` | `--si-color-border` | `#d2d6e4` → `#e3e6ef` | `#3b4566` → `rgba(255, 255, 255, 0.1)` | study-configuration.css |
 | `--cfg-warn` | `--si-color-warning` | `#a84a06` | `#fbbf24` | study-configuration.css |
 | `--cfg-warn-line` | `--si-color-warning-line` | `#f0c999` | `#7a5a14` | study-configuration.css |
@@ -70,7 +70,7 @@ The value columns show the current value, then the target when it differs. `alia
 | `--focus-glow` | Stays: Login screen identity, stays in the application. | | | login.css |
 | `--focus-glow-xl` | Stays: Login screen identity, stays in the application. | | | login.css |
 | `--font-body` | `--si-font-body` | `"Inter", system-ui, sans-serif` |  | theme.css |
-| `--font-display` | `--si-font-display` | `"Fraunces", Georgia, serif` |  | theme.css |
+| `--font-display` | `--si-font-display` | `"Fraunces", Georgia, serif` → `"Newsreader", Georgia, serif` |  | theme.css |
 | `--gradient-blue` | Removed: Inherited from theme.css, used only by its own legacy rules. | | | theme.css |
 | `--gradient-brand` | Removed: Inherited from theme.css, used only by its own legacy rules. | | | theme.css |
 | `--gradient-green` | Removed: Inherited from theme.css, used only by its own legacy rules. | | | theme.css |
@@ -91,7 +91,7 @@ The value columns show the current value, then the target when it differs. `alia
 | `--im-success-soft` | `--si-color-success-soft` | `rgba(21, 128, 61, .10)` → `rgba(21, 128, 61, 0.1)` | `rgba(74, 222, 128, .12)` → `rgba(74, 222, 128, 0.12)` | import.css |
 | `--im-surface` | `--si-color-surface-raised` | `var(--wz-surface, #f7f8fc)` → `#f7f8fc` | `#141d35` | import.css |
 | `--im-surface-2` | `--si-color-surface-sunken` | `var(--wz-surface-2, #eef0f8)` → `#eef0f8` | `#1a2440` | import.css |
-| `--im-text` | `--si-color-text` | `var(--wz-text, #1a1d2e)` → `#1a1d2e` | `#e6ebf5` | import.css |
+| `--im-text` | `--si-color-text` | `var(--wz-text, #1a1d2e)` → `#1e1b3a` | `#e6ebf5` | import.css |
 | `--im-warning` | `--si-color-warning` | `var(--wz-warning, #b45309)` → `#a84a06` | `#fbbf24` | import.css |
 | `--im-warning-soft` | `--si-color-warning-soft` | `var(--wz-warning-soft, rgba(180, 83, 9, .10))` → `rgba(180, 83, 9, 0.1)` | `rgba(251, 191, 36, .12)` → `rgba(251, 191, 36, 0.12)` | import.css |
 | `--os-bg` | `--si-color-surface` | `var(--app-surface)` → `#ffffff` |  | org-switch.css |
@@ -103,7 +103,7 @@ The value columns show the current value, then the target when it differs. `alia
 | `--os-hover` | `--si-color-state-hover` | `rgba(109, 74, 255, .07)` → `rgba(26, 29, 46, 0.04)` | `rgba(255, 255, 255, .06)` → `rgba(255, 255, 255, 0.06)` | org-switch.css |
 | `--os-pill-bg` | `--si-color-accent-soft` | `rgba(109, 74, 255, .14)` → `#eeedfd` | `rgba(138, 124, 255, .2)` → `#1e1c44` | org-switch.css |
 | `--os-soft` | `--si-color-state-hover` | `rgba(26, 29, 46, .035)` → `rgba(26, 29, 46, 0.04)` | `rgba(255, 255, 255, .04)` → `rgba(255, 255, 255, 0.06)` | org-switch.css |
-| `--os-text` | `--si-color-text` | `var(--app-text)` → `#1a1d2e` |  | org-switch.css |
+| `--os-text` | `--si-color-text` | `var(--app-text)` → `#1e1b3a` |  | org-switch.css |
 | `--os-violet` | `--si-color-accent-strong` | `#4b2fd6` → `#4338ca` | `#c4b5fd` → `#a5b4fc` | org-switch.css |
 | `--radius` | `--si-radius-md` | `8px` |  | app.css |
 | `--radius-lg` | Removed: Used only by the legacy rules of theme.css. Replaced by the radius scale. | | | theme.css |
@@ -124,7 +124,7 @@ The value columns show the current value, then the target when it differs. `alia
 | `--sheet-accent` | `--si-color-accent` | `#6d4aff` → `#4f46e5` | `#a78bfa` → `#818cf8` | study-sheet.css |
 | `--sheet-accent-dark` | `--si-color-accent-strong` | `#3b2aa8` → `#4338ca` | `#c4b5fd` → `#a5b4fc` | study-sheet.css |
 | `--sheet-error` | `--si-color-danger` | `#b42318` → `#b91c1c` | `#f87171` → `#fca5a5` | study-sheet.css |
-| `--sheet-ink` | `--si-color-text` | `#111827` → `#1a1d2e` | `#e5e7eb` → `#e6ebf5` | study-sheet.css |
+| `--sheet-ink` | `--si-color-text` | `#111827` → `#1e1b3a` | `#e5e7eb` → `#e6ebf5` | study-sheet.css |
 | `--sheet-line` | `--si-color-border` | `#d1d5db` → `#e3e6ef` | `#374151` → `rgba(255, 255, 255, 0.1)` | study-sheet.css |
 | `--sheet-page` | Stays: Printed sheet: the page background differs in print. | | | study-sheet.css |
 | `--sheet-paper` | `--si-color-surface` | `#ffffff` | `#1a1530` → `#0f1629` | study-sheet.css |
@@ -175,7 +175,7 @@ The value columns show the current value, then the target when it differs. `alia
 | `--wz-success` | `--si-color-success` | `#15803d` → `#11692f` | `#4ade80` | study-wizard.css |
 | `--wz-surface` | `--si-color-surface-raised` | `#f8f9fa` → `#f7f8fc` | `#141d35` | new.html.twig, study-wizard.css |
 | `--wz-surface-2` | `--si-color-surface-sunken` | `#eef0f8` | `#1a2440` | study-wizard.css |
-| `--wz-text` | `--si-color-text` | `var(--bs-body-color, #13152b)` → `#1a1d2e` | `#e2e8f0` → `#e6ebf5` | new.html.twig, study-wizard.css |
+| `--wz-text` | `--si-color-text` | `var(--bs-body-color, #13152b)` → `#1e1b3a` | `#e2e8f0` → `#e6ebf5` | new.html.twig, study-wizard.css |
 | `--wz-text-faint` | `--si-color-text-faint` | `#9ca3af` → `#5f667c` | `#475569` → `#8793ab` | new.html.twig |
 | `--wz-text-muted` | `--si-color-text-muted` | `var(--bs-secondary-color, #6c757d)` → `#4f566b` | `#64748b` → `#b0bacd` | new.html.twig |
 | `--wz-warning` | `--si-color-warning` | `#b45309` → `#a84a06` | `#fbbf24` | study-wizard.css |
