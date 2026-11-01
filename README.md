@@ -132,7 +132,7 @@ token and no Node.js in the application:
 ```json
 {
     "repositories": [{ "type": "vcs", "url": "https://github.com/synapse-medical/synapse-design-system" }],
-    "require": { "synapse-medical/design": "0.0.1-alpha.4" }
+    "require": { "synapse-medical/design": "0.0.1-alpha.5" }
 }
 ```
 
