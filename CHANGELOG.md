@@ -8,8 +8,6 @@ All notable changes to this project are documented here. The format follows [Kee
 
 - The documentation site uses the template of the public Synapse Medical sites: header, hero, sections, footer, 404 page, Nunito, Newsreader and JetBrains Mono. Components and examples keep reading the tokens.
 - The product is named Synapse Medical in the documentation.
-- The text colour `color.neutral.900` is `#1e1b3a` instead of `#1a1d2e`.
-- Newsreader replaces Fraunces as the heading font (`font.display`), and the package no longer ships Fraunces.
 - The dark theme of the documentation site uses the `#0f1629` background of the tokens, with its surfaces aligned on them.
 
 ### Added
@@ -29,6 +27,15 @@ All notable changes to this project are documented here. The format follows [Kee
 
 - Components read the generated tokens. Spacing tokens are named by their value (`--si-space-16`).
 - Badge, alert and modal: more tones and variants, and every component page documents usage, variants, states, dimensions, accessibility, responsive behaviour, examples and API.
+
+## [0.0.1-alpha.5] - 2026-11-01
+
+Validates the chosen text colour and heading font. Not for production use.
+
+### Changed
+
+- The text colour `color.neutral.900` is `#1e1b3a` instead of `#1a1d2e`.
+- Newsreader replaces Fraunces as the heading font (`font.display`), and the package no longer ships Fraunces.
 
 ## [0.0.1-alpha.4] - 2026-11-01
 
