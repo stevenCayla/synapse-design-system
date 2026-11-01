@@ -103,7 +103,7 @@ pnpm test:parity
 ├── tests/browser/                 Accessibility, behaviour, width and screenshots
 ├── tooling/                       Token and documentation checks, Twig parity, release, visual tests
 ├── AGENTS.md                      Rules for coding agents
-├── composer.json                  Composer package synapse/design
+├── composer.json                  Composer package synapse-medical/design
 └── DESIGN_SYSTEM_EXTRACTION_PLAN.md
 ```
 
@@ -132,7 +132,7 @@ token and no Node.js in the application:
 ```json
 {
     "repositories": [{ "type": "vcs", "url": "https://github.com/synapse-medical/synapse-design-system" }],
-    "require": { "synapse/design": "0.0.1-alpha.3" }
+    "require": { "synapse-medical/design": "0.0.1-alpha.4" }
 }
 ```
 
@@ -143,14 +143,14 @@ framework:
         paths:
             assets/: ''
             # The namespace keeps its fonts and images apart from those of the application.
-            vendor/synapse/design/dist: synapse-design
+            vendor/synapse-medical/design/dist: synapse-design
 ```
 
 ```yaml
 # config/packages/twig.yaml
 twig:
     paths:
-        vendor/synapse/design/twig: si
+        vendor/synapse-medical/design/twig: si
 ```
 
 ```twig

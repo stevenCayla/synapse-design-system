@@ -1,5 +1,5 @@
 {
-    "name": "synapse/design",
+    "name": "synapse-medical/design",
     "description": "Synapse Medical Design System: styles, tokens, assets and Twig partials.",
     "type": "library",
     "license": "MIT"
