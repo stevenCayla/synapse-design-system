@@ -27,6 +27,14 @@ All notable changes to this project are documented here. The format follows [Kee
 - Components read the generated tokens. Spacing tokens are named by their value (`--si-space-16`).
 - Badge, alert and modal: more tones and variants, and every component page documents usage, variants, states, dimensions, accessibility, responsive behaviour, examples and API.
 
+## [0.0.1-alpha.4] - 2026-11-01
+
+Validates the new Composer package name. Not for production use.
+
+### Changed
+
+- The Composer package is now `synapse-medical/design`, and its files move to `vendor/synapse-medical/design/`. Versions up to `0.0.1-alpha.3` keep the name `synapse/design`.
+
 ## [0.0.1-alpha.3] - 2026-10-31
 
 Validates the Release workflow. Not for production use. No change to the package.

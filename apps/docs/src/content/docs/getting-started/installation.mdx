@@ -10,7 +10,7 @@ The package installs with Composer, from a tagged release, with no token and no 
 ```json
 {
     "repositories": [{ "type": "vcs", "url": "https://github.com/synapse-medical/synapse-design-system" }],
-    "require": { "synapse/design": "0.0.1-alpha.3" }
+    "require": { "synapse-medical/design": "0.0.1-alpha.4" }
 }
 ```
 
@@ -21,14 +21,14 @@ framework:
         paths:
             assets/: ''
             # The namespace keeps its fonts and images apart from those of the application.
-            vendor/synapse/design/dist: synapse-design
+            vendor/synapse-medical/design/dist: synapse-design
 ```
 
 ```yaml
 # config/packages/twig.yaml
 twig:
     paths:
-        vendor/synapse/design/twig: si
+        vendor/synapse-medical/design/twig: si
 ```
 
 Then load the styles and use the partials. The theme comes from the `data-theme` attribute of `<html>`, `light` or `dark`.

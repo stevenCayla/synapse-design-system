@@ -14,7 +14,7 @@
 
 | # | Décision | Statut | Choix |
 |---|---|---|---|
-| D1 | Comment l'application reçoit le Design System | Décidé | Package Composer `synapse/design`, depuis ce dépôt rendu public (§9.2) |
+| D1 | Comment l'application reçoit le Design System | Décidé | Package Composer `synapse-medical/design`, depuis ce dépôt rendu public (§9.2) |
 | D2 | Bootstrap | Décidé | Moteur **temporaire** pendant la migration. À terme, aucune dépendance à Bootstrap ni à un framework : on reprend les éléments utiles dans notre code et on construit nos composants ([#1](https://github.com/synapse-medical/synapse-design-system/issues/1), §3.4, Phase 11) |
 | D3 | Couleur de marque | Décidé | **`#4f46e5`**, déjà celle de `synapse-www` et `synapse-docs`. Remplace `#6d4aff` dans l'application (§8.4, §18.3) |
 | D4 | Préfixe | Décidé | `si` pour les classes et les variables (`.si-badge`, `--si-color-text`) |
@@ -331,7 +331,7 @@ synapse-design-system/
 ├── AGENTS.md
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
-├── composer.json                # package synapse/design pour les applications PHP
+├── composer.json                # package synapse-medical/design pour les applications PHP
 ├── package.json                 # scripts racine
 ├── pnpm-workspace.yaml
 ├── .github/workflows/           # ci.yaml, release.yaml
@@ -483,15 +483,15 @@ Le code doit se trouver dans l'image de l'application, car Symfony sert ces CSS 
 
 ```text
 synapse-design-system   workflow de release (version) → CI : build, commit de dist/ hors de main, tag vX.Y.Z
-                                                              │
-synapse-app             composer require synapse/design  ◄────┘
-                        └── vendor/synapse/design/      # non versionné ; composer.lock fixe la version
+                                                                      │
+synapse-app             composer require synapse-medical/design  ◄────┘
+                        └── vendor/synapse-medical/design/      # non versionné ; composer.lock fixe la version
 ```
 
 - **Dépôt :** un `composer.json` à la racine. Le `dist/` n'existe que dans le commit tagué, pas sur `main`.
-- **Application :** déclaration d'un dépôt `vcs` dans `composer.json`, ajout de `vendor/synapse/design/dist: synapse-design` à `asset_mapper.paths` et de `vendor/synapse/design/twig: si` à `twig.paths`. Le namespace est nécessaire : sans lui, `fonts/` et `images/logo.svg` du package entrent en conflit avec ceux de l'application, qui l'emporteraient.
+- **Application :** déclaration d'un dépôt `vcs` dans `composer.json`, ajout de `vendor/synapse-medical/design/dist: synapse-design` à `asset_mapper.paths` et de `vendor/synapse-medical/design/twig: si` à `twig.paths`. Le namespace est nécessaire : sans lui, `fonts/` et `images/logo.svg` du package entrent en conflit avec ceux de l'application, qui l'emporteraient.
 - **Dockerfile inchangé :** `composer install` et `asset-map:compile` existent déjà.
-- **Nom :** `synapse/design` n'est pas publié sur Packagist, le dépôt `vcs` suffit. Il est indépendant du scope npm du §9.3.
+- **Nom :** `synapse-medical/design` n'est pas publié sur Packagist, le dépôt `vcs` suffit. Il est indépendant du scope npm du §9.3.
 - **Mises à jour :** `composer require`, éventuellement par Dependabot, si sa configuration couvre ce dépôt `vcs` (à vérifier en Phase 4).
 
 **Options écartées :**
@@ -512,7 +512,7 @@ L'essai 2 de la Phase 1 valide ce montage avec un vrai build Docker. **Si Compos
 
 - **Rien à publier pour l'instant :** l'organisation réserve le scope. Le package reste `private` tant qu'aucun consommateur Node ne l'attend. La première publication, pour `www` ou `docs`, demandera un `npm login` ou un jeton en CI.
 - **Sites :** `pnpm add @synapse-medical/design`.
-- **Application PHP :** le package Composer garde le nom `synapse/design` (§9.2). Il n'est pas publié sur Packagist, et ne dépend donc pas de ce scope.
+- **Application PHP :** le package Composer se nomme `synapse-medical/design` (§9.2). Il n'est pas publié sur Packagist, et ne dépend donc pas de ce scope.
 
 ---
 
@@ -580,7 +580,7 @@ Il pose le principe *Before implementing UI, check the Synapse Design System*, p
 C'est le point qui rend le dispositif réellement utile : **l'agent trouve dans l'application la documentation de la version qu'elle utilise, sans réseau :**
 
 ```text
-vendor/synapse/design/meta/
+vendor/synapse-medical/design/meta/
 ├── AGENTS.consumer.md     # règles pour un projet consommateur
 ├── components.json
 ├── tokens.json

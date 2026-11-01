@@ -52,4 +52,4 @@ Semantic versioning, one version for the whole package. The public contract is t
 1. On `main`, add the version to `CHANGELOG.md`.
 2. Run the **Release** workflow with the version number.
 
-It runs the checks, builds the package, commits `dist/`, `twig/` and `meta/` in a commit outside `main`, tags it `vX.Y.Z` and publishes a GitHub release. Applications update with `composer require synapse/design:X.Y.Z`.
+It runs the checks, builds the package, commits `dist/`, `twig/` and `meta/` in a commit outside `main`, tags it `vX.Y.Z` and publishes a GitHub release. Applications update with `composer require synapse-medical/design:X.Y.Z`.
