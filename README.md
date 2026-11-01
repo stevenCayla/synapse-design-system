@@ -10,7 +10,7 @@ Design tokens, CSS components, Twig partials and usage rules, documented in Engl
 [![Astro](https://img.shields.io/badge/Astro-7-ff5d01.svg)](https://astro.build)
 [![Starlight](https://img.shields.io/badge/Starlight-0.42-8b5cf6.svg)](https://starlight.astro.build)
 
-[Development](https://dev-design.synapse-medical.fr) · [Roadmap](DESIGN_SYSTEM_EXTRACTION_PLAN.md) · [Contributing](CONTRIBUTING.md) · [Report an issue](https://github.com/synapse-medical/synapse-design-system/issues)
+[Development](https://dev-design.synapse-medical.fr) · [Roadmap](DESIGN_SYSTEM_EXTRACTION_PLAN.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Report an issue](https://github.com/synapse-medical/synapse-design-system/issues)
 
 </div>
 
