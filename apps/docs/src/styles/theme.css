@@ -1,33 +1,41 @@
-/* Starlight reads the Synapse tokens: its colours follow the same light and dark themes. */
+/* The frame of the site follows the template of the public sites. Components and examples read the tokens. */
 @import url("@synapse-medical/design/tokens.css");
 @import url("@synapse-medical/design/fonts.css");
+@import url("@fontsource-variable/nunito");
+@import url("@fontsource-variable/newsreader");
+@import url("@fontsource-variable/jetbrains-mono");
+@import url("./palette.css");
 
 :root {
-  --sl-font: var(--si-font-body);
-  --sl-font-mono: var(--si-font-mono);
-  --sl-color-accent-low: var(--si-color-accent-soft);
-  --sl-color-accent: var(--si-color-accent);
-  --sl-color-accent-high: var(--si-color-accent-strong);
-  --sl-color-white: var(--si-color-text);
-  --sl-color-gray-1: var(--si-color-text);
-  --sl-color-gray-2: var(--si-color-text-muted);
-  --sl-color-gray-3: var(--si-color-text-muted);
-  --sl-color-gray-4: var(--si-color-text-faint);
-  --sl-color-gray-5: var(--si-color-border);
-  --sl-color-gray-6: var(--si-color-surface-sunken);
-  --sl-color-gray-7: var(--si-color-surface-raised);
-  --sl-color-black: var(--si-color-surface);
-  --sl-color-text: var(--si-color-text-muted);
-  --sl-color-text-accent: var(--si-color-accent-strong);
-  --sl-color-text-invert: var(--si-color-accent-on);
-  --sl-color-bg: var(--si-color-surface);
-  --sl-color-bg-nav: var(--si-color-surface);
-  --sl-color-bg-sidebar: var(--si-color-surface-raised);
-  --sl-color-bg-inline-code: var(--si-color-surface-sunken);
-  --sl-color-bg-accent: var(--si-color-accent);
-  --sl-color-hairline: var(--si-color-border);
-  --sl-color-hairline-light: var(--si-color-border);
-  --sl-color-hairline-shade: var(--si-color-border);
+  --sy-font-display: 'Newsreader Variable', georgia, serif;
+  --sy-font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+  --sl-font: 'Nunito Variable', system-ui, sans-serif;
+  --sl-font-mono: var(--sy-font-mono);
+  --sl-nav-height: 60px;
+  --sl-sidebar-width: 272px;
+  --sl-color-accent-low: var(--sy-accent-soft);
+  --sl-color-accent: var(--sy-accent);
+  --sl-color-accent-high: var(--sy-accent-ink);
+  --sl-color-white: var(--sy-ink);
+  --sl-color-gray-1: var(--sy-ink);
+  --sl-color-gray-2: var(--sy-ink2);
+  --sl-color-gray-3: var(--sy-ink3);
+  --sl-color-gray-4: var(--sy-ink3);
+  --sl-color-gray-5: var(--sy-line2);
+  --sl-color-gray-6: var(--sy-bg3);
+  --sl-color-gray-7: var(--sy-bg2);
+  --sl-color-black: var(--sy-bg);
+  --sl-color-text: var(--sy-ink2);
+  --sl-color-text-accent: var(--sy-accent-ink);
+  --sl-color-text-invert: var(--sy-white);
+  --sl-color-bg: var(--sy-bg);
+  --sl-color-bg-nav: var(--sy-bg);
+  --sl-color-bg-sidebar: var(--sy-bg2);
+  --sl-color-bg-inline-code: var(--sy-bg3);
+  --sl-color-bg-accent: var(--sy-accent);
+  --sl-color-hairline: var(--sy-line);
+  --sl-color-hairline-light: var(--sy-line);
+  --sl-color-hairline-shade: var(--sy-line);
 }
 
 .si-doc-preview {

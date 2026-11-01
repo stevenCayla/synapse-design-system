@@ -4,6 +4,11 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Changed
+
+- The documentation site uses the template of the public Synapse Medical sites: header, hero, sections, footer, 404 page, Nunito, Newsreader and JetBrains Mono. Components and examples keep reading the tokens.
+- The product is named Synapse Medical in the documentation.
+
 ### Added
 
 - Design tokens in DTCG JSON: primitives, then semantic tokens for the light and dark themes. Generated as CSS, JSON and JavaScript.

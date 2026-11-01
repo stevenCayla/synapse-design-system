@@ -1,0 +1,21 @@
+---
+// Line icons of the site frame.
+const paths = {
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"></path>',
+  moon: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"></path>',
+  sun: '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>',
+  pause: '<path d="M9 5v14M15 5v14"></path>',
+  play: '<path d="M7 5l12 7-12 7z"></path>',
+  form: '<rect x="4" y="3.5" width="16" height="17" rx="2.5"></rect><path d="M8 8h8M8 12h8M8 16h5"></path>',
+  drop: '<path d="M12 3s7 7 7 11.5a7 7 0 0 1-14 0C5 10 12 3 12 3Z"></path>',
+  code: '<path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"></path>',
+};
+
+interface Props {
+  name: keyof typeof paths;
+  class?: string;
+}
+const { name, class: extra } = Astro.props;
+---
+
+<svg class:list={['ds-i', extra]} viewBox="0 0 24 24" aria-hidden="true" set:html={paths[name]} />

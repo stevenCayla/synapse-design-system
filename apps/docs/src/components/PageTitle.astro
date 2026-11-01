@@ -1,8 +1,8 @@
 ---
-// The homepage has its own heading.
+// The homepage and the 404 page have their own heading.
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 
 const isHome = Astro.locals.starlightRoute.entry.data.template === 'splash';
 ---
 
-{!isHome && <Default />}
+{isHome ? <div id="_top"></div> : <Default />}

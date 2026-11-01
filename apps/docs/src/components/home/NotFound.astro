@@ -1,0 +1,47 @@
+---
+// One 404 page for both languages: the server sends it for any unknown address, and the script
+// shows the language of the requested path.
+import Icon from '../site/Icon.astro';
+import NetworkBackground from './NetworkBackground.astro';
+
+const text = {
+  en: { before: 'This page got lost ', em: 'between two releases.', text: 'It may have been moved or renamed. These links should get you back on track.', home: 'Back to home', start: 'Get started', base: '/' },
+  fr: { before: 'Cette page s’est égarée ', em: 'entre deux versions.', text: 'Elle a peut-être été déplacée ou renommée. Ces liens devraient vous remettre sur la bonne voie.', home: 'Retour à l’accueil', start: 'Démarrer', base: '/fr/' },
+};
+---
+
+<div class="ds-home ds-full ds-home--plain not-content">
+  <div class="ds-hero-wrap ds-hero-wrap--full">
+    <NetworkBackground />
+    {Object.entries(text).map(([lang, t]) => (
+      <section class="ds-hero" lang={lang} data-lang={lang} hidden={lang === 'fr'}>
+        <p class="ds-404">404</p>
+        <h1>{t.before}<em>{t.em}</em></h1>
+        <code class="ds-404__path" hidden></code>
+        <p class="ds-lede">{t.text}</p>
+        <div class="ds-actions">
+          <a class="ds-btn ds-btn--pri" href={t.base}><span>{t.home}</span><Icon name="arrow" /></a>
+          <a class="ds-btn" href={`${t.base}getting-started/introduction/`}>{t.start}</a>
+        </div>
+      </section>
+    ))}
+  </div>
+</div>
+
+<script>
+  const fr = location.pathname === '/fr' || location.pathname.startsWith('/fr/');
+  const lang = fr ? 'fr' : 'en';
+  document.documentElement.lang = lang;
+  document.querySelectorAll<HTMLElement>('[data-lang]').forEach((section) => {
+    section.hidden = section.dataset.lang !== lang;
+    const path = section.querySelector<HTMLElement>('.ds-404__path');
+    if (path && !section.hidden) {
+      path.textContent = location.pathname;
+      path.hidden = false;
+    }
+  });
+  document.querySelectorAll<HTMLAnchorElement>('.ds-lang a').forEach((link) => {
+    if (link.hreflang === lang) link.setAttribute('aria-current', 'true');
+    else link.removeAttribute('aria-current');
+  });
+</script>

@@ -1,0 +1,12 @@
+---
+// Logo of the public sites, with the name of this one.
+import Mark from './Mark.astro';
+
+const { siteTitleHref } = Astro.locals.starlightRoute;
+---
+
+<a class="ds-logo" href={siteTitleHref}>
+  <Mark />
+  <span class="ds-wm"><b>SYNAPSE</b> <i>MEDICAL</i></span>
+  <span class="ds-logo__tag">Design System</span>
+</a>
