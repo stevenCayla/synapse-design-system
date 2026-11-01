@@ -24,7 +24,7 @@
 | D8 | Branches | Décidé | `main` seule ; un push déploie `dev-design` ; un workflow lancé à la main avec le numéro de version pose le tag `vX.Y.Z` et publie la release et la production (§16) |
 | D9 | `/settings/design` | Décidé | Supprimer le lien de menu et le contenu de la page, sans lien de remplacement ni redirection (§4.2) |
 
-À décider avant la 1.0, sans bloquer le démarrage : la police de titres (Fraunces ou Inter). Jusque-là, rien ne change à l'écran.
+Décidé le 1er novembre 2026 : titres en Newsreader, texte `#1e1b3a`, fond sombre `#0f1629`, pour les jetons comme pour les sites. La police et le texte changent à l'écran quand l'application passe des alias actuels aux jetons.
 
 ---
 
@@ -431,7 +431,7 @@ Principe : **tirer les jetons de ce que les écrans récents ont déjà validé.
 | `color.surface.raised` | `#f7f8fc` | `#141d35` | `--wz-surface`, `--app-surface-2` |
 | `color.surface.sunken` | `#eef0f8` | `#1a2440` | `--wz-surface-2`, `--app-surface-3` |
 | `color.border.default` | `#e3e6ef` | `rgba(255,255,255,.10)` | `--app-border`, `--wz-border` |
-| `color.text.default` | `#1a1d2e` | `#e6ebf5` | `--app-text`, `--wz-text` |
+| `color.text.default` | `#1e1b3a` | `#e6ebf5` | `--app-text`, `--wz-text` |
 | `color.text.muted` | `#4f566b` | `#b0bacd` | Six variantes |
 | `color.accent.default` | `#4f46e5` | `#818cf8` | `--accent`, `--wz-accent`, `--color-brand-*` |
 | `color.accent.strong` | `#4338ca` | `#a5b4fc` | `--wz-accent-strong` |

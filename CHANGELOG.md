@@ -8,13 +8,16 @@ All notable changes to this project are documented here. The format follows [Kee
 
 - The documentation site uses the template of the public Synapse Medical sites: header, hero, sections, footer, 404 page, Nunito, Newsreader and JetBrains Mono. Components and examples keep reading the tokens.
 - The product is named Synapse Medical in the documentation.
+- The text colour `color.neutral.900` is `#1e1b3a` instead of `#1a1d2e`.
+- Newsreader replaces Fraunces as the heading font (`font.display`), and the package no longer ships Fraunces.
+- The dark theme of the documentation site uses the `#0f1629` background of the tokens, with its surfaces aligned on them.
 
 ### Added
 
 - Design tokens in DTCG JSON: primitives, then semantic tokens for the light and dark themes. Generated as CSS, JSON and JavaScript.
 - Validation of the tokens: theme parity, WCAG AA contrast pairs, migration table and usage in components.
 - Migration table for the 174 variables of `synapse-app`, with `aliases.css` (current values) and `aliases-target.css` (tokens).
-- Inter, Fraunces and Nunito fonts, and the logo in the brand colour `#4f46e5`.
+- Inter, Newsreader and Nunito fonts, and the logo in the brand colour `#4f46e5`.
 - Stylelint rejects hard-coded colours, spacing, radii and font sizes.
 - Documentation site, in English and French: homepage, foundations generated from the tokens, accessibility rules, `/tokens.json`, `/llms.txt` and `/llms-full.txt`.
 - Deployment of the site to Cloudflare Workers: `main` to staging, a final release to production.
