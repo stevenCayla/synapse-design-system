@@ -8,6 +8,8 @@ for (const path of pages) {
     test(`${path} has no accessibility violation in the ${theme} theme`, async ({ page }) => {
       await page.emulateMedia({ colorScheme: theme });
       await page.goto(path, { waitUntil: 'load' });
+      // Expressive Code makes scrollable code blocks focusable from an idle callback, which can run after the load event.
+      await page.waitForFunction(() => [...document.querySelectorAll('.expressive-code pre')].every((pre) => pre.scrollWidth <= pre.clientWidth || pre.hasAttribute('tabindex')));
       // Examples have their own tests. The search button comes from Starlight: its label leaves out the "Ctrl K" hint.
       const { violations } = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
