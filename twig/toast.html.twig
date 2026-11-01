@@ -1,0 +1,18 @@
+{#
+  The region where toasts appear, with the ones rendered by the server (flash messages).
+
+  Parameters
+  ----------
+  close_label  string  translated label of the close buttons, also used by showToast()
+  label        string  translated name of the region
+  toasts       array   optional [{message, tone, duration}]. duration in ms, 0 to stay
+  static       bool    render it in the page (documentation only)
+#}
+<div class="si-toast-region{% if static is defined and static %} si-toast-region--static{% endif %}" data-si-toast-region data-si-close-label="{{ close_label }}" role="region" aria-label="{{ label }}" aria-live="polite">
+    {%- for toast in toasts|default([]) -%}
+    <div class="si-toast{% if toast.tone is defined and toast.tone %} si-toast--{{ toast.tone }}{% endif %}"{% if toast.tone is defined and toast.tone == 'danger' %} role="alert"{% endif %}{% if toast.duration is defined %} data-si-duration="{{ toast.duration }}"{% endif %}>
+        <span class="si-toast__message">{{ toast.message }}</span>
+        <button type="button" class="si-toast__close" data-si-toast-close aria-label="{{ close_label }}"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+    </div>
+    {%- endfor -%}
+</div>

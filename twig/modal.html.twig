@@ -1,0 +1,19 @@
+{#
+  Parameters
+  ----------
+  id           string  element id, also the base of the title id
+  title        string  translated title
+  size         string  'sm' | '' | 'lg'
+  close_label  string  translated label of the close button in the header
+  open         bool    render it open, in the page (documentation only)
+
+  Blocks: body, footer. Open it with data-si-open="{id}" on a button, close it with data-si-close.
+#}
+<dialog class="si-modal{% if size is defined and size %} si-modal--{{ size }}{% endif %}" id="{{ id }}" aria-labelledby="{{ id }}-title"{% if open is defined and open %} open{% endif %}>
+    <header class="si-modal__header">
+        <h2 class="si-modal__title" id="{{ id }}-title">{{ title }}</h2>
+        {%- if close_label is defined and close_label %}<button type="button" class="si-btn si-btn--ghost si-btn--icon si-btn--sm" data-si-close aria-label="{{ close_label }}"><i class="bi bi-x-lg" aria-hidden="true"></i></button>{% endif -%}
+    </header>
+    <div class="si-modal__body">{% block body %}{% endblock %}</div>
+    <footer class="si-modal__footer">{% block footer %}{% endblock %}</footer>
+</dialog>

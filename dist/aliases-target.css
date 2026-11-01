@@ -1,0 +1,238 @@
+/* Generated from packages/design/tokens/migration. Target values: every application variable reads its token. Do not edit. */
+:root {
+  --accent: var(--si-color-accent);
+  --accent-light: var(--si-color-shell-accent);
+  --app-bg: var(--si-color-bg-page);
+  --app-border: var(--si-color-border);
+  --app-border-subtle: var(--si-color-border-subtle);
+  --app-footer-border: var(--si-color-border);
+  --app-footer-text: var(--si-color-text-faint);
+  --app-header-bg: var(--si-color-surface);
+  --app-header-border: var(--si-color-border);
+  --app-surface: var(--si-color-surface);
+  --app-surface-2: var(--si-color-surface-raised);
+  --app-surface-3: var(--si-color-surface-sunken);
+  --app-text: var(--si-color-text);
+  --app-text-faint: var(--si-color-text-faint);
+  --app-text-muted: var(--si-color-text-muted);
+  --app-toggle-bg: var(--si-color-state-hover);
+  --app-toggle-hover: var(--si-color-state-active);
+  --container: var(--si-layout-container);
+  --font-body: var(--si-font-body);
+  --font-display: var(--si-font-display);
+  --radius: var(--si-radius-md);
+  --sheet-accent: var(--si-color-accent);
+  --sheet-accent-dark: var(--si-color-accent-strong);
+  --sheet-error: var(--si-color-danger);
+  --sheet-ink: var(--si-color-text);
+  --sheet-line: var(--si-color-border);
+  --sheet-paper: var(--si-color-surface);
+  --sheet-prod: var(--si-color-warning);
+  --sheet-soft: var(--si-color-text-muted);
+  --sheet-warn: var(--si-color-text-muted);
+  --sidebar-active-bg: var(--si-color-shell-active-bg);
+  --sidebar-active-border: var(--si-color-shell-accent);
+  --sidebar-bg: var(--si-color-shell-bg);
+  --sidebar-border: var(--si-color-shell-border);
+  --sidebar-hover: var(--si-color-shell-hover);
+  --sidebar-section-title: var(--si-color-shell-title);
+  --sidebar-text: var(--si-color-shell-text);
+  --sidebar-text-muted: var(--si-color-shell-text-muted);
+  --transition: var(--si-motion-transition);
+}
+
+html[data-theme="dark"] {
+  --app-bg: var(--si-color-bg-page);
+  --app-border: var(--si-color-border);
+  --app-border-subtle: var(--si-color-border-subtle);
+  --app-footer-border: var(--si-color-border);
+  --app-footer-text: var(--si-color-text-faint);
+  --app-header-bg: var(--si-color-surface);
+  --app-header-border: var(--si-color-border);
+  --app-surface: var(--si-color-surface);
+  --app-surface-2: var(--si-color-surface-raised);
+  --app-surface-3: var(--si-color-surface-sunken);
+  --app-text: var(--si-color-text);
+  --app-text-faint: var(--si-color-text-faint);
+  --app-text-muted: var(--si-color-text-muted);
+  --app-toggle-bg: var(--si-color-state-hover);
+  --app-toggle-hover: var(--si-color-state-active);
+}
+
+.cfg {
+  --cfg-accent: var(--si-color-accent-strong);
+  --cfg-accent-line: var(--si-color-accent-line);
+  --cfg-accent-soft: var(--si-color-accent-soft);
+  --cfg-bad: var(--si-color-danger);
+  --cfg-bad-soft: var(--si-color-danger-soft);
+  --cfg-bg: var(--si-color-surface-raised);
+  --cfg-card: var(--si-color-surface);
+  --cfg-line: var(--si-color-border);
+  --cfg-muted: var(--si-color-text-muted);
+  --cfg-ok: var(--si-color-success);
+  --cfg-ok-line: var(--si-color-success-line);
+  --cfg-ok-soft: var(--si-color-success-soft);
+  --cfg-on-accent: var(--si-color-accent-on);
+  --cfg-sub: var(--si-color-surface-sunken);
+  --cfg-text: var(--si-color-text);
+  --cfg-track: var(--si-color-border);
+  --cfg-warn: var(--si-color-warning);
+  --cfg-warn-line: var(--si-color-warning-line);
+  --cfg-warn-soft: var(--si-color-warning-soft);
+}
+
+html[data-theme="dark"] .cfg {
+  --cfg-accent: var(--si-color-accent-strong);
+  --cfg-accent-line: var(--si-color-accent-line);
+  --cfg-accent-soft: var(--si-color-accent-soft);
+  --cfg-bad: var(--si-color-danger);
+  --cfg-bad-soft: var(--si-color-danger-soft);
+  --cfg-bg: var(--si-color-surface-raised);
+  --cfg-card: var(--si-color-surface);
+  --cfg-line: var(--si-color-border);
+  --cfg-muted: var(--si-color-text-muted);
+  --cfg-ok: var(--si-color-success);
+  --cfg-ok-line: var(--si-color-success-line);
+  --cfg-ok-soft: var(--si-color-success-soft);
+  --cfg-on-accent: var(--si-color-accent-on);
+  --cfg-sub: var(--si-color-surface-sunken);
+  --cfg-text: var(--si-color-text);
+  --cfg-track: var(--si-color-border);
+  --cfg-warn: var(--si-color-warning);
+  --cfg-warn-line: var(--si-color-warning-line);
+  --cfg-warn-soft: var(--si-color-warning-soft);
+}
+
+.im-flow {
+  --im-accent: var(--si-color-accent);
+  --im-accent-soft: var(--si-color-accent-soft);
+  --im-accent-strong: var(--si-color-accent-strong);
+  --im-bg: var(--si-color-surface);
+  --im-border: var(--si-color-border);
+  --im-danger: var(--si-color-danger);
+  --im-danger-soft: var(--si-color-danger-soft);
+  --im-faint: var(--si-color-text-faint);
+  --im-input: var(--si-color-input-bg);
+  --im-muted: var(--si-color-text-muted);
+  --im-on-accent: var(--si-color-accent-on);
+  --im-success: var(--si-color-success);
+  --im-success-soft: var(--si-color-success-soft);
+  --im-surface: var(--si-color-surface-raised);
+  --im-surface-2: var(--si-color-surface-sunken);
+  --im-text: var(--si-color-text);
+  --im-warning: var(--si-color-warning);
+  --im-warning-soft: var(--si-color-warning-soft);
+}
+
+html[data-theme="dark"] .im-page .im-flow {
+  --im-accent: var(--si-color-accent);
+  --im-accent-soft: var(--si-color-accent-soft);
+  --im-accent-strong: var(--si-color-accent-strong);
+  --im-bg: var(--si-color-surface);
+  --im-border: var(--si-color-border);
+  --im-danger: var(--si-color-danger);
+  --im-danger-soft: var(--si-color-danger-soft);
+  --im-faint: var(--si-color-text-faint);
+  --im-input: var(--si-color-input-bg);
+  --im-muted: var(--si-color-text-muted);
+  --im-on-accent: var(--si-color-accent-on);
+  --im-success: var(--si-color-success);
+  --im-success-soft: var(--si-color-success-soft);
+  --im-surface: var(--si-color-surface-raised);
+  --im-surface-2: var(--si-color-surface-sunken);
+  --im-text: var(--si-color-text);
+  --im-warning: var(--si-color-warning);
+  --im-warning-soft: var(--si-color-warning-soft);
+}
+
+.org-switch {
+  --os-bg: var(--si-color-surface);
+  --os-border: var(--si-color-border);
+  --os-current-bg: var(--si-color-accent-soft);
+  --os-current-border: var(--si-color-accent-line);
+  --os-dim: var(--si-color-text-muted);
+  --os-focus: var(--si-color-focus-ring);
+  --os-hover: var(--si-color-state-hover);
+  --os-pill-bg: var(--si-color-accent-soft);
+  --os-soft: var(--si-color-state-hover);
+  --os-text: var(--si-color-text);
+  --os-violet: var(--si-color-accent-strong);
+}
+
+html[data-theme="dark"] .org-switch {
+  --os-border: var(--si-color-border);
+  --os-current-bg: var(--si-color-accent-soft);
+  --os-current-border: var(--si-color-accent-line);
+  --os-dim: var(--si-color-text-muted);
+  --os-focus: var(--si-color-focus-ring);
+  --os-hover: var(--si-color-state-hover);
+  --os-pill-bg: var(--si-color-accent-soft);
+  --os-soft: var(--si-color-state-hover);
+  --os-violet: var(--si-color-accent-strong);
+}
+
+[data-theme='dark'] {
+  --sheet-accent: var(--si-color-accent);
+  --sheet-accent-dark: var(--si-color-accent-strong);
+  --sheet-error: var(--si-color-danger);
+  --sheet-ink: var(--si-color-text);
+  --sheet-line: var(--si-color-border);
+  --sheet-paper: var(--si-color-surface);
+  --sheet-prod: var(--si-color-warning);
+  --sheet-soft: var(--si-color-text-muted);
+  --sheet-warn: var(--si-color-text-muted);
+}
+
+.wz-shell {
+  --wz-accent: var(--si-color-accent);
+  --wz-accent-line: var(--si-color-accent-line);
+  --wz-accent-soft: var(--si-color-accent-soft);
+  --wz-accent-strong: var(--si-color-accent-strong);
+  --wz-bg: var(--si-color-surface);
+  --wz-border: var(--si-color-border);
+  --wz-danger: var(--si-color-danger);
+  --wz-danger-soft: var(--si-color-danger-soft);
+  --wz-dim: var(--si-color-text-faint);
+  --wz-disabled-bg: var(--si-color-disabled-bg);
+  --wz-disabled-border: var(--si-color-disabled-border);
+  --wz-disabled-text: var(--si-color-disabled-text);
+  --wz-faint: var(--si-color-text-faint);
+  --wz-input-bg: var(--si-color-input-bg);
+  --wz-muted: var(--si-color-text-muted);
+  --wz-on-accent: var(--si-color-accent-on);
+  --wz-on-success: var(--si-color-success-on);
+  --wz-shadow: var(--si-shadow-md);
+  --wz-success: var(--si-color-success);
+  --wz-surface: var(--si-color-surface-raised);
+  --wz-surface-2: var(--si-color-surface-sunken);
+  --wz-text: var(--si-color-text);
+  --wz-warning: var(--si-color-warning);
+  --wz-warning-soft: var(--si-color-warning-soft);
+}
+
+html[data-theme="dark"] .wz-shell {
+  --wz-accent: var(--si-color-accent);
+  --wz-accent-line: var(--si-color-accent-line);
+  --wz-accent-soft: var(--si-color-accent-soft);
+  --wz-accent-strong: var(--si-color-accent-strong);
+  --wz-bg: var(--si-color-surface);
+  --wz-border: var(--si-color-border);
+  --wz-danger: var(--si-color-danger);
+  --wz-danger-soft: var(--si-color-danger-soft);
+  --wz-dim: var(--si-color-text-faint);
+  --wz-disabled-bg: var(--si-color-disabled-bg);
+  --wz-disabled-border: var(--si-color-disabled-border);
+  --wz-disabled-text: var(--si-color-disabled-text);
+  --wz-faint: var(--si-color-text-faint);
+  --wz-input-bg: var(--si-color-input-bg);
+  --wz-muted: var(--si-color-text-muted);
+  --wz-on-accent: var(--si-color-accent-on);
+  --wz-on-success: var(--si-color-success-on);
+  --wz-shadow: var(--si-shadow-md);
+  --wz-success: var(--si-color-success);
+  --wz-surface: var(--si-color-surface-raised);
+  --wz-surface-2: var(--si-color-surface-sunken);
+  --wz-text: var(--si-color-text);
+  --wz-warning: var(--si-color-warning);
+  --wz-warning-soft: var(--si-color-warning-soft);
+}
