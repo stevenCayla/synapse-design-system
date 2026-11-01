@@ -1,0 +1,19 @@
+{#
+  Parameters
+  ----------
+  tone     string  '' | 'success' | 'warning' | 'danger' | 'info'
+  variant  string  '' | 'note' | 'banner'
+  title    string  optional translated title
+  text     string  translated text, or override the "body" block with embed
+  icon     string  optional icon classes, decorative
+  role     string  'status' (default) or 'alert' for what needs immediate attention
+  dismiss_label  string  translated label of a close button. Needs the behaviours script
+#}
+<div class="si-alert{% if tone is defined and tone %} si-alert--{{ tone }}{% endif %}{% if variant is defined and variant %} si-alert--{{ variant }}{% endif %}" role="{{ role|default('status') }}">
+    {%- if icon is defined and icon %}<i class="si-alert__icon {{ icon }}" aria-hidden="true"></i>{% endif -%}
+    <div class="si-alert__content">
+        {%- if title is defined and title %}<p class="si-alert__title">{{ title }}</p>{% endif -%}
+        <div class="si-alert__body">{% block body %}{{ text|default('') }}{% endblock %}</div>
+    </div>
+    {%- if dismiss_label is defined and dismiss_label %}<button type="button" class="si-alert__dismiss" data-si-dismiss aria-label="{{ dismiss_label }}"><i class="bi bi-x-lg" aria-hidden="true"></i></button>{% endif -%}
+</div>

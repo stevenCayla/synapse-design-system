@@ -1,0 +1,21 @@
+{#
+  Parameters
+  ----------
+  id        string  id of the control, also the base of the hint and error ids
+  label     string  translated label
+  required  bool    shows the required mark. The control needs its own `required` attribute
+  hint      string  optional translated help
+  error     string  optional translated error. The control needs aria-invalid="true"
+  required_label string  translated text of the required mark, for screen readers
+
+  Block: control. Link the control with aria-describedby to "{id}-hint" and "{id}-error".
+#}
+<div class="si-field">
+    <label class="si-field__label" for="{{ id }}">{{ label }}
+        {%- if required is defined and required %} <span class="si-field__required" aria-hidden="true">*</span>
+        {%- if required_label is defined and required_label %}<span class="si-sr-only"> {{ required_label }}</span>{% endif %}{% endif -%}
+    </label>
+    {%- block control %}{% endblock -%}
+    {%- if hint is defined and hint %}<p class="si-field__hint" id="{{ id }}-hint">{{ hint }}</p>{% endif -%}
+    {%- if error is defined and error %}<p class="si-field__error" id="{{ id }}-error"><i class="bi bi-exclamation-circle" aria-hidden="true"></i>{{ error }}</p>{% endif -%}
+</div>

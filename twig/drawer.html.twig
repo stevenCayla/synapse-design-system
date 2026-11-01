@@ -1,0 +1,26 @@
+{#
+  Parameters
+  ----------
+  id             string  element id, also the base of the title id
+  title          string  translated title
+  close_label    string  translated label of the close button
+  size           string  'sm' | '' | 'lg'
+  loading_label  string  translated text while the content loads
+  error_title    string  translated title if it cannot load
+  url            string  optional address of the content, loaded on opening
+  open           bool    render it open, in the page (documentation only)
+
+  Blocks: body, footer. Open it with data-si-open="{id}" on a button, close it with data-si-close.
+#}
+<dialog class="si-drawer{% if size is defined and size %} si-drawer--{{ size }}{% endif %}" id="{{ id }}" aria-labelledby="{{ id }}-title"
+    {%- if url is defined and url %} data-si-load="{{ url }}"{% endif %}
+    {%- if loading_label is defined and loading_label %} data-si-loading-label="{{ loading_label }}"{% endif %}
+    {%- if error_title is defined and error_title %} data-si-error-title="{{ error_title }}"{% endif %}
+    {%- if open is defined and open %} open{% endif %}>
+    <header class="si-drawer__header">
+        <h2 class="si-drawer__title" id="{{ id }}-title">{{ title }}</h2>
+        <button type="button" class="si-btn si-btn--ghost si-btn--icon si-btn--sm" data-si-close aria-label="{{ close_label }}"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+    </header>
+    <div class="si-drawer__body" data-si-drawer-body>{% block body %}{% endblock %}</div>
+    {%- block footer_wrapper %}{% if block('footer') is defined %}<footer class="si-drawer__footer">{{ block('footer') }}</footer>{% endif %}{% endblock -%}
+</dialog>
