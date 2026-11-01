@@ -1,0 +1,24 @@
+---
+// A button that switches between the two themes, as on the other public sites.
+import { t } from '../../lib/i18n';
+import Icon from './Icon.astro';
+---
+
+<button class="ds-theme" type="button" data-theme-toggle aria-label={t(Astro.currentLocale).toggleTheme}>
+  <Icon name="moon" class="ds-theme__moon" />
+  <Icon name="sun" class="ds-theme__sun" />
+</button>
+
+<script>
+  for (const button of document.querySelectorAll('[data-theme-toggle]')) {
+    button.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      try {
+        localStorage.setItem('starlight-theme', next);
+      } catch {
+        // Storage can be unavailable: the choice then lasts for this page.
+      }
+    });
+  }
+</script>

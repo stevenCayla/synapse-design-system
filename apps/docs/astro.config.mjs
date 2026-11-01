@@ -23,26 +23,30 @@ export default defineConfig({
       filter: (page) => !/\/examples\/|\/404\/?$/.test(page),
     }),
     starlight({
-      title: 'Synapse Design System',
-      logo: {
-        light: '../../packages/design/assets/images/logo.svg',
-        dark: '../../packages/design/assets/images/logo-dark.svg',
-        alt: 'Synapse',
-        replacesTitle: false,
-      },
+      title: 'Synapse Medical Design System',
       favicon: '/favicon.svg',
       defaultLocale: 'root',
       locales: {
         root: { label: 'English', lang: 'en' },
         fr: { label: 'Français', lang: 'fr' },
       },
-      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/stevenCayla/synapse-design-system' }],
-      customCss: ['./src/styles/theme.css'],
-      components: { PageTitle: './src/components/PageTitle.astro' },
+      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/synapse-medical/synapse-design-system' }],
+      customCss: ['./src/styles/theme.css', './src/styles/template.css', './src/styles/home.css'],
+      expressiveCode: {
+        styleOverrides: { borderRadius: '10px', borderColor: 'var(--sy-line)', codeFontFamily: 'var(--sy-font-mono)', codeFontSize: '13px', uiFontFamily: 'var(--sy-font-mono)', uiFontSize: '12px' },
+      },
+      components: {
+        Header: './src/components/site/Header.astro',
+        SiteTitle: './src/components/site/SiteTitle.astro',
+        ThemeSelect: './src/components/site/ThemeSelect.astro',
+        LanguageSelect: './src/components/site/LanguageSelect.astro',
+        Footer: './src/components/site/Footer.astro',
+        PageTitle: './src/components/PageTitle.astro',
+      },
       plugins: [
         starlightLlmsTxt({
-          projectName: 'Synapse Design System',
-          description: 'The source of truth for the Synapse interface: design tokens, CSS components, Twig partials and usage rules.',
+          projectName: 'Synapse Medical Design System',
+          description: 'The source of truth for the Synapse Medical interface: design tokens, CSS components, Twig partials and usage rules.',
           details: 'Before implementing UI, check these rules. Values are in /tokens.json. Do not invent a colour, a spacing, a button or a variant when a suitable one exists.',
         }),
       ],

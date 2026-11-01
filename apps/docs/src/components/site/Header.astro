@@ -1,0 +1,26 @@
+---
+import Search from '@astrojs/starlight/components/Search.astro';
+import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
+import LanguageSelect from './LanguageSelect.astro';
+import SiteTitle from './SiteTitle.astro';
+import ThemeSelect from './ThemeSelect.astro';
+---
+
+<div class="ds-header">
+  <SiteTitle />
+  <div class="ds-header__grow"></div>
+  <div class="print:hidden"><Search /></div>
+  <div class="ds-header__prefs print:hidden">
+    <div class="ds-header__social sl-hidden md:sl-flex"><SocialIcons /></div>
+    <LanguageSelect />
+    <ThemeSelect />
+  </div>
+</div>
+
+<style>
+  @media (min-width: 50rem) {
+    :global([data-has-sidebar]) .ds-header__prefs {
+      display: flex;
+    }
+  }
+</style>

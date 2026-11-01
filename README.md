@@ -1,16 +1,16 @@
 <div align="center">
 
-# Synapse Design System
+# Synapse Medical Design System
 
 **The source of truth for the interface of [Synapse Medical](https://synapse-medical.fr)**<br>
 Design tokens, CSS components, Twig partials and usage rules, documented in English and French.
 
-[![CI](https://github.com/stevenCayla/synapse-design-system/actions/workflows/ci.yaml/badge.svg)](https://github.com/stevenCayla/synapse-design-system/actions/workflows/ci.yaml)
+[![CI](https://github.com/synapse-medical/synapse-design-system/actions/workflows/ci.yaml/badge.svg)](https://github.com/synapse-medical/synapse-design-system/actions/workflows/ci.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Astro](https://img.shields.io/badge/Astro-7-ff5d01.svg)](https://astro.build)
 [![Starlight](https://img.shields.io/badge/Starlight-0.42-8b5cf6.svg)](https://starlight.astro.build)
 
-[Development](https://dev-design.synapse-medical.fr) · [Roadmap](DESIGN_SYSTEM_EXTRACTION_PLAN.md) · [Contributing](CONTRIBUTING.md) · [Report an issue](https://github.com/stevenCayla/synapse-design-system/issues)
+[Development](https://dev-design.synapse-medical.fr) · [Roadmap](DESIGN_SYSTEM_EXTRACTION_PLAN.md) · [Contributing](CONTRIBUTING.md) · [Report an issue](https://github.com/synapse-medical/synapse-design-system/issues)
 
 </div>
 
@@ -31,7 +31,7 @@ Design tokens, CSS components, Twig partials and usage rules, documented in Engl
 
 ## Overview
 
-The Synapse Design System is a monorepo with one package and its documentation site,
+The Synapse Medical Design System is a monorepo with one package and its documentation site,
 built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
 It is early work: no application uses it yet, and all its components stay experimental until one does.
 [`DESIGN_SYSTEM_EXTRACTION_PLAN.md`](DESIGN_SYSTEM_EXTRACTION_PLAN.md) gives the roadmap.
@@ -46,7 +46,7 @@ It is early work: no application uses it yet, and all its components stay experi
 | Checks | Theme parity, WCAG AA contrast pairs, documentation and links, Twig rendering compared with PHP, and browser tests on every fixture |
 
 The components do not depend on Bootstrap or on any other UI framework
-([#1](https://github.com/stevenCayla/synapse-design-system/issues/1)).
+([#1](https://github.com/synapse-medical/synapse-design-system/issues/1)).
 
 ## Environments
 
@@ -131,7 +131,7 @@ token and no Node.js in the application:
 
 ```json
 {
-    "repositories": [{ "type": "vcs", "url": "https://github.com/stevenCayla/synapse-design-system" }],
+    "repositories": [{ "type": "vcs", "url": "https://github.com/synapse-medical/synapse-design-system" }],
     "require": { "synapse/design": "0.0.1-alpha.3" }
 }
 ```

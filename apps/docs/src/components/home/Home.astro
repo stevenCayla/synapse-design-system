@@ -1,14 +1,16 @@
 ---
-// Homepage. Its components are the real ones, rendered from their fixtures, and its figures are read
-// from the tokens: nothing here can drift from the package.
+// Homepage, on the template of the public sites. Its components are the real ones, rendered from
+// their fixtures, and its figures are read from the tokens: nothing here can drift from the package.
 import '@synapse-medical/design/styles.css';
-import '../../styles/home.css';
 import { contrastReport } from '@synapse-medical/design/contrast';
 import pairs from '@synapse-medical/design/contrast-pairs.json';
 import { listComponents, listFixtures, renderFixture } from '@synapse-medical/design/fixtures';
 import { tokens } from '@synapse-medical/design/tokens';
 import { langOf } from '../../lib/i18n';
 import { latestVersion } from '../../lib/version';
+import Icon from '../site/Icon.astro';
+import Mark from '../site/Mark.astro';
+import NetworkBackground from './NetworkBackground.astro';
 import { homeContent } from './content';
 
 const lang = langOf(Astro.currentLocale);
@@ -35,47 +37,65 @@ const stats = [
 const swatches = ['accent', 'success', 'warning', 'danger', 'info'];
 ---
 
-<div class="ds-home not-content">
-  <section class="ds-hero">
-    <div class="ds-hero__text">
+<div class="ds-home ds-full not-content">
+  <div class="ds-hero-wrap">
+    <NetworkBackground />
+    <section class="ds-hero">
+      <div class="ds-mark" aria-hidden="true">
+        <span class="ds-mark__ring"></span><span class="ds-mark__ring"></span><span class="ds-mark__ring"></span>
+        <span class="ds-mark__tile"><Mark /></span>
+      </div>
       <p class="ds-eyebrow"><b>v{latestVersion()}</b><span>{c.eyebrow}</span></p>
-      <h1>{c.title}</h1>
+      <h1>{c.title[0]}<em>{c.title[1]}</em>{c.title[2]}</h1>
       <p class="ds-lede">{c.lede}</p>
       <div class="ds-actions">
-        <a class="ds-link ds-link--primary" href={`${base}getting-started/introduction/`}>{c.start}</a>
-        <a class="ds-link" href={`${base}foundations/colors/`}>{c.browse}</a>
+        <a class="ds-btn ds-btn--pri" href={`${base}getting-started/introduction/`}><span>{c.start}</span><Icon name="arrow" /></a>
+        <a class="ds-btn" href={`${base}foundations/colors/`}>{c.browse}</a>
       </div>
       <dl class="ds-stats">
         {stats.map((stat) => <div><dt>{stat.label}</dt><dd>{stat.value}</dd></div>)}
       </dl>
-    </div>
-    <figure class="ds-specimen">
-      <figcaption>{c.specimen.label}</figcaption>
-      <div class="ds-specimen__badges" set:html={specimen.badges.join('')} />
-      <Fragment set:html={specimen.alert} />
-      <Fragment set:html={specimen.success} />
-      <Fragment set:html={specimen.buttons} />
-    </figure>
-  </section>
+      <figure class="ds-mock">
+        <figcaption class="ds-mock__head"><i></i><i></i><i></i><span>{c.specimen.label}</span></figcaption>
+        <div class="ds-mock__body">
+          <div class="ds-mock__col">
+            <div class="ds-mock__row" set:html={specimen.badges.join('')} />
+            <Fragment set:html={specimen.alert} />
+          </div>
+          <div class="ds-mock__col">
+            <Fragment set:html={specimen.success} />
+            <Fragment set:html={specimen.buttons} />
+          </div>
+        </div>
+      </figure>
+    </section>
+  </div>
 
-  <section class="ds-section">
-    <h2>{c.audiences.heading}</h2>
-    <div class="ds-cards">
+  <section class="ds-sec">
+    <div class="ds-sec__head">
+      <p class="ds-kick">{c.audiences.kick}</p>
+      <h2>{c.audiences.heading[0]}<em>{c.audiences.heading[1]}</em></h2>
+    </div>
+    <div class="ds-grid">
       {
         c.audiences.items.map((item) => (
-          <a class="ds-card" href={`${base}${item.href}`}>
+          <a class="ds-card ds-card--link" href={`${base}${item.href}`}>
+            <span class="ds-card__icon"><Icon name={item.icon} /></span>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
-            <span class="ds-card__cta">{item.cta} <span aria-hidden="true">→</span></span>
+            <span class="ds-card__more">{item.cta}<Icon name="arrow" /></span>
           </a>
         ))
       }
     </div>
   </section>
 
-  <section class="ds-section">
-    <h2>{c.foundations.heading}</h2>
-    <p class="ds-section__sub">{c.foundations.sub}</p>
+  <section class="ds-sec ds-sec--dots">
+    <div class="ds-sec__head">
+      <p class="ds-kick">{c.foundations.kick}</p>
+      <h2>{c.foundations.heading[0]}<em>{c.foundations.heading[1]}</em></h2>
+      <p>{c.foundations.sub}</p>
+    </div>
     <div class="ds-foundations">
       {
         c.foundations.items.map((item) => (
@@ -95,10 +115,29 @@ const swatches = ['accent', 'success', 'warning', 'danger', 'info'];
     </div>
   </section>
 
-  <section class="ds-section">
-    <h2>{c.principles.heading}</h2>
-    <div class="ds-principles">
-      {c.principles.items.map((item) => <div><h3>{item.title}</h3><p>{item.text}</p></div>)}
+  <section class="ds-sec">
+    <div class="ds-sec__head">
+      <p class="ds-kick">{c.principles.kick}</p>
+      <h2>{c.principles.heading[0]}<em>{c.principles.heading[1]}</em></h2>
+    </div>
+    <div class="ds-grid">
+      {c.principles.items.map((item, index) => (
+        <div class="ds-card">
+          <span class="ds-card__n">{String(index + 1).padStart(2, '0')}</span>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="ds-sec ds-sec--last">
+    <div class="ds-cta">
+      <div>
+        <h2>{c.cta.title[0]}<em>{c.cta.title[1]}</em></h2>
+        <p>{c.cta.text}</p>
+      </div>
+      <a class="ds-btn ds-btn--pri" href={`${base}getting-started/installation/`}><span>{c.cta.action}</span><Icon name="arrow" /></a>
     </div>
   </section>
 </div>

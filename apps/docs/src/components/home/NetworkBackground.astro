@@ -1,0 +1,27 @@
+---
+// Animated network behind a hero, with its pause button (WCAG 2.2.2). The choice is remembered.
+import Icon from '../site/Icon.astro';
+import { t } from '../../lib/i18n';
+
+const text = t(Astro.currentLocale);
+---
+
+<script is:inline>
+  // Transparent header at the top of the page, floating one once scrolled.
+  (function () {
+    var root = document.documentElement;
+    var update = function () { root.classList.toggle('ds-top', scrollY < 8); };
+    update();
+    addEventListener('scroll', update, { passive: true });
+  })();
+</script>
+
+<div class="ds-bg" aria-hidden="true"><canvas class="ds-net"></canvas></div>
+<button class="ds-netp" type="button" data-net-pause aria-pressed="false" aria-label={text.pauseAnimation}>
+  <span class="ds-netp__pause"><Icon name="pause" /><span>{text.pauseAnimation}</span></span>
+  <span class="ds-netp__play"><Icon name="play" /><span>{text.resumeAnimation}</span></span>
+</button>
+
+<script>
+  import '../../scripts/network';
+</script>
